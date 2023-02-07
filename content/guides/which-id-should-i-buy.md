@@ -1,110 +1,111 @@
 +++
-title = "Which ID Should I Buy?"
-description = "A buyer's guide to the 5 different types of Urbit IDs: Galaxy, Star, Planet, Moon, & Comet"
+title = "Quelle ID dois-je acheter ?"
+description = "Guide d'achat des 5 différents types d'Urbit IDs: Galaxies, Etoiles, Planètes, Lune et Comètes"
 +++
 
 
 ## TL;DR
 
-Urbit ID is a decentralized addressing system and public key infrastructure designed for Urbit OS. It is a unique number, a username, an avatar, a piece of a collectively owned network, and a key to a new digital world. Sort of like DNS, IP and a username system combined into one thing. Each Urbit ID is an [ERC-721](https://eips.ethereum.org/EIPS/eip-721) NFT on the Ethereum blockchain.
+Urbit ID est un système d'adresse décentralisé et une infrastructure à clé publique conçue pour Urbit OS. Il s'agit d'un numéro unique, d'un nom d'utilisateur, d'un avatar, un morceau d'un réseau collectif, et d'une clé d'un nouveau monde numérique. Un peu comme si un DNS, une IP et un système de noms d'utilisateur étaient combinés en un seul nom. Chaque Urbit ID est un NFT [ERC-721](https://eips.ethereum.org/EIPS/eip-721) sur la blockchain Ethereum.
 
-There are 5 types of Urbit IDs, only 3 of which should be purchased, each with a different role in the network:
+Il existe 5 types d'Urbit ID, dont 3 seulement doivent être achetés, chacun ayant un rôle différent dans le réseau :
 
-1. Galaxies are likely candidates for large organizations, countries, or anything that wants to have complete control over their own networking. They spawn and sponsor stars, perform peer discovery and NAT traversal similar to DNS, provide provider-style services, and govern.  There are 2^8 (256) galaxies and each can spawn 255 stars.
-2. Stars are for businesses, communities, or metropolises. Stars spawn and sponsor planets, perform peer routing, provide hosting or infrastructural services, and swap for [$WSTR](https://star.market/) (Wrapped Stars). There are 2^16 (~65K) stars and each can sponsor ~65K planets.
-3. Planets are for individuals. They are your username, domain name, and crypto wallet address all wrapped into one asset. They can spawn moons.
+1. Les galaxies sont probablement des candidats pour de grandes organisations, des pays, ou tout ce qui veut avoir un contrôle total sur leur propre réseau. Elles génèrent et parrainent des étoiles, effectuent la découverte par les pairs et la transversale NAT semblable au DNS, fournissent des services de type fournisseur, et gouvernent. Il y a 2^8 (256) galaxies et chacune peut générer jusqu'à 255 étoiles.
+2. Les étoiles s'adressent aux entreprises, aux collectivités ou aux métropoles. Les étoiles initialisent et parrainent des planètes, effectuent le routage par les pairs, fournissent des services d'hébergement ou d'infrastructure, et échangent pour du [$WSTR](https://star.market/) (Wrapped Stars). Il y a 2^16 (~65K) étoiles et chacune peut parrainer ~65K planètes.
+3. Les planètes sont pour les individus. Elles sont votre nom d'utilisateur, nom de domaine, et l'adresse de portefeuille crypto, le tout combiné en un seul nom. Ils peuvent donner naissance à des lunes.
 
-**NEVER BUY THESE**:
+**N'ACHETEZ JAMAIS CELLE-CI**:
 
-4. Moons are for devices. They are the IoT of Urbit. These are not independent identities. They cannot change sponsors.
-5. Comets are free identities. Anyone can boot one. They are for trying out Urbit, developing/deploying automated agents (bots), and performing otherwise "disposable" activity.
+1. Les lunes sont pour les systèmes. Ils sont l'IoT d'Urbit. Ce ne sont pas des identités indépendantes. Elles ne peuvent pas changer de parrain.
+2. Les comètes sont des identités libres. N'importe qui peut en initialiser une. Elles servent à tester Urbit, à développer/déployer des agents automatisés (bots) et à effectuer des activités dites “jetables”.
 
-## What is an Urbit ID?
+## Qu'est-ce qu'une Urbit ID ?
 
-Technically, Urbit ID is a decentralized addressing and public key infrastructure designed for Urbit OS. The Urbit ID registry is deployed to the Ethereum blockchain. Thus, each Urbit ID is an ERC-721 token. Functionally, Urbit ID is a unique number, a username, an avatar, a piece of a collectively owned network, and a key to a new digital world. You can think of it as your username, domain name, and crypto wallet address all rolled into one.
+Techniquement, Urbit ID est une infrastructure d'adresse décentralisée fonctionnant autour d’un système de clef publique conçue pour Urbit OS. Le registre Urbit ID est déployé sur la blockchain Ethereum. Ainsi, chaque Urbit ID est un token ERC-721. Pratiquement, Urbit ID est un numéro unique, un nom d'utilisateur, un avatar, l'élément d'un réseau collectif et la clé d'un nouveau monde numérique. Vous pouvez penser à elle comme votre nom d'utilisateur, nom de domaine, et l'adresse de portefeuille crypto combinés en un seul nom.
 
-There are 5 different types of Urbit IDs: Galaxy, Star, Planet, Moon, and Comet. Each plays a different functional role in the network. Galaxies spawn Stars which spawn Planets which spawn Moons. Comets are free and can be easily generated by anyone. Galaxies are governance nodes, stars are infrastructure nodes, planets are personal nodes, moons are device nodes, and comets are bots.
+Il y a 5 types différents d'Urbit IDs : Galaxie, Étoile, Planète, Lune et Comète. Chacune joue un rôle fonctionnel différent au sein du réseau. Les galaxies génèrent des étoiles qui générèrent des planètes qui générèrent des lunes. Les comètes sont gratuites et peuvent être facilement générées par n'importe qui. Les galaxies sont des nœuds de gouvernance, les étoiles des nœuds d'infrastructure, les planètes des nœuds personnels, les lunes des nœuds système et les comètes des bots.
 
-Urbit ID was designed as the PKI, networking system and pseudonymous identity system for Urbit OS. For Urbit OS to succeed as a decentralized network, there needs to be a simple mechanism for distributing address space. Urbit ID was designed as a simple, mechanical system where addresses have value (because they’re scarce) and can be distributed in blocks to distribute authority and authentication. You can think of Urbit ID a bit like digital land—except smaller parcels (stars and planets) can always move to other regions by simply changing sponsors.
+Urbit ID a été conçu comme étant le KPI, le système réseau et le système d'identité pseudonyme pour Urbit OS. Pour qu'Urbit OS réussisse en tant que réseau décentralisé, il doit y avoir un mécanisme simple de répartition de l'espace d'adresse. Urbit ID a été conçu comme un système simple et mécanique où les adresses ont de la valeur (car elles sont rares) et peuvent être distribuées en blocs pour répartir l’autorité et l’authentification. On peut penser à Urbit ID un peu comme à une terre numérique, sauf que les petites parcelles (étoiles et planètes) peuvent toujours se déplacer vers d'autres régions en changeant simplement de parrain.
 
-Each Urbit ID is really just a number. From that number, we generate a pronounceable name and a visually identifiable sigil. `~dalwel-fadrun` is 3,509,632,436, for example. This number is a place in our Urbit ID registry which gives you access to and ownership of the network. Urbit IDs are scarce so they cost something. There are 2^32 (~4B). Since they cost something, people are less likely to spam or abuse the network. And since you need a sponsor, you have some basic form of accountability to *someone*—you can always change sponsors. [The internet died five years ago](https://forum.agoraroad.com/index.php?threads/dead-internet-theory-most-of-the-internet-is-fake.3011/), Urbit lives on. 
+Chaque Urbit ID n'est vraiment qu'un nombre. À partir de ce nombre, nous générons un nom prononçable et un sigle visuellement identifiable. Par exemple, `~dalwel-fadrun` vaut 3,509,632,436 . Ce numéro est une place dans notre registre Urbit ID qui vous permet d'accéder au réseau et d'en être propriétaire. Les Urbit IDs sont rares, elles en dérivent une valeur intrinsèque. Il y en a 2^32 (~4B). Comme elles en dérivent une valeur intrinsèque, les gens sont moins susceptibles de spammer ou d'abuser du réseau. Et puisque vous avez besoin d'un parrain, vous avez une certaine forme de responsabilité envers *quelqu'un.* Vous pouvez toujours changer de parrain. [The internet died five years ago](https://forum.agoraroad.com/index.php?threads/dead-internet-theory-most-of-the-internet-is-fake.3011/), Urbit vit toujours.
 
-Urbit ID is a pseudonymous and reputation-based identity system. There are ways to swap your ID with a nickname or dox yourself on the network if you wish. Think of an Urbit ID more like a phone number than a handle.
+Urbit ID est un système pseudonyme et basé sur la réputation. Il y a différentes façons d'échanger votre ID avec un surnom ou en révélant vous-même votre identité sur le réseau, si vous le souhaitez. Pensez à Urbit ID plus comme un numéro de téléphone qu'un pseudo.
 
-## The Different Types of IDs
+## Les différents types d'IDs
 
-When talking about Urbit IDs to purchase, we are really only talking about three kinds: Galaxy, Star, and Planet. Moons and Comets aren’t worth buying. If they are for sale, it is a scam. Run, don’t walk, the other way. One of the most important functions of galaxies and stars is minting other identities, aka spawning. There are a total of 256 galaxies. Each galaxy can spawn 255 stars. Each star can spawn 65,535 planets. This makes for a total of ~4.3 billion planets on the Urbit network. 
+Lorsque nous parlons d'Urbit ID à acheter, nous ne parlons vraiment que de ces trois types : Galaxies, Etoiles, et Planètes. Les lunes et les comètes ne valent pas la peine d’être achetées. Si elles sont à vendre, c'est une arnaque. Fuyez, ne tombez pas dans le piège. Une des fonctions les plus importantes des galaxies et des étoiles est de mint, autrement dit: initialiser d'autres identités. Il y a un total de 256 galaxies. Chaque galaxie peut donner naissance à 255 étoiles. Chaque étoile peut donner naissance à 65 535 planètes. Cela fait un total d'environ 4,3 milliards de planètes sur le réseau Urbit.
 
-When deciding which Urbit ID to purchase you should consider what level of involvement you want in the network, as well as the current status of the Urbit ID. Be sure to read our [How to Inspect an ID](/guides/how-to-inspect-an-id) guide which goes over the difference between new and booted, spawned and unspawned, active and inactive Urbit IDs. 
+Lorsque vous décidez d’acheter une Urbit ID, vous devez tenir compte du niveau d'implication que vous voulez au sein du réseau, ainsi que du statut actuel de l'Urbit ID en question. Assurez-vous de lire notre guide [Comment inspecter une ID](https://operators.urbit.org/guides/how-to-inspect-an-id) qui explique la différence entre les  Urbit ID nouvellement crées ou déjà initialisées, générées et non générées, actives et inactives.
 
-The sections below will detail the role of each type of Urbit ID in the network.
+Les sections ci-dessous détailleront le rôle de chaque type d'Urbit ID au sein du réseau.
 
-### Galaxy
+### Galaxie
 
-- Example name: `~zod`
-- Spawns: 2^8 Stars
-- Purpose: Governance
+- Exemple de nom : `~zod`
+- Génére : 2^8 étoiles
+- Objectif : Gouvernance
 
-Galaxies are likely candidates for large organizations, countries, or anything that wants to have complete control over their own networking or play a role in governing the future of Urbit ID.  
+Les galaxies sont probablement des candidats pour de grandes organisations, des pays, ou tout ce qui veulent avoir un contrôle total sur leur propre réseau ou jouer un rôle dans la gouvernance du futur d'Urbit ID.  
 
-Galaxies 1. spawn and sponsor stars, 2. perform peer discovery and NAT traversal similar to DNS, 3. vote, and 4. part of an exclusive social club. Let’s break that down. 
+Les galaxies, 1. Génèrent et parrainent des étoiles, 2. Effectuent la découverte par les pairs et la traversée NAT similaire au DNS, 3. Votent, 4. Font partie d'un club social exclusif. Décomposons cela.
 
-Galaxies spawn 255 stars, each star can spawn 65,535 planets. That’s a lot of address space. Galaxy holders are responsible for keeping their nodes running at all times as they provide software and network updates for their peers, also known as sponsoring stars. It’s considered bad practice to spawn and sell stars from an inactive galaxy. 
+Les galaxies génèrent 255 étoiles, chacune pouvant générer 65 535 planètes. Ce qui requiert un large espace d’adressage.  Les holders de Galaxy sont responsables de garder leurs nœuds opérationnels en tout temps, car ils fournissent les mises à jour logicielles et réseau à leurs pairs, également connus sous le nom de parrain d’étoiles. Produire et vendre des étoiles à partir d’une galaxie inactive est considéré comme une mauvaise pratique.
 
-On the network, galaxies perform peer discovery for their children. Simply put, this means that your galaxy tells other Urbit IDs where they can find your children so that they can communicate directly with them -- similar to asking a DNS server to tell you where to look for google.com. Thus, it is crucially important that your Galaxy be online and reachable.
+Sur le réseau, les galaxies effectuent la découverte pour leurs pairs et leurs enfants. En termes simples, cela signifie que votre galaxie indique aux autres Urbit ID où ils peuvent trouver vos enfants afin qu'ils puissent communiquer directement avec eux, comme si vous demandiez à un serveur DNS de vous dire où chercher google.com. Ainsi, il est crucial que votre Galaxie soit en ligne et accessible.
 
-Galaxy holders form a senate that can upgrade the logic of the Urbit ID system by majority vote. They convene in a private group on Urbit, a telegram channel, and an email list.
+Les holders de Galaxy forment un sénat pouvant améliorer la logique du système Urbit ID par un vote majoritaire. Ils s’organisent via un groupe privé sur Urbit, un canal telegram ainsi que par le biais d’une liste d’emails
 
-They also form a select social club.
+De plus, ils forment un club social sélectif.
 
-### Star
+### Étoile
 
-- Example name: `~sampel`
-- Spawns: 2^16 Planets
-- Purpose: Infrastructure
+- Exemple de nom : `~sampel`
+- Génére : 2^16 planètes
+- Objectif : Infrastructure
 
-Stars are for businesses, communities, DAOs, or metropolises. 
+Les étoiles s'adressent aux entreprises, aux collectivités, aux DAO ou aux métropoles.
 
-Stars 1. spawn and sponsor planets, 2. moderate their peers, 3. provide hosting, L2, or object storage services and 4. swap for $WSTR.
+Les étoiles, 1. Génèrent et parrainent des planètes, 2. Modèrent leurs pairs
+, 3. Fournissent des services d'hébergement, L2, ou de stockage d'objets, 4. Échanger contre $WSTR.
 
-1. A star can spawn 65,535 planets. Star holders are responsible for keeping their nodes running at all times as they provide software and network updates for their peers, also known as sponsoring planets. It’s considered bad practice to spawn and sell planets from an inactive star.
-2. Stars are natural Schelling points for services and as such can earn income by charging fees for bolt-on, provider-style services. While it is still early days on the network, we have some ideas about services stars could provide. Want to run some machine learning algorithms to auto-tag all your music files? Fine, your star has a giant machine learning cluster that's available over a pay-per-compute API. Want access to high-frequency market data? Also something you can pay for through your star. Want to buy something using bitcoin? Your star can act as a supernode charging miner-style fees. 
-3. To a degree, a star is responsible for all the planets they host. If a planet you sponsor is abusive, others may ask you to take corrective action by warning or de-sponsoring the ship in question. Note that this isn’t a common occurrence; unilaterally revoking sponsorship should be considered the nuclear option. Keep in mind that sponsorship is a two-way street. If you develop a reputation for facilitating abusive planets, others ultimately have the option of ignoring you or the planets you sponsor. 
-4. Stars currently can provide several services:
-  - Hosting: Not every person can be expected to set up their Digital Ocean instance using terminal. Some examples of hosting services are [UrbitHost](https://urbithost.com/), [Escape Pod Store](https://www.escapepod.store/), and [Tlon Corp](https://tlon.io/).
-  - Object Storage: It doesn’t make sense to store large media inside of a planet’s files system. Stars can provide these services via connectors that allow you to automatically upload media to a file storage service such as AWS or LFS. 
-5. All unbooted stars can be swapped for Wrapped Stars ($WSTR). This means that your star must remain unbooted and have not spawned any of its planets. You can swap your stars [here](http://star.market/).
+1. Une étoile peut générer jusqu’à 65 535 planètes. Les détenteurs d'étoiles ont la responsabilité de maintenir leurs nœuds opérationnels en tout temps, car ils fournissent les mises à jour logicielles et réseau à leurs pairs, également connus sous le nom de parrain de planètes. Produire et vendre des planètes à partir d’une étoile inactive est considéré comme une mauvaise pratique.
+2. Les étoiles sont des points Schelling naturels pour les services et, à ce titre, peuvent gagner des revenus en facturant des frais  de service. Bien qu'elles en soient encore à leurs débuts sur le réseau, nous avons quelques idées sur les services que les étoiles pourraient fournir. Vous voulez exécuter des algorithmes de machine learning afin de tagger automatiquement tous vos fichiers musicaux ? Bien, votre étoile a un cluster géant pour le machine learning disponible via une API pay-per-compute. Vous voulez accéder à des données de marché à haute fréquence ? C’est aussi quelque chose que vous pouvez payer à travers votre étoile. Vous voulez acheter quelque chose en utilisant Bitcoin ? Votre étoile peut agir comme un supernœud facturant des frais du même style qu’un mineur. 
+3. Dans une certaine mesure, une étoile est responsable de toutes les planètes qu'elle héberge. Si une planète que vous parrainez est abusive, d'autres peuvent vous demander de prendre des mesures correctives en avertissant ou en retirant votre parrainage au vaisseau en question. Notez que cette situation n'est pas courante ; la révocation unilatérale du parrainage doit être considérée comme l'option nucléaire. N'oubliez pas que le parrainage est une voie à double sens. Si vous développez une réputation de facilitateur de planètes abusives, les autres ont finalement la possibilité de vous ignorer ou d'ignorer les planètes que vous parrainez.
+4. Une étoile peut actuellement fournir plusieurs services :
+    - Hébergement : On ne peut pas s'attendre à ce que tout le monde configure son instance Digital Ocean en utilisant un terminal. Quelques exemples de services d'hébergement sont [UrbitHost](https://urbithost.com/), [Escape Pod Store](https://www.escapepod.store/), et [Tlon Corp](https://tlon.io/).
+    - Stockage d'objets : ça n’a pas de sens de stocker des documents volumineux  à l'intérieur du système de fichiers d'une planète. Une étoile peut fournir ces services via des connecteurs qui vous permettent de télécharger automatiquement des médias vers un service de stockage de fichiers tel qu'AWS ou LFS.
+    - Toutes les étoiles non initialisées peuvent être échangées contre des étoiles enveloppées (wrap) ($WSTR). Cela signifie que votre étoile doit rester non initialisé et n'avoir généré aucune de ses planètes. Vous pouvez échanger vos étoiles [ici](https://star.market/).
 
-### Planet
+### Planète
 
-- Example name: `~sampel-palnet`
-- Spawns: 2^32 Moons
-- Purpose: Personal
+- Exemple de nom : `~sampel-palnet`
+- Génération : 2^32 Lunes
+- Objectif : Personnel
 
-Planets are for you. They are personal and permanent. You can pass your planet onto your children, your children’s children, and so forth.
+Les planètes sont pour vous. Elles sont personnelles et permanentes. Vous pouvez transmettre votre planète à vos enfants, aux enfants de vos enfants, et ainsi de suite.
 
-Planets are your username, domain name, and crypto wallet address all wrapped into one. Your planet can also distribute software. In fact, you look up software applications by @p, an Urbit ID name such as ~sampel-palnet. 
+Les planètes sont votre nom d'utilisateur, votre nom de domaine et votre adresse de portefeuille cryptographique tous combinés en un seul nom. Votre planète peut aussi distribuer des logiciels. En fait, vous recherchez des applications logicielles par @p, un nom d'Urbit ID tel que ~sampel-palnet.
 
-Planets can issue 2^32 moons. We’ll read more about moons in the next section, but it is worth noting that moons are not independent identities like galaxies, stars, and planets. Moons are not represented in Azimuth. 
-
+Les planètes peuvent émettre 2^32 lunes. Nous en saurons plus sur les lunes dans la section suivante, mais il convient de noter que les lunes ne sont pas des identités indépendantes comme les galaxies, les étoiles ainsi que les planètes. Les lunes ne sont pas représentées dans Azimuth.
+ 
 ### Moon
 
-- Example name: `~doznec-salfun-naptul-habrys`
-- Spawns: N/A
-- Purpose: Device
+- Exemple de nom : `~doznec-salfun-naptul-habrys`
+- Génération : N/A
+- Objectif : Système
 
-Moons are for devices.
+Les lunes sont pour le système.
 
-Moons differ from all previous Urbit IDs in that they cannot escape their sponsor. Moons are currently used as backup identities, bots, or group hosts. Hosting a group inevitably means more network traffic, and a heavily trafficked group may impact a planet’s performance. Thus one may wish to offload group hosting duties to a moon to maintain a more performant planet.
+Les Lunes diffèrent de toutes les précédentes Urbit IDs en somme elles ne peuvent se détacher à leur parrain. Les lunes sont actuellement utilisées comme identités de sauvegarde, pour les bots ou les hôtes d’un groupe. L'hébergement d'un groupe signifie inévitablement plus de trafic sur le réseau, de ce fait un groupe fortement sollicité peut avoir un impact sur les performances d'une planète. Ainsi, nous pouvons décharger les tâches d’hébergement d’un groupe sur une lune afin de maintenir la planète plus performante.
 
-Moons are kind of like the IoT of Urbit. Someday moons are for your fleet of farming robots, your in-house factory, your network of mining GPUs. 
+Les lunes sont un peu comme l'IoT d'Urbit. Un jour, les lunes sont pour votre *flotte de robots farmers*, votre usine interne, et un autre, pour votre réseau d’exploitation GPUs.
 
-### Comet
+### Comète
 
-- Example name: `~doznec-salfun-naptul-habrys-doznec-salfun-naptul-habrys`
-- Spawns: N/A
-- Purpose: Bot
+- Exemple de nom : `~doznec-salfun-naptul-habrys-doznec-salfun-naptul-habrys`
+- Génération : N/A
+- Objectif : Bot
 
-Comets are for bots or for trying out Urbit. These are free identities that anyone can spin up to get on the network. Spin one up today and get on the network for free [following this guide](https://urbit.org/getting-started). Because comets are free, many groups or other Urbit IDs might block communications with them. 
+Les comètes sont pour les bots ou pour essayer Urbit. Ce sont des identités gratuites que n'importe qui peut créer pour accéder au réseau. Faites en tourner un aujourd’hui et obtenez en sur le réseau gratuitement en [suivant ce guide](https://urbit.org/getting-started). Parce que les comètes sont gratuites, de nombreux groupes ou autres Urbit ID peuvent bloquer les communications avec elles.
 
-Comets don’t have an OTA provider by default. So they really are for demo-mode.
+Les comètes n’ont pas de fournisseur OTA par défaut. Donc elles sont vraiment pour le mode démo.
