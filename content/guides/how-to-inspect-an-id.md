@@ -1,94 +1,95 @@
 +++
-title = "How to Inspect an ID"
-description = "Urbit IDs unlock an entire digital world, and while they are NFTs, there’s a lot more to them than your typical piece of digital art."
+title = "Comment inspecter une ID"
+description = "Les Urbit ID débloque l’accès à tout un monde numérique, et bien qu'il s'agisse de NFT, ils sont bien plus que votre typique œuvre d'art numérique."
 +++
 
-There are five different types of Urbit ID—galaxies, stars, planets, moons, comets—but only the first three are relevant for the purposes of this guide (moons and comets should **never be purchased**). For an in-depth overview of what each ID is for, check out the [Urbit ID Buyer’s Guide](/guides/which-id-should-i-buy).
+Il existe cinq types différents d'Urbit ID – galaxies, étoiles, planètes, lunes, comètes – mais seuls les trois premiers sont pertinents pour les besoins de ce guide (les lunes et les comètes **ne doivent jamais être achetées**). Pour un aperçu détaillé de la fonction de chaque ID, consultez le [Guide de l’acheteur d’Urbit ID](/guides/which-id-should-i-buy).
 
-One of the most important things to understand about Urbit IDs (“ID”) is that they are intended to be used to power an operating system, within which their owner will interact with a larger network of other ID owners (“owners”). An owner may take actions that permanently affect the state of the ID, and their actions with other owners on the network may confer *reputation* to the ID. Throughout the rest of this guide we’ll discuss the best ways to determine the status of a given ID.
+Une des choses les plus importantes à comprendre à propos des Urbit ID (”ID”) est qu’elles sont destinées à être utilisés pour alimenter un système d’exploitation, au sein duquel leur propriétaire interagir avec un réseau plus large composé d’autres propriétaires d’ID (”propriétaires”). Un propriétaire peut prendre des mesures qui affectent de façon permanente l'état de l'ID, et leurs interactions avec d'autres propriétaires sur le réseau peuvent conférer une réputation à l'ID. Dans le reste de ce guide, nous discuterons des meilleures manières de déterminer le statut d’une ID.
 
-Throughout this guide we’ll be making use of the [Urbit Network Explorer](https://network.urbit.org). 
+Tout au long de ce guide, nous allons faire usage de l’[Urbit Network Explorer](https://network.urbit.org/). 
 
-## Planets
+## Planètes
 
-When evaluating a planet you’ll want to consider the following:
+Lors de l’évaluation d’une planète, vous voudrez considérer les éléments suivants : 
 
-- Whether the planet has been spawned
-- Whether the planet has been booted
-- Whether the planet has an online sponsor
+- Si la planète a été générée (spawn)
+- Si la planète a été initialisée
+- Si la planète a un parrain en ligne
 
-### Spawn status
+### Statut de génération
 
-A planet that has not been spawned cannot be acquired—if someone is attempting to sell you an unspawned planet they’re not to be trusted. 
+Une planète qui n’a pas encore été généré ne peut être acquise. Si quelqu’un essaie de vous vendre une planète qui n’a pas été générée, il ne faut pas lui faire confiance.
 
-Here’s an example of an unspawned planet: https://network.urbit.org/~sampel-palnet
+Voici un exemple d’une planète non générée : https://network.urbit.org/~sampel-palnet
 
-Note the absence of a **Spawned** event in the **Azimuth Event Stream** box at the right side of the screen.
+Notez l'absence d'un événement de **génération** dans la zone **Azimuth Event Stream** à droite de l'écran.
 
-### Booted or unbooted
+### Initialiser ou non Initialiser
 
-When purchasing a planet it’s best to buy one that has never been brought onto the network, commonly referred to as *unbooted*. 
+Lors de l'achat d'une planète, il est préférable d'en acheter une qui n'a jamais été mise sur le réseau, communément appelée *non initialisée*.
 
-A planet that has been *booted* has been brought onto the network and can be assumed to have interacted with other ships. This means that it may have acquired a reputation, either good or bad, which will now be conferred upon you as the new owner. *It’s best to not have the baggage of an existing reputation when acquiring a new planet.*
+Une planète qui a été initialisée a été amenée sur le réseau et nous pouvons supposer qu'elle a interagi avec d'autres vaisseaux. Cela signifie qu'elle peut avoir acquis une réputation, bonne ou mauvaise, qui vous sera conférée en tant que nouveau propriétaire. *Il est préférable de ne pas avoir le bagage d’une réputation existante lors de l’acquisition d’une nouvelle planète*.
 
-Use the [Urbit Network Explorer](https://network.urbit.org) to determine whether or not a planet has been booted before by checking its **Key Revision.**
+Utilisez [Urbit Network Explorer](https://network.urbit.org) pour déterminer si une planète a déjà été initialisée ou non en vérifiant la **version de la clé** (key revision).
 
-The planet [`~pannex-pidrup`](https://network.urbit.org/~pannex-pidrup) has been spawned, but has a Key Revision of `0`, which means that you can be certain that it has never been on the network. On the other hand, [`~riprud-tidmel`](https://network.urbit.org/~riprud-tidmel) has a key revision of `1`, which means that it has likely been booted.
+La planète [`~pannex-pidrup`](https://network.urbit.org/~pannex-pidrup) a été initialisée, mais a une version clé de `0`, signifiant que vous pouvez être sûr qu'elle n'a jamais été sur le réseau. En revanche, [`~riprud-tidmel`](https://network.urbit.org/~riprud-tidmel) a une version de clé de `1`, ce qui signifie qu'elle a probablement été initialisé.
 
-### Sponsor status
+### Statut du Parrain
 
-Planets are meant to be used, and in order for a planet to be useful it must have an online sponsor. Sponsors are responsible for distributing software updates and performing peer discovery (the specifics of which are covered [here](#TODO)), which are necessary functions for using your planet that you’ll be unable to receive with an offline sponsor.
+Les planètes sont destinées à être utilisées, et pour qu'une planète soit utile, elle doit avoir un parrain en ligne. Les parrains sont chargés de distribuer les mises à jour logicielles et d’effectuer la découverte des autres propriétaires de son réseau de planètes (dont les détails sont abordés [ici](#TODO)). Ce sont des fonctions nécessaires à l’utilisation de votre planète. Ces fonctions ne pouvant être reçues par un parrain hors ligne.
 
-To find the sponsor of a given planet, consider the previous example of `~pannex-pidrup` in the Network Explorer:
+Pour trouver le parrain d'une planète donnée, considérez l'exemple précédent de `~pannex-pidrup` dans l'Explorateur du Réseau :
 
 ![sponsor chain](https://storage.googleapis.com/media.urbit.org/operators/sponsor-chain.png)
 
-The sponsor can be found in the **Sponsor Chain**, which in this case is `~siddef`. 
+Le parrain peut être trouvé dans **Sponsor Chain** (Parrain Chaîne), qui dans ce cas est `~siddef`.
 
-An **online sponsor** is a star that has been booted and is running on the network. At time of writing (October 2021), there is no direct way to determine whether or not a star is online using the Network Explorer; however, there are a number of ways to get a good idea. 
+Un **parrain en ligne** est une étoile qui a été initialisé et qui s’exécute sur le réseau. Au moment de la rédaction (octobre 2021), il n'y avait aucun moyen direct de déterminer si une étoile était en ligne ou non à l'aide de l'Explorer. Cependant maintenant il existe plusieurs moyen.
 
-First, check if the star has been booted. If it has not been booted, it cannot be online (see above). [This star](https://network.urbit.org/~foddef) has never been booted, since it has a Key Revision of 0, while [this star](https://network.urbit.org/~litzod) has definitely been booted.
+Premièrement, vérifiez si l'étoile a été initialisée. Si elle n'a pas initialisé, elle ne peut être en ligne (voir ci-dessus). [Cette étoile](https://network.urbit.org/~foddef) n'a jamais été initialisée, puisqu'elle a une version clé de 0, alors que [cette étoile](https://network.urbit.org/~litzod) a été initialisée.
 
-Second, check to see if the star is actively sponsoring other planets. The more planets sponsored, the higher the likelihood that the star provides a good quality of service—meaning it is online most/all of the time. Here’s an [example of a star](https://network.urbit.org/~litzod) that must provide good service since it has so many child planets under sponsorship.
+Deuxièmement, vérifiez si l'étoile parraine activement d'autres planètes. Plus il y a de planètes parrainent, plus il y a de chances que l'étoile fournisse un service de qualité, signifiant qu'elle est en ligne la plupart du temps. Voici un [exemple d’étoile](https://network.urbit.org/~litzod) qui semble fournir un bon service puisqu’elle a de nombreuses planètes enfants sous parrainage.
 
-Finally, if you’d really like to be sure, you can [boot a comet](https://urbit.org/getting-started) and use `|hi ~sampel` (where `~sampel` is the star in question) to determine if the star is online *right now*. If the response is `~sampel is ok`, `~sampel` is online.
+Enfin, si vous voulez vraiment être sûr, vous pouvez [initialiser une comète](https://urbit.org/getting-started) et utiliser `|hi~sampel` (où `~sampel` est l’étoile en question) afin de déterminer si l’étoile est en ligne *en ce moment*. Si la réponse est `~sampel est ok`, alors `~sampel` est en ligne.
 
-## Stars
+## Étoiles
 
-When evaluating a star you’ll want to consider whether or not it has:
+Lors de l’évaluation d’une étoile, vous pourriez considérer si elle a ou non :
 
-- Been spawned
-- Been booted
-- An online sponsor
-- Spawned planets
+- Été générée
+- Été initialisée
+- Un parrain en ligne
+- Générée des Planètes
 
-Evaluating the points 1-3 above is basically the same as it is for planets for the same reasons. The only difference is that for checking an online sponsor, you’re instead checking the galaxy instead of the star. 
+L'évaluation des points 1-3 ci-dessus sont fondamentalement similaires à ceux des planètes pour les mêmes raisons. La seule différence est que pour vérifier un parrain en ligne, vous allez plutôt vérifier la galaxie à la place de l'étoile. 
 
-## Booted or spawned planets
+## Planètes initialisées ou générées
 
-A star’s value decreases significantly if it has been booted or spawned planets. If it has been booted or engaged in any spawning of planets, it’s no longer able to be wrapped using [WSTR](https://star.market).
+La valeur d’une étoile diminue significativement si elle a été initialisée ou si elle a généré des planètes. Si elle a été initialisée ou si elle s’est engagée dans une quelconque génération de planètes, elle ne peut plus être enveloppée (wrap) par [WSTR](https://star.market).
 
-Even if trading as an ERC-721, the presence of spawned planets indicates that the star is no longer in “mint” condition. It’s like driving a car off the lot.
+Même si la norme d’une étoile est ERC-721, la présence de planètes initialisées indique que l’étoile n’est plus en état de “mint”. C’est comme conduire une voiture hors piste.
 
-The easiest way to check if a star has spawned planets is through Etherscan directly:
+La façon la plus simple de vérifier si une étoile a généré des planètes est directement via Etherscan :
 
-Navigate to the Azimuth contract: https://etherscan.io/address/azimuth.eth#readContract
-Scroll down to number 16, `getSpawnCount`
-Enter the point number (found in the Network Explorer) into the field, and hit **Query**
+Naviguez jusqu'au contrat Azimuth : https://etherscan.io/address/azimuth.eth#readContract
+Faites défiler jusqu'au numéro 16, `getSpawnCount`
+Entrez le point number (mentionné dans l’explorer) dans le champ, et appuyez sur **Query**
 
-For example, let’s use the star `~siddef`:
+Par exemple, utilisons l’étoile `~siddef`:
 
 ![point-number](https://storage.googleapis.com/media.urbit.org/operators/point-number.png)
 
-The point number is 30,645, which we’d then put into Etherscan:
+Le point number est 30 645, que nous mettons dans Etherscan :
 
 ![getSpawnCount](https://storage.googleapis.com/media.urbit.org/operators/getSpawnCount.png)
 
-This star has indeed spawned planets. If a star has not spawned planets, this number will come back as 0.
+Cette étoile a en effet généré à des planètes. Si une étoile n'a pas généré de planètes, ce nombre sera de 0.
 
 ## Galaxies
 
-Galaxies are rare and highly valuable, and the stakes of purchasing them are much higher. Most galaxies have stars in the Linear Release Contract, which disburses stars to their owner on a linear schedule up until the year 2024. 
+Les galaxies sont rares et de grande valeur, et l'enjeu de les acheter est beaucoup plus élevé. La plupart des galaxies ont des étoiles dans le contrat de libération linéaire, distribuant les étoiles à leur propriétaire selon un calendrier linéaire jusqu'en 2024.
 
-Due to the complexity inherent in purchasing a Galaxy, we’d recommend reaching out to `~wolref-podlex` at the Urbit Foundation for support. 
+En raison de la complexité inhérente à l’achat d’une Galaxie, nous vous recommandons de contacter `~wolref-podlex` de la Fondation Urbit pour obtenir de l’aide.
+
 
