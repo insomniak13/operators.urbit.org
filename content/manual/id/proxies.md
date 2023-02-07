@@ -4,52 +4,30 @@ weight = 8
 template = "doc.html"
 +++
 
-Proxy addresses allow you to execute non-ownership related actions like spawning
-child identities, voting, and setting networking keys without jeopardizing the
-keys you've designated with ownership rights. Setting proxy rights is optional,
-but it is recommended for on-chain actions you will execute more frequently.
+Les adresses proxy vous permettent d'exécuter des actions non liées à la propriété comme la création d'identités enfantées, le vote, et la mise en place de clés de réseau sans pour autant mettre en danger les clés que vous avez désignées avec des droits de propriété. La définition des droits de proxy est facultative, mais elle est recommandée pour les actions sur la chaîne que vous exécuterez plus fréquemment.
 
-Setting proxies is a good security practice. For instance, you might keep your
-ownership address in cold storage, while your management proxy is kept in Metamask.
+La définition de procurations est une bonne pratique de sécurité. Par exemple, vous pouvez conserver votre adresse de propriété dans un stockage à froid, tandis que votre proxy de gestion est conservé dans Metamask.
 
-The [Urbit HD Wallet](https://developers.urbit.org/reference/glossary/hdwallet) automatically sets proxies for
-your Urbit ID.
+Le portefeuille [Urbit HD Wallet](https://developers.urbit.org/reference/glossary/hdwallet) définit automatiquement les proxies pour votre Urbit ID.
 
-### Types of proxies
+### Types de proxies
 
-There are three main types of proxy: management, spawn, and voting. Their
-capabilities are detailed in the following. In addition, each proxy is able to
-transfer itself to another address - e.g. the management proxy can set a new
-address to be the management proxy.
+Il existe trois principaux types de proxies : gestion, génération/création, et vote. Leurs capacités sont détaillées dans ce chapitre. En outre, chaque proxy est capable de se transférer à une autre adresse, par exemple, le proxy de gestion peut définir une nouvelle adresse avec laquelle il sera le proxy de gestion.
 
-- **Management proxy**
+- **Proxy de gestion**
 
-  Can configure or set Arvo networking keys,
-  [factory reset](/manual/id/guide-to-resets), and conduct sponsorship related
-  operations. Planets, stars, and galaxies may all set a management proxy.
+  Peut configurer ou définir les clés de mise en réseau d'Arvo, lancer une [réinitialisation d’usine](https://operators.urbit.org/manual/id/guide-to-resets) et effectuer des opérations liées au parrainage. Les planètes, les étoiles et les galaxies peuvent toutes définir un proxy de gestion.
 
-- **Spawn proxy**
+- **Proxy de génération**
 
-  For stars and galaxies only. Can create new child identities.
+  Disponible uniquement pour les étoiles et les galaxies. Peut créer de nouvelles identités enfants.
 
-- **Voting proxy**
+- **Proxy de vote**
 
-  Galaxies only. Galaxies are the part of the [Galactic
-  Senate](https://developers.urbit.org/reference/glossary/senate), and this means they can cast votes on new
-  proposals including changes to Ecliptic.
+  Uniquement pour les galaxies. Les galaxies font partie du [Sénat galactique](https://developers.urbit.org/reference/glossary/senate), ce qui signifie qu'elles peuvent voter sur les nouvelles propositions, y compris les modifications de l'écliptique.
 
-### Transfer proxy
+### Proxy de transfert
 
-There is also a fourth proxy called the transfer proxy which is considered to be
-of a different sort than the other three, since it generally only set on a
-temporary basis to make ownership transfer less mistake-prone, and cleared once
-ownership has finished.
+Il existe également un quatrième type de proxy, appelé proxyde transfert, qui est considéré comme étant d'un type différent des trois autres, puisqu'il n'est généralement établi que sur une base temporaire afin de rendre le transfert de propriété moins sensible aux erreurs, et qu'il est effacé une fois le transfert terminé.
 
-The address holding the transfer proxy may transfer ownership of the ID to the
-address of the transfer proxy. This is used to make transferring a two-step
-process: using the ownership address to set the transfer proxy, and then using
-the transfer proxy to complete the transaction. It is possible to transfer
-ownership as a one-step process, but this is risky and not recommended. Bridge
-does not natively support one-step transfers, you must use an advanced tool like
-[`%claz`](https://developers.urbit.org/reference/azimuth/advanced-azimuth-tools) to manually generate such a
-transaction.
+L'adresse détenant le proxy de transfert peut transférer la propriété de l'ID à l'adresse du proxy de transfert. Ceci est utilisé pour faire du transfert un processus en deux étapes : utiliser l'adresse de propriété pour définir le proxy de transfert, puis utiliser le proxy de transfert pour terminer la transaction. Il est possible de transférer la propriété en une seule étape, mais cela est risqué et non recommandé. Bridge ne supporte pas nativement les transferts en une étape, vous devez utiliser un outil avancé comme [%claz](https://developers.urbit.org/reference/azimuth/advanced-azimuth-tools) pour générer manuellement une telle transaction.
