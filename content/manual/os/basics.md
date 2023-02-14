@@ -1,96 +1,89 @@
 +++
-title = "Basics"
-description = "How to operate your ship, including using your ship's filesystem and messaging applications, starting a moon, or requesting a DNS entry."
+title = "Principes de base"
+description = "Comment faire fonctionner votre vaisseau, y compris l'utilisation du système de fichiers et des applications de messagerie de votre vaisseau, le démarrage d'une lune, ou la demande d'une entrée DNS."
 template = "doc.html"
 weight = 1
 [extra]
 hidetitle = "true"
 +++
 
-This document deals with:
+Ce document porte sur comment :
 
-- Running an Urbit ship with the ordinary runtime [from the command line](https://urbit.org/getting-started/cli).
-- Basic setup, configuration and usage in Urbit's shell called the `dojo`.
+- Exécuter un vaisseau Urbit avec un temps d'exécution normal [depuis la ligne de commande](https://urbit.org/getting-started/cli).
+- Configuration de base, configuration et utilisation dans l’interface système shell d'Urbit appelé `dojo`.
 
-## Shutdown
+## Arrêt
 
-You can turn your urbit off with `Ctrl-d` from the Chat or Dojo prompts.
+Vous pouvez éteindre votre instance Urbit avec `Ctrl-d` à partir des invitations de commande Chat ou Dojo.
 
-You can force-quit your urbit with `Ctrl-z` from anywhere.
+Vous pouvez forcer l’arrêt de votre Urbit avec `Ctrl-z` de n'importe où.
 
-## Restart
+## Redémarrer 
 
-To restart your urbit simply pass the name of your pier:
-
+Pour redémarrer votre Urbit, utilisez simplement le nom de votre ponton (pier) :
 ```sh
 $ ./urbit some-planet
 ```
 
-or
+ou
 
 ```sh
 $ ./urbit comet
 ```
 
-## Logging
+## Journalisation
 
-To log an urbit's command line output to a file, use `script`:
+Pour journaliser la sortie de la ligne de commande d’Urbit dans un fichier, utilisez le `script` :
 
 ```sh
 $ script urbit.log ./urbit your-urbit
 ```
 
-## Moving your pier
+## Déplacer votre ponton
 
-Piers are designed to be portable, but it _must_ be done while the urbit
-is not running. Urbit networking is stateful, so you can't run two copies
-of the same urbit in two places.
+Les pontons (pier) sont conçus pour être portables, mais cela _doit_ être fait pendant que l'Urbit ne s'exécute pas. Le réseau urbit est conscient de son propre état, ainsi, vous ne pouvez pas exécuter deux copies du même urbit à deux endroits différents.
 
-To move a pier, simply move the contents of the directory it lives in.
-To keep these files as small as possible we usually use the `--sparse`
-option in `tar`. With a pier `your-urbit/`, something like this should work:
+Pour déplacer un ponton, il suffit de déplacer le contenu du répertoire dans lequel il vit. Pour garder ces fichiers aussi petits que possible, nous utilisons habituellement l'option `--sparse` de `tar`. Avec un ponton`your-urbit/`, quelque chose comme ceci devrait fonctionner :
 
 ```sh
 tar -Scvzf ~/your-urbit.tar.gz ~/your-urbit/
 scp your-old-server:~/your-urbit.tar.gz your-new-server:~
 ```
 
-Then to unzip it, on your other Unix server, run:
-
+Ensuite, pour le décompresser, sur votre autre serveur Unix, exécutez :
 ```sh
 tar xfvz your-urbit.tar.gz
 ```
 
-Delete the tar file, and, after installing Urbit on your new server, start your urbit back up with:
+Supprimez le fichier tar, après avoir installé Urbit sur votre nouveau serveur. Redémarrez votre sauvegarde Urbit avec :
 
 ```sh
 ./urbit your-urbit
 ```
 
-## Hardware requirements
+## Prérequis en matière de matériel
 
-Urbit can run on any x86 computer (unofficial, unsupported [ARM binaries](https://botter-nidnul.github.io/AArch64_Urbit_Static_Binaries.html) are also available), ideally with at least 2GB of RAM.
+Urbit peut s’exécuter sur n'importe quel ordinateur x86 (des [exécutables ARM](https://botter-nidnul.github.io/AArch64_Urbit_Static_Binaries.html) non officiels et non supportés sont également disponibles), idéalement avec au moins 2Go de RAM.
 
-Urbit maintains a persistent log of the history of your ship. Eventually this log will be automatically trimmed when necessary, but for now it only increases in size. An actively used planet will consume 5-50 GB of storage space per year of operation.
+Urbit tient un registre persistant de journalisation de votre vaisseau. Finalement, cette journalisation sera automatiquement réduite si nécessaire, mais pour l'instant, elle ne fait qu'augmenter en taille. Une planète utilisée activement consomme 5 et 50Go d'espace de stockage par année de fonctionnement.
 
-## Console
+## Interface de Commandes
 
-Your Urbit terminal is separated into two parts: the prompt (the bottom line) and the record (everything above that). The record is shared; all the output from all the apps in your command set appears in it. The prompt is multiplexed.
+Votre terminal Urbit est séparé en deux parties : l'invite de commande (la ligne du bas) et l'enregistrement (tout au-dessus). L'enregistrement est partagé ; toutes les sorties de toutes les applications de votre ensemble de commandes y apparaissent. L'invitation est multiplexée.
 
-In the CLI, Urbit apps can process your input before you hit return. To see this in action try entering `)` as the first character at the Dojo prompt. Since there is no Dojo command or Hoon expression that starts with ')', the Dojo rejects it.
+Dans CLI, les applications Urbit peuvent traiter votre saisie avant que vous ne cliquiez sur retour. Pour voir cela en action, essayez d'entrer `)` comme premier caractère dans l'invitation de commande Dojo. Puisqu'il n'y a pas de commande Dojo ou d'expression Hoon commençant par ')', le Dojo la rejette.
 
-`Ctrl-x` - Switches the prompt between running console apps
+`Ctrl-x` - Changer l’invitation de commande entre les applications de la console en cours d'exécution
 
-`Ctrl-c` - Crash current event. Processed at the Unix layer and prints a stack
-trace.
+`Ctrl-c` - Crash de l'évènement en cours. Traitement au niveau de la couche Unix et impression d'une trace de la stack.
 
-`Ctrl-d` - From Chat or Dojo, stops your Urbit process.
+`Ctrl-d` - Arrête votre processus Urbit depuis Chat ou Dojo.
 
-`Ctrl-z` - Stops the Urbit process from _anywhere_.
+`Ctrl-z` - Arrête le processus Urbit de n'*importe où*.
 
-`↑` / `↓` - History navigation
+`↑ / ↓` - Historique de navigation
 
-The following emacs-style key bindings are available:
+Les combinaisons de touches de style emacs suivantes sont disponibles :
 
 ```
 Ctrl-a    Cursor to beginning of the line (Home)
@@ -108,34 +101,29 @@ Ctrl-u    Kill to beginning of line
 Ctrl-y    Yank from kill buffer
 ```
 
-## Updates
+## Mises à jour
 
-By default, your `%base` [desk](https://developers.urbit.org/reference/glossary/desk) (which contains the [Arvo](https://developers.urbit.org/reference/glossary/arvo) kernel and core apps) receives updates ([OTAs](https://developers.urbit.org/reference/glossary/ota-updates)) from your sponsor. Other desks will receive updates from their respective publishers. To check the OTA source for each desk, run `+vats` in the [dojo](https://developers.urbit.org/reference/glossary/dojo). It will print out details for each desk - the `source` field shows which ship the desk gets updates from and the `updates` field shows `tracking` if automatic updates are enabled.
+Par défaut, votre `%base` [bureau](https://developers.urbit.org/reference/glossary/desk) (contenant le noyau [Arvo](https://developers.urbit.org/reference/glossary/arvo) et les applications centrales) reçoit les mises à jour ([OTA](https://developers.urbit.org/reference/glossary/ota-updates)) de votre parrain. Les autres bureaux recevront des mises à jour de leurs éditeurs respectifs. Pour vérifier la source OTA de chaque bureau, exécutez `+vats` dans le [dojo](https://developers.urbit.org/reference/glossary/dojo). L’affichage des résultats pour chaque bureau sera dans le champ `source` indiquant à partir de quel bureau sont reçues les mises à jour et le champ `updates`montre le `tracking` si les mises à jour automatiques sont activées.
 
-If for some reason updates are not enabled or the current source is not online or up to date, you can enable updates or change source with the `|install` command.
+Si, pour une raison quelconque, les mises à jour ne sont pas activées ou si la source actuelle n'est pas en ligne ou à jour, vous pouvez activer les mises à jour ou changer de source avec la commande `|install`.
 
-`|install (sein:title our now our) %landscape` will enable updates to the `%landscape` desk from your sponsor. `|install ~some-ship %landscape` will enable updates to the landscape desk from whatever ship is specified in place of `~some-ship`. For third party apps, make sure to correctly specify the publisher's ship. Each desk's updates are managed separately, so you'll need to run this for each desk separately. For the `%base` desk specifically, you sync from `%kids` rather than `%base` on the remote ship, so must specify it like `|install (sein:title our now our) %kids, =local %base`.
+`|install (sein:title our now our) %landscape` activera les mises à jour vers le bureau `%landscape` depuis votre parrain. `|install ~some-ship %landscape` activera les mises à jour vers le bureau Landscape depuis le vaisseau spécifié à la place de `~some-ship`. Pour les applications tierces, assurez-vous d'indiquer correctement le vaisseau de l'éditeur. Les mises à jour de chaque bureau sont gérées séparément, vous devrez donc les exécuter séparément pour chaque bureau. Pour le bureau `%base` en particulier, vous synchronisez depuis `%kids` au lieu de `%base` sur le vaisseau à distance, vous devez donc le spécifier comme `|install (sein:title our now our) %kids`, `=local %base`.
 
-#### Additional OTA Troubleshooting
+#### Dépannage supplémentaire OTA
 
-Please check the Support Wiki for additional OTA troubleshooting, such as:
-[OTA 1.0.71 failed](https://github.com/urbit/support/wiki/OTA-1.0.71-failed),
-[Missing OTA](https://github.com/urbit/support/wiki/Missing-OTA),
-[Stuck flow preventing planets from receiving
-OTAs](https://github.com/urbit/support/wiki/Stuck-flow-preventing-planets-from-receiving-OTAs),
-and [No content shows in Links page after OTA](https://github.com/urbit/support/wiki/No-content-shows-in-Links-page-after-OTA).
+Veuillez consulter le Wiki de support pour d'autres dépannage OTA, tels que : **[OTA 1.0.71 failed](https://github.com/urbit/support/wiki/OTA-1.0.71-failed)**, **[Missing OTA](https://github.com/urbit/support/wiki/Missing-OTA)**, **[Stuck flow preventing planets from receiving OTAs](https://github.com/urbit/support/wiki/Stuck-flow-preventing-planets-from-receiving-OTAs)**, et **[No content shows in Links page after OTA](https://github.com/urbit/support/wiki/No-content-shows-in-Links-page-after-OTA)**
 
-## Web interface
+## Interface Web
 
-On startup, urbit tries to bind to `localhost:80`. If you're already running something on port `80`, or your host OS will not allow urbit to bind port `80`, urbit will try `8080`, then `8081`, `8082`, and so on. For planets only, we also provide subdomains of `arvo.network` for free. Any planet `~your-urbit` is also at `your-urbit.arvo.network`, but only after you [set up DNS](#dns-setup).
+Au démarrage, Urbit essaie de se connecter via `localhost:80`. Si vous exécutez déjà quelque chose sur le port 80, ou si votre système d'exploitation hôte ne permet pas à Urbit de lier le port `80`, Urbit essaiera `8080`, puis `8081`, `8082`, et ainsi de suite. Pour les planètes seulement, nous fournissons également gratuitement des sous-domaines via arvo.network. Toute planète `~your-urbit` se trouve aussi sur votre `-urbit.arvo.network`, mais seulement après avoir [configuré le DNS](https://operators.urbit.org/manual/os/basics#dns-setup).
 
-Once running, you can sign into your ship’s web interface from `http://localhost` (if bound to port `80`), `http://localhost:8080` (if bound to port `8080`), or `https://your-urbit.arvo.network` if you've set up DNS.
+Une fois exécuté, vous pouvez vous connecter à l'interface web de votre vaisseau depuis `http://localhost` (si lié au port `80`), `http://localhost:8080` (si lié au port 8080), ou `https://your-urbit.arvo.network` si vous avez configuré le DNS.
 
-## Moons {% #moons %}
+## Lunes {% #lunes %}
 
-Planets can spawn moons, which are conceptually meant for connected devices: phones, smart TVs, digital thermostats. The basic idea is that your planet runs permanently in a data center somewhere, while moons run on all your devices. Each planet can issue ~4 billion (`2^32`) moons.
+Les planètes peuvent générer des lunes, qui sont conceptuellement destinées à des systèmes connectés : téléphones, téléviseurs intelligents, thermostats numériques. L'idée de base est que votre planète tourne en permanence dans une database quelque part, tandis que les lunes tournent sur tous vos appareils. Chaque planète peut émettre ~4 milliards (2^32) de lunes.
 
-To generate a random moon from your planet, run:
+Pour générer une lune aléatoirement à partir de votre planète, exécutez :
 
 ```
 ~sampel-palnet:dojo> |moon
@@ -143,101 +131,93 @@ moon: ~faswep-navred-sampel-palnet
 0w5cT5t.wCO6i.~e1xg.Oz0qb.QNO6I.3Kt2T.h9M9F.U3vU~.X3Qu0.gtb19.IYTkY.80kWZ.SIEUE.DXa8i.TiDof.o3-1C.RHLKS.k81M0.ecz5o.ic0Bg.600g1
 ```
 
-The `moon:` part is the name of the moon, in this case `~faswep-navred-sampel-palnet`. The next line starting with `0w5...` is the private key necessary to boot it.
+La partie de la commande après `moon:` est le nom de la lune, dans ce cas `~faswep-navred-sampel-palnet`. La ligne suivante commençant par `0w5...` représente la clé privée nécessaire à l’initialisation.
 
-You can just copy the key (which in this case would be the `0w5[...]600g1` part) to the clipboard, or save it in a `.key` file, for example `faswep-navred-sampel-palnet.key`.
+Vous pouvez simplement copier la clé (qui dans ce cas serait la partie `0w5[...]600g1`) dans le bloc note, ou la sauvegarder dans un fichier `.key`, par exemple `faswep-navred-sampel-palnet.key`.
 
-You can use the key and moon name in the same installation flow from the [Command line installation](https://urbit.org/getting-started/cli) guide, following the same scheme as for booting a planet. That scheme is:
+Vous pouvez utiliser la clé et le nom de la lune dans le même flux d'installation depuis le guide [d'installation en ligne de commande](https://urbit.org/getting-started/cli), suivant le même schéma que pour l’initialisation d'une planète. Via ce schéma :
 
 ```sh
 $ ./urbit -w <moon-name> -G <key> -c <pier-name>
 ```
 
-or
+ou
 
 ```sh
 $ ./urbit -w <moon-name> -k <key-file> -c <pier-name>
 ```
 
-Note the `<moon-name>` excludes the leading `~`. The `-c <piername>` argument is not required, but it is recommended; otherwise, the resulting directory is a rather unwieldy moon name. Moons are automatically synced to their parent `%kids` desk, and can control applications on their parent planet using `|link`.
+Notez que `<moon-name>` exclut `~` dans la commande. L'argument `-c <piername>` n'est pas obligatoire, mais il est recommandé; sinon, le répertoire résultant est un nom de lune plutôt lourd. Les lunes sont automatiquement synchronisées avec leur bureau parent `%kids`, et peuvent contrôler les applications de leur planète parente en utilisant `|link`.
 
-To factory reset a moon -- that is, to reset its presence on the network so that it's treated as a freshly spawned ship by others -- run from the parent ship:
+Pour réinitialiser une lune, c'est-à-dire pour réinitialiser sa présence sur le réseau afin qu'elle soit traitée comme un vaisseau fraîchement créé par les autres. Lancez l'opération suivante depuis le vaisseau parent :
 
 ```
 |moon-breach ~faswep-navred-sampel-palnet
 ```
 
-To cycle the keys of a moon without a factory reset, run:
+Pour faire défiler les clés d’une lune sans réinitialisation d’usine, exécuter :
 
 ```
 |moon-cycle-keys ~faswep-navred-sampel-palnet
 ```
 
-You can then run `|rekey` on the moon with the key given by the above command as the argument.
+Vous pouvez ensuite exécuter |rekey sur la lune avec la clé donnée par la commande ci-dessus comme argument
 
-### Maintaining Moons Through A Breach {% #restoring-moons %}
+### Maintenir les lunes à travers une réinitialisation {% #maintenir-les-lunes %}
 
-Moons are [always subordinate to the ship that issued them](https://developers.urbit.org/reference/glossary/moon). Their PKI is sent around the network by their parent planet/star/galaxy. As such, if the sponsor planet/star/galaxy of a moon breaches, other urbits on the network who were not aware of the moon prior to the breach (knew its PKI information) will not be able to reach the old moon. Moons can, however, be preserved over the breach of their sponsor and re-added to `jael`. The following guide assumes you are on `[life=n rift=1]` where `n` can be any life #. If you've previously breached your moon and want to preserve it, you'll need to modify the instructions to include setting the appropriate rift using `|moon-breach` from `hood`.
+Les lunes sont [toujours subordonnées au vaisseau qui les a émises.](https://developers.urbit.org/reference/glossary/moon). Leurs clés privées sont envoyées à travers le réseau par leur planète/étoile/galaxie mère. Ainsi, si la planète/l'étoile/la galaxie mère d'une lune est sujette à une réinitialisation, les autres urbits du réseau n’étant pas conscient de la réinitialisation, et donc du changement de clé privée, ne pourront pas atteindre l’ancienne lune. Les lunes peuvent, cependant, être préservées à travers une réinitialisation de leurs parrains et réajoutées à `jael`. Le guide suivant suppose que vous êtes sur `[life=n rift=1]` où `n` peut être n'importe quel nombre de vie #. Si vous avez déjà réinitialisé votre lune et souhaitez la préserver, vous devrez modifier les instructions pour inclure le réglage approprié en utilisant `|moon-breach` depuis l'invite de commande `hood`.
 
-To add an existing moon to `jael` on a breached planet, you'll need the following:
+Pour ajouter une lune existante à `jael` sur une planète réinitialisée, vous aurez besoin de ce qui suit :
 
-- Your moon's current life # `+keys ~sampel-monler-dozzod-dozzod` (run on the moon) _and_;
-- Your moon's sponsor's understanding of your moon's current life (same command, run on the sponsor).
-- Your moon's existing keyfile or key-string (`@uw`) _or_ the result of `pub:ex:(nol:nu:crub:crypto .^(@uv %j /=vein=/<life # of moon, per moon, here>))` _and_;
-- Your moon's sponsor's understanding of your moon's existing public key `pass:.^([@ud pass=@uw ~] %j /=deed=/~sampel-monler-dozzod-dozzod/<life # of moon per sponsor here>)`.
-
-If you only have they keyfile or key-string from your moon's last boot, you'll need to derive the `pass` value from that using
+- La vie actuelle de votre lune # `+keys ~sampel-monler-dozzod-dozzod` (exécuté sur la lune)
+- La compréhension de l’état actuel de votre lune par son parrain (même commande, exécutée sur le parrain).
+- Le fichier ou la chaîne de clés existants de votre lune (`@uw`) _ou_ le résultat de `pub:ex :(nol:nu:crub:crypto .^(@uv %j /=vein=/<numéro de vie de la lune, par lune, ici>))`
+- La compréhension par le parrain de votre lune sur l’existence de votre clé publique de lune `pass:.^([@ud pass=@uw ~] %j /=deed=/~sampel-monler-dozzod-dozzod/<life # of moon per sponsor here>)`
+- Si vous ne disposez que du fichier ou d’une chaîne de clés provenant de la dernière initialisation de votre lune, vous devrez dériver la valeur `pass` à partir de ce fichier ou de cette chaîne à l'aide de la méthode suivante.
 
 ```
 pub:ex:(nol:nu:crub:crypto key:(seed:jael:l (cue <your @uw keyfile contents or key-string contents here>)))
 ```
 
-This should produce a long `@ud`.
+Cela devrait produire `@ud`.
 
-Once you have all of the requisite elements, you can perform the following on the moon's sponsor:
-
+Une fois que vous avez tous les éléments nécessaires, vous pouvez effectuer les opérations suivantes sur le parrain de la lune :
 ```
 |moon-cycle-keys ~sampel-monler-dozzod-dozzod, =life <life # of moon, per moon, here>, =public-key <result of the existing keyfile conversion to pass or the result of scrying jael on your moon, found above>
 ```
 
-Eventually, the PKI will populate through the network w/ the correct life #, reconnecting your previously orphaned moon. You can speed this up by `|hi ~zod` and `|hi ~sampel-monler-dozzod-dozzod`-ing from the moon and sponsor, respectively (replace with the appropriate ship names).
+Finalement, les clés privées se propagent à travers le réseau w/ via le numéro vie (*life*) correct, en reconnectant votre lune précédemment orpheline. Vous pouvez accélérer cela en utilisant `|hi ~zod` et `|hi ~sampel-monler-dozzod-dozzod`-ing provenant respectivement de la lune et du parrain (remplacez par les noms de vaisseaux appropriés)
 
-## Escaping A Sponsor {% #escape %}
 
-To use the network as a planet or star, you must be sponsored by an active star
-or galaxy, respectively. If your sponsor isn't suiting your needs, you can
-escape to a different one. This can be done with
-[Bridge](https://bridge.urbit.org/) following the instructions
-[here](/manual/id/using-bridge#escaping-your-sponsor).
+## Se libérer d’un parrain {% #Se libérer %}
+
+Pour utiliser le réseau en tant que planète ou étoile, vous devez être sponsorisé respectivement par une étoile ou une galaxie active. Si votre parrain ne correspond pas à vos besoins, vous pouvez passer à un autre. Cela peut être fait avec [Bridge](https://bridge.urbit.org/) en suivant les instructions [sur cette page](https://operators.urbit.org/manual/id/using-bridge#escaping-your-sponsor).
 
 ## Life and rift number
 
-You can check your ship's _life_ and _rift_ number by running `+keys our` in
-dojo. You can inspect another ship's life and rift number by running `+keys
-~sampel-palnet`. For information on what life and rift are, see [Life and
-Rift](https://developers.urbit.org/reference/azimuth/life-and-rift).
+Vous pouvez vérifier la vie (_life_) de votre vaisseau et le numéro de réinitialisation (_rift_) en exécutant `+keys our` dans le dojo. Vous pouvez vérifier la vie et le numéro de réinitialisation d'un autre vaisseau en exécutant `+keys ~sampel-palnet`. Pour en savoir plus sur la vie et le rift, voir [Vie et réinitialisations](https://developers.urbit.org/reference/azimuth/life-and-rift).
 
-## DNS setup {% #dns-setup %}
+## Configuration DNS {% #Configuration-DNS %}
 
-We have a system that lets you request a domain name for your ship in the form of `ship.arvo.network`, where `ship` is your ship's name minus the `~`. This allows users to access their ships remotely using Landscape, our graphical web interface. Stars and planets follow the same DNS request process, and galaxies have their own requirements. Moons and comets are not supported.
+Nous avons un système qui vous permet de demander un nom de domaine pour votre vaisseau sous la forme suivante : `ship.arvo.network`, où `ship` est le nom de votre vaisseau sans le `~`. Cela permet aux utilisateurs d'accéder à leurs vaisseaux à distance en utilisant Landscape depuis notre interface web. Les étoiles et les planètes suivent le même processus de demande DNS, et les galaxies ont leurs propres besoins. Les lunes et les comètes ne sont pas supportées.
 
-For a planet or star's DNS request to be made and fulfilled, they must be hosting their ship someplace with a public IP address, and its HTTP server must be listening on port 80.
+Pour que la requête DNS d'une planète ou d'une étoile soit faite et satisfaite, elle doit héberger son vaisseau quelque part avec une adresse IP publique, et son serveur HTTP doit être à l'écoute sur le port 80.
 
-To initiate a DNS request, run the following thread in your ship's dojo, passing the IP address as an argument with .0.0.0.0 (`@if`) syntax. For example:
+Pour initier une requête DNS, exécutez le *thread* suivant dans le dojo de votre vaisseau, en passant l'adresse IP comme argument avec la syntaxe .0.0.0.0 (`@if`). À titre d'exemple :
 
 ```
 -dns-address [%if .1.2.3.4]
 ```
 
-The `%dns-address` thread, running locally, will make an HTTP request to that IP address on port 80 to confirm that it is itself available at that IP and port. If that fails, you'll receive a `couldn't access ship on port 80` message in the terminal; this request will retry a few times. If the self-check is successful, the request is relayed to `~deg`, and you'll receive a message saying, `request for DNS sent to ~deg`. Once `~deg` has acknowledged receipt of the request, the `%dns-address` thread will print a terminal message saying `awaiting response from ~deg`.
+Le thread `%dns-address`, exécuté localement, lancera une requête HTTP à cette adresse IP sur le port 80 pour confirmer qu'il est lui-même disponible sur cette adresse IP et à ce port. Si cela échoue, vous recevrez un message `couldn't access ship on port 80` dans le terminal; cette demande sera réessayée plusieurs fois. Si l'auto-vérification réussit, la requête est relayée à `~deg`, et vous recevrez un message disant, `request for DNS sent to ~deg`. Une fois que `~deg` a accusé réception de la demande, le thread `%dns-address` affichera un message dans le terminal indiquant `awaiting response from ~deg`
 
-The request will make take a little time to be fulfilled, but eventually the `ship.arvo.network` DNS record will be set to the given IP address. Once that's set up, `~deg` will notify your ship. Your ship will now try to verify that it can reach itself on `ship.arvo.network` over port 80. If it can't, it'll send a message saying, `unable to access via ship.arvo.network`. If it can, it will configure itself with that domain and say `confirmed access via ship.arvo.network`.
+La requête prendra un peu de temps à être exécutée, mais finalement l'enregistrement DNS `ship.arvo.network` sera défini à l'adresse IP donnée. Une fois cela configuré, `~deg` notifiera votre vaisseau. Votre vaisseau va maintenant essayer de vérifier qu'il peut se joindre lui-même sur `ship.arvo.network` via le port 80. S'il ne peut pas, il enverra un message disant, `unable to access via ship.arvo.network`. S'il le peut, il se configurera avec ce domaine et dira `confirmed access via ship.arvo.network`.
 
-Great! You're set up now. Try accessing your `ship.arvo.network` in your browser to use Landscape; we recommend Chrome or Brave.
+Parfait ! Vous êtes maintenant configuré. Essayez d'accéder à `ship.arvo.network` dans votre navigateur afin d’utiliser Landscape; nous vous recommandons Chrome ou Brave.
 
-### Configuring SSL
+### Configuration de SSL
 
-To enable SSL on your ship, you must poke the `%acme` agent with the domain encoded in a path and it will request a certificate. The path format is `/tld/your_domain/your_subdomain`, so if your domain is `sampel-palnet.arvo.network`, you'd use it like so:
+Pour activer SSL sur votre vaisseau, vous devez faire appel à l'agent `%acme` avec le domaine encodé dans un chemin et il demandera un certificat. Le format du chemin est `/tld/your_domain/your_subdomain`, donc si votre domaine est `sampel-palnet.arvo.network`, vous l'utiliserez comme ceci :
 
 ```
 :acme &path /network/arvo/sampel-palnet
@@ -245,18 +225,18 @@ To enable SSL on your ship, you must poke the `%acme` agent with the domain enco
 
 ### Galaxies
 
-Galaxies are already required to have separate DNS entry at galaxy.urbit.org. There's no automated process for getting that binding, so if you're a galaxy-holder, get in touch with us at support@urbit.org.
+Les galaxies doivent déjà avoir une entrée DNS distincte sur galaxy.urbit.org. Il n'y a pas de processus automatisé pour obtenir cette liaison, donc si vous êtes un détenteur de galaxie, contactez-nous à support@urbit.org.
 
-There is a command for galaxies that will try to re-use their already-necessary Ames DNS entry for HTTPS:
+Il y a une commande pour les galaxies qui essaieront de réutiliser leur entrée DNS Ames déjà nécessaire pour HTTPS:
 
 ```
 > -dns-auto
 ```
 
-This will make HTTP-requests to self-check availability over `galaxy.$AMES-DOMAIN` (currently galaxy.urbit.org), where `galaxy` is the galaxy's name minus the `~`.
+Cela lancera des requêtes HTTP pour vérifier automatiquement la disponibilité `galaxy.$AMES-DOMAIN` (actuellement galaxy.urbit.org), où `galaxy` est le nom de la galaxie sans le `~`.
 
-Otherwise, `-dns-auto` works the same as `-dns-address` does with stars and planets: if it's available or unavailable, terminal messages, and so on.
+Sinon, `-dns-auto` fonctionne de la même manière que `-dns-address` avec les étoiles et les planètes.
 
 ### Ports
 
-The built-in logic for listening on port 80 is to try to bind to port 80; if it cannot, it tries 8080, then increments until it can bind a port. Port 80 is available to unprivileged process on recent versions of macOS. Otherwise, the process needs to either be run as root, or be given special permission (`sudo setcap 'cap_net_bind_service=+ep' /path/to/urbit/binary` on Linux).
+La logique intégrée pour écouter sur le port 80 est d'essayer de se lier au port 80 ; si cela n'est pas possible, essayer 8080, puis incrémenter jusqu'à ce qu'il puisse se lier à un port. Le port 80 est disponible pour les processus sans privilèges sur les versions récentes de macOS. Sinon, le processus doit être exécuté en tant que super utilisateur ou avoir une permission spéciale (`sudo setcap 'cap_net_bind_service=+ep' /path/to/urbit/binary` sous Linux).
