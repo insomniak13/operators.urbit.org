@@ -1,111 +1,85 @@
 +++
-title = "Using Bridge"
+title = "Utilisation de Bridge"
 template = "doc.html"
-description = "How to use Bridge to interact with Azimuth and manage your Urbit ID."
+description = "Comment utiliser Bridge pour interagir avec Azimuth et gérer votre identifiant Urbit."
 weight = 7
 aliases = ["/docs/getting-started/using-bridge/"]
 +++
 
-[Bridge](https://github.com/urbit/bridge) is the application we built for interacting with [Azimuth](https://azimuth.network), the Urbit PKI, and managing your Urbit ID. Importantly, Bridge also allows you to generate a keyfile that you will need to boot your ship so that it can use the Arvo network.
+[Bridge](https://github.com/urbit/bridge) est l'application que nous avons construite pour interagir avec [Azimuth](https://azimuth.network), les clés privées Urbit et pour gérer votre Urbit ID. Bridge vous permet également de générer un fichier clé dont vous aurez besoin pour initialiser votre vaisseau afin qu'il puisse utiliser le réseau Arvo.
 
-This guide assumes that you have an Urbit ID, or that you have found someone to send an Urbit ID to your Ethereum address and are looking to claim it.
+Ce guide suppose que vous avez déjà une Urbit ID, ou que vous avez trouvé quelqu'un pour envoyer une Urbit ID à votre adresse Ethereum et vous cherchez à la réclamer.
 
-### Hosted Bridge
+### Bridge héberger
 
-To connect to Bridge, go to [https://bridge.urbit.org](https://bridge.urbit.org) into your browser, and enter your identity's credentials in the appropriate fields. If you were invited to claim an Urbit ID, it's very likely that you received an email that would direct you to Bridge, and you can simply follow the hyperlink in that email.
+Pour vous connecter à Bridge, rendez-vous sur [https://bridge.urbit.org](https://bridge.urbit.org/) dans votre navigateur, et entrez les informations d'identification de votre identité dans les champs appropriés. Si vous avez été invité à réclamer une Urbit ID , il est très probable que vous ayez reçu un e-mail vous dirigeant vers Bridge, et vous pouvez simplement suivre le lien dans cet e-mail.
+Vous arriverez sur une page vous offrant deux choix principaux : `ID` et `OS`. `OS` est la seule option qui vous intéresse pour le moment ; cliquez dessus. Sur la page `OS`, cliquez sur le bouton `Download Arvo Keyfile`. Une fois que vous avez téléchargé le fichier clé, vous pouvez quitter Bridge et procéder à [l'installation du binaire Urbit](https://urbit.org/getting-started/).
 
-You'll arrive at a page and see two major choices: `ID` and `OS`. `OS` is the only option that you're interested in right now; click on it. On the `OS` page, click the `Download Arvo Keyfile` button. Once you have downloaded the keyfile, you can exit Bridge and proceed to [install the Urbit binary](https://urbit.org/getting-started/).
+### Bridge local
+Il est également possible d'exécuter Bridge localement. C'est plus compliqué, mais nous recommandons cette option pour gérer des actifs suffisamment précieux, comme plusieurs étoiles ou plus. Pour installer Bridge localement, et vous diriger vers la [page de publication sur GitHub](https://github.com/urbit/bridge/releases/). Téléchargez le fichier `.zip` de la version la plus récente. Après l'avoir téléchargé, suivez les instructions ci-dessous.
 
-### Local Bridge
+Pour utiliser Bridge :
 
-Alternatively, Bridge can be run locally. It's more complicated, but we recommend this option for managing sufficiently valuable assets, such as several stars or more. To install local Bridge, navigate to the [release page on GitHub](https://github.com/urbit/bridge/releases/). Download the `.zip` file of the latest version. After you download it, follow the instructions below.
+- Décompressez le fichier .zip que vous avez téléchargé (bridge-$version.zip).
+- Ouvrez votre interface de ligne de commande (Terminal sur X, Command Prompt sur Windows).
+- Naviguez vers le répertoire bridge-$version, où $version est le numéro de version approprié.
+- Exécutez cette commande : `python3 -m http.server 5000 --bind 127.0.0.1.`
 
-To use Bridge:
+Vous pouvez ensuite utiliser l'application Bridge en accédant à `http://localhost:5000` dans votre navigateur Internet.
 
-- Unzip the .zip file that you downloaded (bridge-$version.zip).
-- Open up your command line interface (Terminal on
-  X, Command Prompt on Windows).
-- Navigate to the bridge-$version directory, where $version is the appropriate version number.
-- Run this command: `python3 -m http.server 5000 --bind 127.0.0.1.`
+### Se connecter
 
-You can then use the Bridge app by navigating to `http://localhost:5000` in your internet browser.
+Une fois le programme exécuté dans votre navigateur, suivez les étapes présentées en fonction du type de portefeuille dont vous disposez. Plusieurs options de connexion vous seront proposées. Une option intéressante est Urbit Master Ticket qui est dédiée à ceux qui ont utilisé notre Wallet Generator. Si vous avez acheté des points lors d'une vente Urbit et que vous avez ensuite utilisé le Wallet Generator, vos clés de réseau seront définies pour vous. Toutes les autres options de connexion vous demanderont de définir vos propres clés de réseau.
 
-### Log in
+Remarque : Bridge vous permet d'effectuer, de lire et d’écrire sur la blockchain Ethereum. L'écriture sur la blockchain, comme le changement de vos clés de réseau, entraînera un coût de transaction nécessitant que vous disposiez de quelques ETH dans le wallet avec lequelle vous vous connectez.
 
-Once the program is running in your browser, go through the steps presented according to the type of wallet you have. You’ll be presented with a few login options. A notable option is Urbit Master Ticket. This is for those who used our Wallet Generator software. If you bought points from an Urbit sale and then used the Wallet Generator, your networking keys will be set for you. All other login options will require you to set your own networking keys.
+### Accepter votre transfert
 
-Note: Bridge allows you to both make reads and writes to the Ethereum blockchain. Writing to the blockchain, such as changing your networking keys, will incur a transaction cost that will require you to have some ETH in the address you log in with.
+Si vos points vous ont été attribués par Tlon, il est probable que vous les possédiez déjà en totalité. Mais si quelqu'un d'autre vous a envoyé un point, vous devrez d'abord utiliser Bridge pour accepter ce transfert.
 
-### Accept your transfer
+Après avoir accédé à votre adresse Ethereum, si un point a été envoyé à cette adresse, vous arriverez à une page avec un en-tête `Incoming Transfers`, sous lequel se trouve un graphique. Cliquez sur le lien `Détails ->` situé sous le graphique
 
-If you were given points by Tlon you likely already fully own them. But if someone else sent you a point, then you will first need to use Bridge to accept that transfer.
+Vous êtes maintenant sur la page de gestion de votre point. Si le transfert n'est pas encore terminé, alors cliquez sur `Accept Incoming Transfer`. Si vous effectuez un transfert vers vous-même et que vous ne souhaitez pas effectuer une réinitialisation d’usine avec les paramètres [par défaut](https://developers.urbit.org/reference/glossary/reset), cochez la case intitulée `Retain proxies and key configuration, in case of transferring to self, in case of transfer to self`. Sinon, laissez la case décochée, afin que votre vaisseau soit réinitialisé avec les paramètres d’usine avec les paramètres par défaut lors du transfert et qu'aucune donnée Azimuth du propriétaire précédent (à savoir les proxies et les clés de réseau) ne soit conservée. Appuyez ensuite sur le bouton `Generate and Sign Transaction`, puis sur le bouton `Send Transaction`.
 
-After you access your Ethereum address, if a point was sent to that address, you'll come to a page that has an `Incoming Transfers` header, under which is a graphic. Click the `Details ->` link under that graphic.
+Si vous possédez déjà un point, cliquez sur le bouton `Détails ->` sous votre sigle dans la section `Your Points`.
 
-Now you'll be on the management page of your point. The transfer isn't completed
-yet, so click `Accept incoming transfer`. If you are transferring to yourself
-and do not wish to [factory reset](https://developers.urbit.org/reference/glossary/reset), check the box labeled
-`Retain proxies and key configuration, in case of transferring to self`.
-Otherwise leave the box unchecked, ensuring that your ship will be factory reset upon
-transfer and thus no Azimuth data from the previous owner (namely proxies and
-networking keys) will be retained. Then press the `Generate and Sign Transaction` button, followed by the `Send Transaction` button.
+### Définissez vos clés de réseau
 
-If you already own a point, click on the `Details ->` under your sigil in the `Your Points` section.
+Si vous venez d'accepter un point, vous serez renvoyé à l’écran relatif à vos points. Remarquez que les liens et les boutons sont maintenant cliquables. Maintenant, ce point vous appartient !
 
-### Set your networking keys
-
-If you just accepted a point, you'll be returned to your point screen. Notice that that links and buttons are now clickable. You now own this point!
-
-Click the link that says `Set network keys`. The field presented in the resulting page expects a 32-byte hexadecimal string. If it's filled already, no action is required. If it is empty, you will need to generate such a string. You can generate this data any way you please, but in the terminal on MacOS or Linux, you can write
+Cliquez sur le lien `Set network keys`. Le champ présenté dans la page qui s’affiche attend une chaîne hexadécimale de 32 octets. S'il est déjà rempli, aucune action n'est requise. S'il est vide, vous devrez générer la chaîne. Vous pouvez générer ces données comme bon vous semble, mais dans le terminal sous MacOS ou Linux, vous pouvez écrire
 
 ```sh
 hexdump -n 32 -e '4/4 "%08X"' /dev/random
 ```
 
-and use the result.
+et utiliser le résultat.
 
-It should be noted that setting your network keys is an event on the Ethereum network and will therefore cost a trivial, but non-zero, amount of [gas](https://eth.wiki/en/fundamentals/design-rationale#gas-and-fees) to complete.
+Il convient de noter que la définition de vos clés de réseau est un événement sur le réseau Ethereum et coûtera donc une quantité triviale, mais non nulle, de [gas](https://eth.wiki/en/fundamentals/design-rationale#gas-and-fees) pour être réalisée.
 
-### Generate your keyfile
+### Générer votre fichier clé
 
-From the detail page associated with your point, click the `Generate Arvo Keyfile` link and you'll be taken to a page with a field titled `Network seed`. This field should already be filled in, and should match the hexadecimal string that you entered in the previous step. If it's not filled in or does not match, fill it in with the correct string.
-Click `Generate ->`, which will download a keyfile onto your machine.
+Depuis la page de détails associée à votre point, cliquez sur le lien `Generate Arvo Keyfile` et vous serez dirigé vers une page avec un champ intitulé `Network seed`. Ce champ devrait déjà être rempli et correspondre à la chaîne hexadécimale que vous avez saisie lors de l'étape précédente. S'il n'est pas rempli ou ne correspond pas, remplissez-le avec la chaîne correcte. Cliquez sur `Generate ->`, ce qui téléchargera un fichier de clé sur votre machine.
 
-With that keyfile in hand, you can now exit Bridge and continue to the guide to [install the Urbit binary](https://urbit.org/getting-started/).
+Avec ce fichier clé en main, vous pouvez maintenant quitter Bridge et continuer à suivre le [guide d’installation de l’exécutable d’Urbit](https://urbit.org/getting-started/).
 
-### Escaping your sponsor {% #escaping-your-sponsor %}
+### Se détachez de son parrain {% #détachez-de-son-parrain %}
 
-As a planet or star, it behooves you to be sponsored by an active star or galaxy,
-respectively. If your sponsor isn't suiting your needs, you can escape to a
-different one.
+En tant que planète ou étoile, vous avez un intérêt à être parrainé par une étoile ou une galaxie active, respectivement. Si votre parrain ne répond pas à vos besoins, vous pouvez vous détachez vers un autre parrain.
 
-#### Prerequisites
+#### Conditions préalables
 
-- A little bit of ETH in your management proxy address to pay for the
-  transaction.
-- The `@p` of the sponsor you want to escape to. You should negotiate the
-  transfer with the sponsor ahead of time, as they will need to accept it on
-  their end. If you cannot find one, contact Tlon at support@urbit.org and we
-  will assist you in escaping to one of our stars/galaxies.
+- Avoir un peu d’ETH dans votre adresse de gestion proxy afin de payer la transaction, ou les frais de transaction.
+- L'`@p`du parrain vers lequel vous voulez vous détacher. Vous devez négocier le transfert avec le parrain à l'avance, car il devra l'accepter de son côté. Si vous n'en trouvez pas, contactez Tlon à [support@urbit.org](mailto:support@urbit.org) et nous vous aiderons à vous détacher vers l'une de nos étoiles/galaxies.
 
 #### Instructions
 
-1. Login to [Bridge](https://bridge.urbit.org) with the management proxy address
-   for the ship that will be escaping their sponsor. The ownership address will
-   also do, as will the master ticket if you have that.
-2. Click on the "OS" button at the bottom of the screen.
-3. Below Network, you will find the `@p` of your current sponsor. Click "Change"
-   to the right of that.
-4. Enter the `@p` of your new sponsor.
-5. Click the "Request" button and then complete the transaction.
+1. Connectez-vous à [Bridge](https://bridge.urbit.org) avec l'adresse proxy  du vaisseau qui va échapper à son parrain. L'adresse du propriétaire fera également l'affaire, tout comme le ticket principal si vous l'avez.
+2. Cliquez sur le bouton "OS" en bas de l'écran.
+3. Sous l’onglet Network, vous trouverez l'`@p` de votre parrain actuel. Cliquez sur "Change" à droite de celui-ci.
+4. Entrez l'`@p` de votre nouveau parrain.
+5. Cliquez sur le bouton "Request", puis effectuez la transaction.
 
-This action will consume a small amount of ETH. Your sponsor will then need to
-accept you via a similar process in Bridge, which will require ETH on their end.
-After the transaction is completed on Ethereum, it will still take some time for
-the information to propagate to the Urbit network. After 30 minutes or so, you
-may check that your sponsor has successfully been altered by running
-`(sein:title our now our)` in dojo and confirming that the `@p` matches that of
-your new sponsor.
+Cette action consommera une petite quantité d'ETH. Votre parrain devra ensuite vous accepter via un processus similaire dans Bridge, nécessitant de l'ETH de sa part. Une fois la transaction effectuée sur Ethereum, il faudra encore un certain temps pour que l'information se propage sur le réseau Urbit. Après environ 30 minutes, vous pouvez vérifier que votre parrain a été modifié avec succès en exécutant `(sein:title our now our)` dans le dojo et en confirmant que le `@p` correspond à celui de votre nouveau parrain.
 
-Once you change your sponsor, you will likely want to change your source of
-[OTAs](https://developers.urbit.org/reference/glossary/ota-updates) to them as well. To accomplish this, enter `|ota ~sponsor %kids` in dojo, where `~sponsor` is the `@p` of your new sponsor.
+Une fois que vous avez changé de parrain, vous voudrez probablement changer votre source d'[OTAs](https://developers.urbit.org/reference/glossary/ota-updates). Pour ce faire, entrez `|ota ~sponsor %kids` dans le dojo, où `~sponsor%kids` est le `@p` de votre nouveau parrain.
