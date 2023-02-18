@@ -1,90 +1,92 @@
 +++
-title = "Layer 2 for planets"
+title = "Couche 2 pour les planètes"
 weight = 50
-description = "Getting started with a permanent Urbit identity."
+description = "Commencer avec une identité Urbit permanente"
 +++
 
-What does Layer 2 mean for planets? Cheap transaction fees which make it inexpensive to get on the network and stay on the network.
+Quel impact permet la couche 2 pour les planètes? Des frais de transaction peu élevés permettant un accès peu coûteux sur le réseau et d'y rester.
 
-Performing transactions directly on the Ethereum blockchain, ‘Layer 1’, has become prohibitively expensive over the past year due to ETH’s value and network congestion. As a result, spawning a planet or performing simple operations in Bridge can be very costly. Urbit’s [Layer 2](https://urbit.org/docs/azimuth/l2/layer2) solution, called [naive rollups](https://urbit.org/blog/rollups), makes performing these transactions cheap or free. Planets can take advantage of this in the form of cheaper planet prices, as well as cheap or free Azimuth transactions.
+Effectuer des transactions directement sur la blockchain Ethereum, la ‘couche 1’, est devenu prohibitif au cours de l'année dernière en raison de la valeur de l'ETH et de la congestion du réseau. Par conséquent, générer une planète ou effectuer des opérations simples via Bridge peut s'avérer très coûteux. La solution de [couche 2](https://urbit.org/docs/azimuth/l2/layer2) d'Urbit, appelée [rollups naïfs](https://urbit.org/blog/rollups), rend l'exécution de ces transactions bon marché voire gratuite. Les planètes peuvent en profiter sous la forme de prix plus bas pour les planètes, ainsi que de transactions Azimuth bon marché ou gratuites.
 
-### What to know
+### Ce qu'il faut savoir
 
-- Migration is currently **one-way**.<br /><br />You cannot move a Layer 2 ID back to Layer 1. This includes planets that are spawned on Layer 2.
-- You cannot interact with Layer 2 IDs using Layer 1 tools like OpenSea or Metamask.<br /><br />You will not be able to use your ID with smart contracts, or ‘see’ it using wallets other than Bridge. **Bridge is currently the only software that can see or interact with Layer 2 IDs.**
-- Layer 2 does not have anything to do with networking between ships.<br /><br />Operating your ship on the network will not be influenced by which layer it is on. You will be fully capable of communicating with ships on either layer.
-- You can perform Layer 2 transactions for free with Tlon’s roller.<br /><br />A public roller operated by Tlon is connected to Bridge by default, but anyone can operate a roller. Tlon’s roller offers free subsidized transactions up to a weekly limit of 25 operations.
-- You will need to pay for the migration to L2.<br /><br />Migrating is a one-time process that takes place on Layer 1. You will need to fund it in the same way as a traditional Layer 1 Azimuth transaction.
-- Your star sponsor can be on either layer.<br /><br />The layer that a star is on has no bearing on who it can sponsor.
+- La migration est actuellement **unidirectionnelle**.<br /><br />Vous ne pouvez pas déplacer une ID de la couche 2 vers la couche 1. Cela inclut les planètes qui sont créées sur la couche 2.
+- Vous ne pouvez pas interagir avec les ID de la couche 2 en utilisant des outils de la couche 1 comme OpenSea ou Metamask.<br /><br />Vous ne pourrez pas utiliser votre ID avec des contrats intelligents, ni le ‘voir’ en utilisant des portefeuilles autres que Bridge. **Bridge est actuellement le seul logiciel qui peut voir ou interagir avec les identifiants de la couche 2**.
+- La couche 2 n'a rien à voir avec la mise en réseau des vaisseaux.<br /><br />Le fonctionnement de votre vaisseau sur le réseau ne sera pas influencé par la couche sur laquelle il se trouve. Vous serez toujours à même de communiquer avec des vaisseaux présents tant sur l’une que sur l'autre couche.
 
-If you already had a planet before the launch of L2, you don’t have to do anything. Your ship will continue to function normally and you will still be able to communicate with the entire network without any additional intervention. However, you have the option of migrating your planet to Layer 2 in order to take advantage of the reduced costs and subsidized transactions available through Tlon’s roller.
+- Vous pouvez effectuer des transactions de la couche 2 gratuitement avec le roller de Tlon.<br /><br />Un roller public exploité par Tlon est connecté à Bridge par défaut, mais tout le monde peut exploiter un roller. Le roller de Tlon offre des transactions gratuites subventionnées jusqu'à une limite hebdomadaire de 25 opérations. 
 
-### Should I move?
+- Vous devrez payer pour la migration vers L2.<br /><br />La migration est un processus ponctuel qui a lieu sur la couche 1. Vous devrez la financer de la même manière qu'une transaction Azimuth traditionnelle de la couche 1.
+    
+- Votre étoile parraine peut se trouver sur l'une ou l'autre couche.<br /><br />La couche sur laquelle se trouve une étoile n'a aucune incidence sur les personnes qu'elle peut parrainer.
 
-If you have a planet on Layer 1, migrating is entirely optional. The **benefits** of migrating a planet to Layer 2 are free or cheap Azimuth transactions. Ships on Layer 2 can use Tlon’s roller to perform operations in Bridge for free up to a weekly limit. These operations might be resetting networking keys, or changing sponsors.
+Si vous aviez déjà une planète avant le lancement de L2, vous n'avez rien à faire. Votre vaisseau continuera de fonctionner normalement et vous pourrez toujours communiquer avec l'ensemble du réseau sans aucune intervention supplémentaire. Cependant, vous avez la possibilité de migrer votre planète vers la couche 2 afin de profiter des coûts réduits et des transactions subventionnées disponibles grâce au roller de Tlon.
 
-The **trade-offs** for migrating a planet to Layer 2 include:
+### Dois-je migrer ?
 
-- The migration process is currently irreversible. If you migrate to Layer 2, you cannot go back to Layer 1.
-- Ships on Layer 2 are not visible to Layer 1 tools like wallets or chain explorers; Bridge is currently the only software that can ‘see’ Layer 2 IDs.
+Si vous avez une planète sur la couche 1, la migration est entièrement facultative. Les **avantages** de la migration d'une planète vers la couche 2 sont des transactions Azimuth gratuites ou bon marché. Les vaisseaux de la couche 2 peuvent utiliser le roller de Tlon pour effectuer des opérations dans le Bridge gratuitement jusqu'à une limite hebdomadaire fixée. Ces opérations peuvent consister à réinitialiser des clés de réseau ou à changer de parrain.
 
-### Which Layer am I on?
+Les **contreparties** de la migration d'une planète vers la couche 2 sont les suivantes :
 
-You can tell at a glance which layer your asset occupies in Bridge:
+- Le processus de migration est actuellement irréversible. Si vous migrez vers la couche 2, vous ne pouvez pas revenir sur la couche 1.
+- Les vaisseaux de la couche 2 ne sont pas visibles par les outils de la couche 1, comme les portefeuilles ou les explorateurs de chaînes. Bridge est actuellement le seul logiciel capable de ‘voir’ les identifiants de la couche 2.
 
-1. Log into Bridge.
-2. Click the ownership address modal at the top left of the main menu.
-3. A square icon with ‘L1’ or ‘L2’ will show up next to each asset that belongs to your address.
+### Sur quelle couche suis-je ?
+Vous pouvez savoir d'un coup d'oeil sur quelle couche se trouve votre bien dans Bridge 
 
-A single ownership address can own ships on both Layer 1 and Layer 2.
+1. Connectez-vous à Bridge.
+2. Cliquez sur la modale de l'adresse de propriété en haut à gauche du menu principal.
+3. Une icône carrée avec 'L1' ou 'L2' s'affiche à côté de chaque ressource appartenant à votre adresse.
 
-### Migrating
+Une adresse de propriété unique peut posséder des vaisseaux à la fois sur la couche 1 et la couche 2.
 
-To migrate:
+### Migration
 
-1. Log into Bridge.
-2. Click the ownership address modal menu at the top left corner.
-3. Select ‘Migrate’, and ‘Proceed’ after reading the information presented.
-4. You will need to pay a one-time fee to fund the transaction; make sure your L1 address has funds available.
+Pour migrer :
 
-Migrating to Layer 2 does not change the address that owns a point. **You will still use the same wallet or key to log into Bridge after migration**. A single ownership address might have ships on both Layer 1 and Layer 2.
+1. Connectez-vous à Bridge.
+2. Cliquez sur le menu modal de l'adresse de propriété dans le coin supérieur gauche.
+3. Sélectionnez ‘Migrer’, puis ‘Continuer’ après avoir lu les informations présentées.
+4. Vous devrez payer des frais uniques pour financer la transaction ; assurez-vous que votre adresse L1 dispose de fonds disponibles.
 
-The migration itself does not need to be submitted to a roller – it should complete within a few minutes. Once it has, you can submit planets and transactions to the roller’s queue immediately.
+La migration vers la couche 2 ne change pas l'adresse propriétaire d'un point. **Vous utiliserez toujours le même portefeuille ou la même clé pour vous connecter à Bridge après la migration**. Une même adresse propriétaire peut avoir des vaisseaux à la fois sur la couche 1 et la couche 2.
 
-### Activating a Layer 2 planet
+La migration elle-même ne doit pas être soumise à un roller, elle devrait se terminer en quelques minutes. Une fois qu'elle l'a fait, vous pouvez soumettre des planètes et des transactions à la file d'attente du roller immédiatement.
 
-**Planet codes** are one-time passphrases used to claim a master ticket through Bridge. These can be standalone text phrases, or embedded in a URL that begins with `bridge.urbit.org`. **Master tickets** are passphrases used to log into Bridge to manage an ID that has already been claimed.
+### Activer une planète sur la couche 2
 
-If you’ve been given a planet code invitation URL to claim a planet:
+**Les codes de planète** sont des phrases mnémoniques à usage unique utilisées pour réclamer un *Master Ticket* via Bridge. Il peut s'agir d'expressions textuelles autonomes ou intégrées à une URL commençant par `bridge.urbit.org`. Les **Master Tickets** sont des mots de passe utilisés pour se connecter à Bridge afin de gérer un identifiant qui a déjà été réclamé.
 
-1. Open the link.
-2. Click ‘Claim’.
-3. Reveal the master ticket code. Write this down somewhere safe.
-4. Confirm you’ve written the code down by typing it back into the prompt.
-5. Click to download your passport, which contains the keyfile you will use for your ship’s first boot.
+Si vous avez reçu une URL d'invitation pour réclamer une planète :
 
-If you’ve been given a four-word text activation code, go to [Bridge](https://bridge.urbit.org/) and click ‘Activate a planet’ at the bottom. Enter your planet code, and follow the instructions above.
+1. Ouvrez le lien.
+2. Cliquez sur "Claim".
+3. Révélez le code du *Master Ticket*. Notez-le dans un endroit sûr.
+4. Confirmez que vous avez bien noté le code en le retapant dans l'invite.
+5. Cliquez pour télécharger votre passeport, qui contient le fichier clé que vous utiliserez pour la première initialisation de votre vaisseau.
 
-In the future, you can log into Bridge using the master ticket you wrote down in order to manage your ship’s keys. Knowing the master ticket is equivalent to owning the ID, so keep it somewhere secure.
+Si vous avez reçu un code d'activation textuel de quatre mots, allez sur [Bridge](https://bridge.urbit.org/) et cliquez sur ‘*Activate a planet’* en bas. Saisissez votre code de planète et suivez les instructions ci-dessus..
 
-An important consideration for new users with regard to Layer 2 planets: your ownership key is technically exposed to the star that issued your planet for up to 24 hours, until the next batch is processed by your roller. During this window, it's technically possible for the issuer to take back the planet or decrypt packets meant for it. This is the reason that the keyfile you use to boot your ship actually has two halves – one for your initial boot, and a second one that belongs solely to you.
+À l'avenir, vous pourrez vous connecter à Bridge en utilisant le *Master Ticket* que vous avez noté afin de gérer les clés de votre vaisseau. Connaître le *Master Ticket* équivaut à posséder l'ID, alors gardez-le dans un endroit sûr.
 
-The first time you boot, the key from the first half of the keyfile is used; but when the next roll batch is processed, the ID will be modified with a second key. This key is kept secret from the star that spawned you, and once this transaction clears, your planet is definitively and cryptographically yours. All of this is **taken care of in the background and requires no intervention**. You don’t even need to restart your planet after the ownership transfer has been finalized.
+Une considération importante pour les nouveaux utilisateurs en ce qui concerne les planètes de la couche 2 : votre clé de propriété est techniquement exposée à l'étoile qui a émis votre planète pendant 24 heures maximum, jusqu'à ce que le lot suivant soit traité par votre *roller*. Pendant ce laps de temps, il est techniquement possible pour l'émetteur de reprendre la planète ou de décrypter les paquets qui lui sont destinés. C'est la raison pour laquelle le fichier clé que vous utilisez pour initialiser votre vaisseau a en fait deux moitiés, une pour le démarrage initial, et une seconde qui vous appartient exclusivement.
 
-### Running your planet
+La première fois que vous initialisez, la clé de la première moitié du fichier clé est utilisée, mais lors du traitement du lot de *roller* suivant, l'identifiant sera modifié avec une deuxième clé. Cette clé est tenue secrète par l'étoile qui vous a généré, et une fois cette transaction effectuée, votre planète est définitivement et cryptographiquement la vôtre. Tout ceci est pris en charge en arrière-plan et ne nécessite aucune intervention. Vous n'avez même pas besoin de redémarrer votre planète après que le transfert de propriété a été finalisé.
 
-Once you’ve activated your planet and downloaded your keyfile, you can use it to [boot your ship immediately](https://urbit.org/getting-started/cli).
+### Exécuter votre planète
 
-Treat your planet like the precious object it is. Do not share your landscape login code or master key with anybody. Never run it in two places at the same time. This will knock it out of sequence with the network, and cause it to become ‘brain damaged’, unable to communicate with the outside world. Don’t delete the directory that contains your asset’s data. If you are shutting down your ship for a while, keep the data folder somewhere safe, and you can pick up where you left off in the future.
+Une fois que vous avez activé votre planète et téléchargé votre fichier clé, vous pouvez l'utiliser pour [initialiser immédiatement votre vaisseau](https://urbit.org/getting-started/cli).
 
-You may also opt to [host your planet](https://urbit.org/getting-started#hosting-providers) with a provider. Ships hosted by providers are always-on and come with support. After you’ve activated your planet code, but before you’ve booted with your keyfile, you can create an account with a hosting provider like [UrbitHost](https://urbithost.com/) and use your keyfile to boot your ship with their service – known as ‘bring your own planet’.
+Traitez votre planète comme l'objet précieux qu'elle est. Ne partagez pas votre code d'accès à votre planète ou votre *Master Key* avec qui que ce soit. N’exécutez jamais à deux endroits en même temps. Cela le désynchroniserait avec le réseau et lui causerait des `lésions cérébrales`, l'empêchant de communiquer avec le monde extérieur. Ne supprimez pas le répertoire qui contient les données de votre poste. Si vous arrêtez votre vaisseau pour un certain temps, conservez le dossier de données dans un endroit sûr, et vous pourrez reprendre là où vous vous êtes arrêté à l'avenir.
 
-In addition to importing a fresh planet, UrbitHost allows you to migrate an existing pier to your hosted account. If you’ve booted a planet on your PC but want to make the switch to hosting, you can upload it and hit the ground running without having to reset your networking keys.
+Vous pouvez également choisir [d'héberger votre planète](https://urbit.org/getting-started#hosting-providers) chez un fournisseur. Les vaisseaux hébergés par des fournisseurs sont toujours opérationnels et bénéficient d'une assistance. Après avoir activé votre code planète, mais avant d'avoir initialisé avec votre fichier clé, vous pouvez créer un compte auprès d'un hébergeur comme [UrbitHost](https://urbithost.com/) et utiliser votre fichier clé pour initialiser votre vaisseau avec leur service, c'est ce qu'on appelle `apporter sa propre planète`.
 
-### Transaction history
+Outre l'importation d'une nouvelle planète, UrbitHost vous permet de faire migrer un ponton (*pier*) existant vers votre compte hébergé. Si vous avez initialisez une planète sur votre PC mais que vous voulez passer à l'hébergement, vous pouvez la télécharger et commencer à travailler sans avoir à réinitialiser vos clés de réseau.
 
-A new feature in Bridge is the ability to see the transaction history of your asset. This is particularly important because with Layer 2, much of the Azimuth state is no longer visible on the Ethereum blockchain, but is maintained by the Urbit network. This means you might not be able to directly observe “who owns what” by looking at the Azimuth contracts with something like a [blockchain explorer](https://etherscan.io/address/azimuth.eth). Activities like setting networking keys, issuing planets, or moving your proxy keys will show up in this log. Note that the transaction history menu in Bridge is currently the only way to examine Azimuth operations that take place on Layer 2.
+### Historique des transactions
 
-If you submit an operation to your roller, you’ll see a timer counting down to the next batch and a history of completed operations. Bridge does not currently allow you to cancel a transaction once it has been submitted.
+Une nouvelle fonctionnalité de Bridge est la possibilité de voir l'historique des transactions de votre actif. Ceci est particulièrement important car avec la couche 2, une grande partie de l'état d'Azimuth n'est plus visible sur la blockchain Ethereum, mais est maintenu par le réseau Urbit. Cela signifie que vous ne serez peut-être pas en mesure d'observer directement "qui possède quoi" en regardant les contrats Azimuth avec quelque chose comme un [explorateur de blockchain](https://etherscan.io/address/azimuth.eth). Les activités telles que la mise en place de clés de réseau, l'émission de planètes ou le déplacement de vos clés de proxy apparaîtront dans ce journal. Notez que le menu de l'historique des transactions dans Bridge est actuellement le seul moyen d'examiner les opérations Azimuth qui ont lieu sur la couche 2.
 
-Incoming transfers of new assets will also show up in your transaction history. If your ownership address owns more than one asset, you can use the modal to select from among them.
+Si vous soumettez une opération à votre roller, vous verrez un compte à rebours jusqu'au prochain lot et un historique des opérations effectuées. Bridge ne vous permet pas actuellement d'annuler une opération une fois qu'elle a été soumise.
+
+Les transferts entrants de nouveaux actifs apparaîtront également dans l'historique de vos opérations. Si votre adresse de propriété possède plus d'un actif, vous pouvez utiliser la modale pour choisir parmi eux.
