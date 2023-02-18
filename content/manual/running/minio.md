@@ -1,42 +1,42 @@
 +++
-title = "Self-hosting S3 Storage with MinIO"
-description = "How to set up and self-host MinIO S3 storage"
+title = "Stockage S3 auto-hébergé avec MinIO"
+description = "Comment configurer et auto-héberger le stockage MinIO S3"
 template = "doc.html"
 weight = 2
 [extra]
 hidetitle = "true"
 +++
 
-Adding [S3](https://aws.amazon.com/s3/) storage to Urbit unlocks some great new features, such as the ability to upload & post your own media to chats straight from your own machine, and upload custom avatars. This is a guide to self-hosting [MinIO](https://min.io), an S3 compatible block storage solution.
+L'ajout de stockage [S3](https://aws.amazon.com/s3/) à Urbit débloque quelques nouvelles fonctionnalités, comme la possibilité de télécharger et de poster vos propres médias dans les chats directement depuis votre propre machine, et de télécharger des avatars personnalisés. Ceci est un guide pour l'auto-hébergement de [MinIO](https://min.io/), une solution de stockage en bloc compatible S3.
 
-You can read more about S3 in [Configuring S3 Storage](/manual/os/s3).
+Vous pouvez en savoir plus sur S3 dans [Configurer le stockage S3](https://operators.urbit.org/manual/os/s3).
 
-Cloud providers offer off-the-shelf S3 solutions that you can get started with almost immediately. However, if you do not wish to trust them with your uploaded files, you can self-host an S3 solution.
+Les fournisseurs de services sur le cloud offrent des solutions S3 prêtes à l'emploi que vous pouvez utiliser presque immédiatement. Toutefois, si vous ne souhaitez pas leur confier vos fichiers téléchargés, vous pouvez héberger vous-même une solution S3.
 
-This process requires a working knowledge of the Linux command line and web technologies such as DNS and TLS.
+Ce processus nécessite une connaissance pratique des lignes de commande Linux et des technologies Web telles que DNS et TLS.
 
-The self-hosting process is almost exactly the same whether you are hosting on your own hardware, or if you are renting a VPS from a cloud provider like DigitalOcean or AWS. Either way, all that you need is a machine running Linux and a domain - for the sake of this guide, `example.com` will be used in place of your custom domain. You should substitute your own domain everywhere the example domain is used in this guide; for example:
+Le processus d'auto-hébergement est quasiment exactement le même, que vous hébergiez sur votre propre matériel ou que vous louiez un VPS auprès d'un fournisseur de services cloud+ comme DigitalOcean ou AWS. Dans tous les cas, tout ce dont vous avez besoin, c'est d'une machine fonctionnant sous Linux et d'un domaine, dans le cadre de ce guide, `exemple.com` sera utilisé à la place de votre domaine personnalisé. Vous devez substituer votre propre domaine partout où le domaine exemple est utilisé dans ce guide ; par exemple :
 
-- `example.com` should become `yourdomain.tld`,
-- `s3.example.com` should become `s3.yourdomain.tld`,
+- `exemple.com` doit devenir `yourdomain.tld`,
+- `s3.exemple.com` doit devenir`s3.yourdomain.tld,`
 
-and so on.
+et ainsi de suite.
 
-Ideally, MinIO would be installed on the same machine that your Urbit planet is hosted on, and run alongside at no extra cost - although it can just as easily be hosted on a separate machine.
+Idéalement, MinIO devrait être installé sur la même machine que celle où est hébergée votre planète Urbit, et fonctionner en parallèle sans coût supplémentaire, bien qu'il puisse tout aussi bien être hébergé sur une machine séparée.
 
-## Steps
+## Étapes
 
-### (optional) Install Docker
+### (facultatif) Installer Docker
 
-Hosting MinIO via Docker is the simplest option. To install Docker server, follow the relevant guide [here](https://docs.docker.com/engine/install/#server).
+Héberger MinIO via Docker est l'option la plus simple. Pour installer le serveur Docker, suivez le guide [ici](https://docs.docker.com/engine/install/#server).
 
-If you don't want to install Docker, MinIO does offer independent binaries. The process for running these should be similar, but the next step assumes you are using Docker.
+Si vous ne souhaitez pas installer Docker, MinIO propose des exécutables indépendants. Le processus pour les exécuter devrait être similaire, mais l'étape suivante suppose que vous utilisez Docker.
 
-### Install MinIO
+### Installer MinIO
 
-Once Docker is installed, we can install and run MinIO by following the steps [here](https://docs.min.io/docs/minio-docker-quickstart-guide.html).
+Une fois que Docker est installé, nous pouvons installer et exécuter MinIO en suivant les étapes [suivantes](https://docs.min.io/docs/minio-docker-quickstart-guide.html).
 
-You should only need to run a single command, along the lines of:
+Vous ne devriez avoir besoin que d'une seule commande, du type :
 
 ```
 docker run -d \
@@ -51,33 +51,33 @@ docker run -d \
   minio/minio server /data --console-address ":9001"
 ```
 
-Ports 9000 and 9001 are exposed to give access to the MinIO S3 interface and MinIO web admin respectively. `/mnt/data` is the path where your uploaded data will be stored on your host machine — you can change this as necessary.
+Les ports 9000 et 9001 sont exposés pour donner accès à l'interface S3 de MinIO et à l'administration web de MinIO respectivement. `/mnt/data` est le chemin où vos données téléchargées seront stockées sur votre machine hôte, vous pouvez le modifier si nécessaire.
 
-Be sure to add the `MINIO_DOMAIN` environment variable; this tells MinIO to accept virtual host style URLs (`BUCKET.s3.example.com` rather than `s3.example.com/BUCKET`), which are required for compatibility with Urbit.
+Assurez-vous d'ajouter la variable d'environnement `MINIO_DOMAIN` ; elle indique à MinIO d'accepter les URLs de style hôte virtuel (`BUCKET.s3.example.com`(http://bucket.s3.example.com/) plutôt que `s3.example.com/BUCKET`(http://s3.example.com/BUCKET)), qui sont nécessaires pour la compatibilité avec Urbit.
 
-Your username and password can be anything of your choosing — make sure they're secure! Your username must be at least 4 characters long and your password at least 8 characters long.
+Votre nom d'utilisateur et votre mot de passe peuvent être ce que vous voulez, assurez-vous qu'ils sont sécurisés ! Votre nom d'utilisateur doit être composé d'au moins 4 caractères et votre mot de passe d'au moins 8 caractères.
 
-### Create DNS records
+### Créer des enregistrements DNS
 
-Now, you'll need to point your own domain at your MinIO installation. Via your domain's DNS settings (usually configured on the registrar you bought your domain through), create three `A` records:
+Maintenant, vous devez faire pointer votre propre domaine vers votre installation MinIO. Via les paramètres DNS de votre domaine (généralement configurés sur le registre par lequel vous avez acheté votre domaine), créez trois enregistrements `A` :
 
-- `s3.example.com`,
-- `console.s3.example.com`, and
-- `BUCKET.s3.example.com` where BUCKET is a bucket name of your choosing — 'media' or 'uploads' are good examples
+- `s3.example.com`(http://s3.example.com/),
+- `console.s3.example.com`(http://console.s3.example.com/), et
+- `BUCKET.s3.example.com`(http://bucket.s3.example.com/), où BUCKET est un nom de conteneur de votre choix, `media` ou `uploads` sont de bons exemples.
 
-All 3 should point at the IP address of your host machine. If you are hosting on your own hardware, this could require port-forwarding via your router so that your host machine is reachable from outside of your home network, and possibly using a dynamic DNS service to update your DNS records if your home IP is not static.
+Ces trois adresses doivent pointer vers l'adresse IP de votre machine hôte. Si vous hébergez sur votre propre matériel, cela peut nécessiter une redirection de port via votre routeur afin que votre machine hôte soit accessible depuis l'extérieur de votre réseau domestique, et éventuellement l'utilisation d'un service DNS dynamique pour mettre à jour vos enregistrements DNS si l'adresse IP de votre domicile n'est pas statique.
 
-DNS records can take a little while to propagate, so don't worry if you type your new URL into your browser and don't see anything yet.
+Les enregistrements DNS peuvent mettre un peu de temps à se propager, alors ne vous inquiétez pas si vous entrez votre nouvelle URL dans votre navigateur et que vous ne voyez rien pendant un moment.
 
-_Note: if you plan to create multiple buckets, you will need a DNS record for each. Alternatively you can use a wildcard domain record, but for use with Urbit only one bucket is needed._
+_Remarque : si vous prévoyez de créer plusieurs conteneurs, vous aurez besoin d'un enregistrement DNS pour chacun. Alternativement, vous pouvez utiliser un enregistrement de domaine wildcard, mais pour l'utilisation avec Urbit, un seul conteneur est nécessaire._
 
-### Set up the reverse proxy
+### Configurer le proxy reverse
 
-Setting up a reverse proxy in front of MinIO allows us to configure domain names and TLS. In this guide we use caddy, an incredibly simple web server. If you have experience with other web servers, you are also able to use those in place of caddy.
+La mise en place d'un proxy *reverse* en face de MinIO nous permet de configurer les noms de domaine et TLS. Dans ce guide, nous utilisons caddy, un serveur web incroyablement simple. Si vous avez de l'expérience avec d'autres serveurs web, vous pouvez également les utiliser à la place de caddy.
 
-To install caddy, follow the instructions [here](https://caddyserver.com/docs/install).
+Pour installer caddy, suivez les instructions [ici](https://caddyserver.com/docs/install).
 
-Caddy handles TLS automatically, so we don't need to worry about setting that up. All we need to do is create a Caddyfile that looks something like this:
+Caddy gère automatiquement TLS, nous n'avons donc pas besoin de nous soucier de sa configuration. Tout ce que nous devons faire est de créer un fichier Caddy qui ressemble à quelque chose comme ceci :
 
 ```
 console.s3.example.com {
@@ -88,54 +88,55 @@ s3.example.com BUCKET.s3.example.com {
 }
 ```
 
-Remember to replace BUCKET with your chosen bucket name, and then run `caddy start` in the same directory as the Caddyfile.
+N'oubliez pas de remplacer BUCKET par le nom de votre choix, puis exécutez `caddy start` dans le même répertoire que le *Caddyfile*.
 
-### Create an S3 bucket
+### Créer un conteneur S3
 
-Navigate to your MinIO admin endpoint (`https://console.s3.example.com`) in a browser and sign in using the username and password you entered in step 1.
+Naviguez vers votre point de terminaison d'administration MinIO (`https://console.s3.example.com`) dans un navigateur et connectez-vous en utilisant le nom d'utilisateur et le mot de passe que vous avez saisis à l'étape 1.
 
-Choose 'buckets' from the left-hand menu, and then 'create bucket' at the top of the page. Enter your bucket name (this MUST match the name in your DNS record, e.g. 'media').
+Choisissez `buckets` dans le menu de gauche, puis `create bucket` en haut de la page. Saisissez le nom de votre conteneur (bucket) (il DOIT correspondre au nom figurant dans votre enregistrement DNS, par exemple `media`).
 
-Then, you need to ensure your bucket is readable to the public, so that others can see your uploaded media. To do this, click 'manage' on your newly created bucket, and then navigate to 'access rules'. Click 'add access rule', enter `*` as the prefix and set access to `readonly`.
+Ensuite, vous devez vous assurer que votre conteneur est accessible au public, afin que d'autres personnes puissent voir les médias que vous avez téléchargés. Pour ce faire, cliquez sur `manage` sur votre conteneur nouvellement créé, puis naviguez jusqu'à `Access Rules`. Cliquez sur `add access rule`, entrez `*` comme préfixe et définissez l'accès comme étant `readonly`.
 
-### Configure your ship
+### Configurez votre vaisseau
 
-Head over to Landscape and navigate to the S3 storage setup page at System preferences > Remote Storage, and enter your domain (with protocol) under endpoint, e.g. `https://s3.example.com`. Enter your username and password from step 1 under access key and secret, and then enter the name of the bucket. When the bucket name is combined with the endpoint, you get your bucket URL e.g. `https://media.s3.example.com`.
+Allez sur Landscape et naviguez jusqu'à la page de configuration du stockage S3 dans Préférences système > Stockage à distance, et entrez votre domaine (avec le protocole) sous le point de terminaison, par exemple [https://s3.example.com](https://s3.example.com/). Entrez votre nom d'utilisateur et votre mot de passe de l'étape 1 sous clé d'accès et secret, puis entrez le nom du conteneur. Lorsque le nom du conteneur est combiné avec le point de terminaison, vous obtenez l'URL de votre conteneur, par exemple `https://media.s3.example.com`.
 
-You can also configure these settings through dojo as shown [here](/manual/os/s3).
+Vous pouvez également configurer ces paramètres via dojo comme indiqué [ici](https://operators.urbit.org/manual/os/s3).
 
-### That's it!
+### Voilà, c'est fait !
 
-You should now be able to upload content using your self-hosted MinIO installation.
+Vous devriez maintenant être en mesure de télécharger du contenu en utilisant votre installation MinIO auto-hébergée.
 
-Once your S3 config is added, you should see a paperclip icon next to the message input in your chats. Media can be uploaded and posted by clicking here.
+Une fois votre configuration S3 ajoutée, vous devriez voir une icône en forme de trombone à côté de la saisie des messages dans vos chats. Les médias peuvent être téléchargés et postés en cliquant dessus.
 
-## Troubleshooting
+## Dépannage
 
-Landscape chat will fail silently if it cannot connect to your S3 endpoint to upload media. To get an idea of what's going wrong, open the network tab of your browser dev tools, and observe the request when you try and upload media. You should see a failed request, hopefully with an error code or reason for failure.
+Le chat de Landscape échoue silencieusement s'il ne peut pas se connecter à votre point de terminaison S3 pour télécharger des médias. Pour avoir une idée de ce qui ne va pas, ouvrez l'onglet réseau des outils de développement de votre navigateur et observez la requête lorsque vous essayez de télécharger des médias. Vous devriez voir une requête échouée, avec un code d'erreur ou la raison de l'échec.
 
-- If you see a `mixed-content` error, this means that not every part of the set up is using TLS. Most browsers will refuse to load non-HTTPS content from a secure page.
-- If you see a `502 Bad Gateway` error, caddy is unable to reach your MinIO installation. Check MinIO is running and your `reverse_proxy` URLs are correct.
-- If you get a `Permission denied` error, it's likely that your bucket endpoint is incorrect. Ensure that you passed the `MINIO_DOMAIN` variable when running MinIO - otherwise it will default to using the path URL format, which Urbit does not support.
+- Si vous voyez l’erreur `mixed-content`, cela signifie que toutes les parties de la configuration n'utilisent pas TLS. La plupart des navigateurs refusent de charger du contenu non-HTTPS à partir d'une page sécurisée.
+- Si vous voyez l’erreur `502 Bad Gateway`, caddy est incapable d'atteindre votre installation MinIO. Vérifiez que MinIO est en cours d'exécution et que les URLs de votre `reverse_proxy` sont correctes.
+- Si vous obtenez l’erreur `Permission denied`, il est probable que le point de terminaison de votre conteneur soit incorrect. Assurez-vous que vous avez passé la variable `MINIO_DOMAIN` lors de l'exécution de MinIO, sinon il utilisera par défaut le format URL path, qu'Urbit ne supporte pas.
 
-A good way to test your setup is to `curl` your S3 bucket endpoint (not your root S3 endpoint) and see what response you get. For example, if we have a bucket named 'media':
+Une bonne façon de tester votre configuration est d’utiliser `curl` sur votre point de terminaison de conteneur S3 (pas votre point de terminaison S3 racine) et voir quelle réponse vous obtenez. Par exemple, si nous avons un conteneur nommé `media` :
 
 ```
-curl https://media.s3.example.com
+curl [https://media.s3.example.com](https://media.s3.example.com/)
 ```
 
-You should get an XML response listing the contents of your bucket.
+Vous devriez obtenir une réponse XML énumérant ce qui se trouve dans votre conteneur.
 
-## Running MinIO and Urbit on the same machine
+## Exécuter MinIO et Urbit sur la même machine
 
-You may wonder how it's possible to run Urbit alongside our MinIO set up if they both need ports 80/443. The answer is to proxy Urbit through caddy, exactly the same way as MinIO. You can create as many directives in your Caddyfile as needed, each pointing to a different port.
 
-For example, you could have 3 domains:
+Vous pouvez vous demander comment il est possible de faire tourner Urbit à côté de notre installation MinIO si les deux ont besoin des ports 80/443. La réponse est de proxyer Urbit à travers caddy, exactement de la même manière que MinIO. Vous pouvez créer autant de directives dans votre Caddyfile que nécessaire, chacune pointant vers un port différent.
 
-- `ship-name.example.com` - proxy to port 8080 where Urbit is running,
-- `console.s3.example.com` - proxy to port 9001 where your MinIO admin is running, and
-- `media.s3.example.com` - proxy to port 9000 where your MinIO bucket is accessible
+Par exemple, vous pourriez avoir 3 domaines :
 
-Currently, there is no way to specify the HTTP port Landscape runs on (unless you are running the `urbit-king` binary), but if 80 is not available at start-up it will try 8080 next. So start caddy first, and when you boot your ship it should detect that port 80 is in use and use 8080 instead.
+- `ship-name.example.com` - proxy vers le port 8080 où Urbit s'exécute,
+- `console.s3.example.com` - proxy vers le port 9001 où votre administrateur MinIO fonctionne,
+- `media.s3.example.com` - proxy vers le port 9000 où votre conteneur MinIO est accessible.
 
-If you are running the `urbit-king` binary, then you can specify the HTTP port with the `--http-port` option.
+Pour le moment, il n'y a aucun moyen de spécifier le port HTTP sur lequel Landscape s'exécute (sauf si vous exécutez l’exécutable `urbit-king`), mais si 80 n'est pas disponible au démarrage, il essaiera ensuite 8080. Donc, démarrez d'abord caddy, et lorsque vous initialisez votre vaisseau, il devrait détecter que le port 80 est utilisé et utiliser 8080 à la place.
+
+Si vous utilisez l’exécutable `urbit-king`, vous pouvez spécifier le port HTTP avec l'option `--http-port`.
