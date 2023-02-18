@@ -1,37 +1,36 @@
 +++
-title = "Bridge Troubleshooting"
+title = "Dépannage de Bridge"
 template = "doc.html"
-description = "Troubleshooting Bridge if you are running into errors"
+description = "Dépanner Bridge si vous avez exécuté des erreurs"
 weight = 20
 +++
 
-This page covers common issues encountered with the [Bridge](https://bridge.urbit.org) application.
+Cette page couvre les problèmes les plus fréquemment rencontrés avec l'application [Bridge](https://bridge.urbit.org).
 
-### Canvas Issues
+### Problèmes liés à Canvas
 
-Bridge uses an HTML element called canvas to create your wallets. Unfortunately malicious websites can use canvas to identify and track users. As a result, some browsers and anti-tracking extensions can interfere with Bridge's ability to generate wallets. 
+Bridge utilise l'élément HTML appelé Canvas pour créer vos portefeuilles. Malheureusement, les sites Web malveillants peuvent utiliser Canvas pour identifier et traquer les utilisateurs. Par conséquent, certains navigateurs et extensions anti-traquage peuvent interférer avec la capacité de Bridge à générer des portefeuilles.
 
-If there are no instructions for your browser, or the instructions don't work, please file a ticket on the [issue tracker](https://github.com/urbit/bridge/issues)
+S'il n'y a pas d'instructions pour votre navigateur, ou si les instructions ne fonctionnent pas, veuillez remplir un ticket sur le [traqueur de problèmes](https://github.com/urbit/bridge/issues).
 
-#### Brave Users
+#### Utilisateurs de Brave
 
-To fix canvas issues on Brave:
+Pour résoudre les problèmes liés à Canvas sur Brave :
 
-- Click on the Brave logo on the right edge of your URL bar
-- Click `Advanced View`
-- Set the bottom dropdown to `Cross-site device recognition blocked`
-- Click on Retry in Bridge
+- Cliquez sur le logo Brave sur le bord droit de votre barre d'URL.
+- Cliquez sur `Advanced View`
+- Réglez le menu déroulant du bas sur `Cross-site device recognition blocked` (Reconnaissance interdite des appareils)
+- Cliquez sur Retry dans Bridge
 
-The warning box should disappear.
+La boîte d'avertissement devrait disparaître.
 
-#### Firefox Users
+#### Utilisateurs de Firefox
 
-To fix canvas issues on Brave:
+Pour résoudre les problèmes liés à Canvas sur Brave :
 
-- Click on the icon of an image in your URL bar, to the left of
-   `https://bridge.urbit.org`
-- Click `Allow Data access`
-- Click on Retry in Bridge
+- Cliquez sur l'icône d'une image dans votre barre d'URL, à gauche de `https://bridge.urbit.org` 
+- Cliquez sur `Allow data Access`
+- Cliquez sur Retry dans Bridge
 
-The warning box should disappear.
+La boîte d'avertissement devrait disparaître.
 
