@@ -1,106 +1,66 @@
 +++
-title = "Creating an Invite Pool"
+title = "Créer un groupe d’invitations"
 weight = 30
 template = "doc.html"
 +++
 
-If you're a star owner, you have the ability to create **invite pools**. These
-invite pools let you give your friends a piece of the network in the form of a
-planet. This document will give you an explanation of how to create an invite
-pool and how to share it with your friends using our tool
-[Bridge](https://bridge.urbit.org).
+Si vous êtes propriétaire d'une étoile, vous avez la possibilité de créer **des groupes d’invitations**. Ces groupes d’invitations vous permettent d'offrir à vos amis une partie du réseau sous la forme d'une planète. Ce document vous explique comment créer un groupe d’invitations et comment le partager avec vos amis à l'aide de notre outil [Bridge](https://bridge.urbit.org/).
 
-For more general tips on using your star, check out the [Star and Galaxy
-Operations page](/manual/).
+Pour des conseils plus généraux sur l'utilisation de votre étoile, consultez la page sur [l'exploitation des étoiles et des galaxies](https://operators.urbit.org/manual).
 
-## Anatomy of an Invite Pool
+## Anatomie d'un groupe d’invitations
 
-An invite pool is a set of planet invites that can be distributed via email or
-URL; each invite is worth one planet when redeemed. An invite pool can be as big
-as you'd like, providing that you have enough planets left to spawn. All invite
-pools must be created by a star, but they must be given to a planet. If you're
-interested in how this works technically, take a look at the
-[DelegatedSending.sol
-contract](https://github.com/urbit/azimuth/blob/master/contracts/DelegatedSending.sol).
+Un groupe d’invitations est un ensemble d'invitations de planètes pouvant être distribués par courrier électronique ou par URL. Chaque invitation vaut une planète lorsqu'elle est échangée. Un groupe d’invitations peut être aussi large que vous le souhaitez, à condition qu'il vous reste suffisamment de planètes à générer. Tous les groupes d’invitations doivent être créés par une étoile, mais ils doivent être donnés à une planète. Si vous souhaitez savoir comment cela fonctionne techniquement, jetez un coup d'œil au [contract DelegatedSending.sol](https://github.com/urbit/azimuth/blob/master/contracts/DelegatedSending.sol).
 
-Keep in mind that all planets will have access to the invite pool until the
-invite pool is exhausted.
+Gardez à l'esprit que toutes les planètes auront accès au groupe d’invitations jusqu'à ce que celui-ci soit épuisé.
 
-For example: As `~marzod`, I spawn `~wicdev-wisryt` and give it an invite pool
-of 100 planets. `~wicdev-wisryt` can now send an invite to a friend at
-galen@tlon.io. When Galen claims his planet (`~ravmel-ropdyl`), `~ravmel-ropdyl`
-can now invite his friend — or 99 of them. `~wicdev-wisryt` may also continue to
-use the invite pool, as can anybody they invite.
+Par exemple : En tant que `~marzod`, je génère `~wicdev-wisryt` et lui attribue un groupe d’invitations de 100 planètes. `~wicdev-wisryt` peut maintenant envoyer une invitation à un ami sur galen@tlon.io. Lorsque Galen réclame sa planète (`~ravmel-ropdyl`), `~ravmel-ropdyl` peut maintenant inviter son ami - ou 99 d'entre eux. `~wicdev-wisryt` peut également continuer à utiliser le groupe d’invitations, tout comme les personnes qu'il invite.
 
-## How To Create an Invite Pool
+## Comment créer un groupe d’invitations ?
 
-Giving your friends a piece of Urbit only takes a few minutes: send an invite
-pool to a planet, and then that planet can email an invite to a friend (or
-friends)
+Donner à vos amis un morceau d'Urbit ne prend que quelques minutes : envoyez groupe d’invitations  à une planète, et ensuite cette planète peut envoyer une invitation par email à un ami (ou des amis).
 
-1. Log into Bridge using your ownership address for your star.
+1. Connectez-vous à Bridge en utilisant votre adresse de propriété pour votre étoile.
 
-2. Change the spawn proxy of your star to
-   `0xF7908Ab1F1e352F83c5ebc75051c0565AEaea5FB`. This is a contract address that
-   will handle the spawning of planets for invitees.
+2. Changez le proxy de génération de votre étoile en `0xF7908Ab1F1e352F83c5ebc75051c0565AEaea5FB`. Il s'agit d'une adresse de contrat qui gérera la génération de planètes pour les invités.
 
-3. Get the `@p` (like `~poldec-tonteg`) of the planet to whom you'd like to give
-   access to the invite pool. It can be one you control or a friend's. It does
-   not have to be a planet sponsored by your star.
+3. Obtenez l'`@p` (comme `~poldec-tonteg`) de la planète à laquelle vous souhaitez donner accès au groupe d’invitations. Il peut s'agir d'une planète que vous contrôlez ou de celle d'un ami. Il ne doit pas nécessairement s'agir d'une planète parrainée par votre étoile.
 
-3. Click "Manage Invite Pools" to assign an invite pool to the planet. You may
-   receive a notification that you need to assign your spawn proxy to the
-   address of the Delegated Sending contract. This is so that the contract can
-   send invites on your behalf when the recipient claims them. This address is
-   `0xF7908Ab1F1e352F83c5ebc75051c0565AEaea5FB`, which is also displayed in Bridge.
+4. Cliquez sur "Manage Invite Pools" pour attribuer groupe d’invitations à la planète. Il se peut que vous receviez une notification vous indiquant que vous devez attribuer votre proxy de génération à l'adresse du contrat d'envoi délégué. Ceci afin que le contrat puisse envoyer des invitations en votre nom lorsque le destinataire les réclame. Cette adresse est `0xF7908Ab1F1e352F83c5ebc75051c0565AEaea5FB`, qui est également affichée dans Bridge.
 
 ![](https://media.urbit.org/docs/invite-pool/browser-point.png)
 
-4. Enter the `@p` of the planet and the number of invites you'd like to assign to them.
+1. Saisissez l'`@p` de la planète et le nombre d'invitations que vous souhaitez leur attribuer.
 
 ![](https://media.urbit.org/docs/invite-pool/browser-create-pool.png)
 
-Once the transaction is complete, the planet will have access to the invite pool.
+Une fois la transaction terminée, la planète aura accès au groupe d’invitations.
 
-## How to Send an Invite
+## Comment envoyer une invitation ?
 
-1. Log into Bridge using the planet assigned an invite pool above using the
-   planet's Master Ticket or ownership address.
+1. Connectez-vous à Bridge en utilisant la planète à laquelle un groupe d'invitations a été attribué en utilisant le *Master Ticket* ou l'adresse de propriété de la planète.
 
-2. Under "Invite Group", click "Add Members" to unroll the invitation UI.
+2. Sous "Invite Group", cliquez sur "Add Members" pour dérouler l'interface d'invitation.
 
-3. Select either "Email" or "URL".
+3. Sélectionnez "Email" ou "URL".
 
-4. If you selected "Email", enter the email address(es) of those you wish to
-   invite to the dialog box. You may add more than one email address. Click "Add to
-   Invite Group" when finished, and wait for the transaction to complete. Your
-   friend(s) will get an email shortly with your gift of an identity for life!
+4. Si vous avez sélectionné "Email", entrez dans la boîte de dialogue l'adresse ou les adresses électroniques de ceux à qui vous souhaitez envoyer l’invitation. Vous pouvez ajouter plus d'une adresse électronique. Cliquez sur "Add to Invite Group" lorsque vous avez terminé, et attendez que la transaction soit terminée. Votre/vos ami(s) recevra(ont) sous peu un e-mail contenant votre cadeau d'une identité pour la vie !
 
-   If you selected "URL", click "Generate Invite URL" to create an invitation URL
-   that you can then share.
+Si vous avez choisi "URL", cliquez sur "Générer une URL d'invitation" pour créer une URL d'invitation que vous pourrez ensuite partager.
 
 ## FAQ
 
-Q. What happens if the spawn proxy address is changed away from
-`0xF7908Ab1F1e352F83c5ebc75051c0565AEaea5FB` after an invite pool has been
-created? Will outstanding invite pool(s) still function?
-A. They won't. Existing balances will remain, but Bridge (and `azimuth-js`) won't
-consider any of the invites from that star usable, and trying to send one of
-their planets anyway will result in a failed transaction.
+Q. Que se passe-t-il si l'adresse du proxy de génération est modifiée par rapport à `0xF7908Ab1F1e352F83c5ebc75051c0565AEaea5FB` après la création d'un groupe d’invitations ? Le(s) groupe(s) d'invités en suspens fonctionneront ils toujours ? 
+R. Non. Les soldes existants seront conservés, mais Bridge (et `azimuth-js`) ne considèrera pas les invitations de cette étoile comme utilisables et toute tentative d'envoyer une de leurs planètes entraînera l'échec de la transaction.
 
-Q. Can a star create more than one invite pool at a time?
-A. Yes, a star can allow any given planet to send any number of invites
-independently from one another.
+Q. Une étoile peut-elle créer plus d'un groupe d’invitations à la fois ? 
+R. Oui, une étoile peut autoriser une planète donnée à envoyer un nombre quelconque d'invitations indépendamment les unes des autres.
 
-Q. Can an invite pool be revoked?
-A. Yes, this may be done by assigning zero invites to a planet that had been
-previously been given access to an invite pool.
+Q. Un pool d'invitations peut-il être révoqué ? 
+R. Oui, cela peut se faire en attribuant zéro invitation à une planète qui avait précédemment eu accès à groupe d’invitations.
 
-Q. Can a delegated planet have more than one invite pool assigned to it?
-A. Yes, as a planet, multiple stars can give you invites to use.
+Q. Une planète déléguée peut-elle se voir attribuer plus d'un groupe d'invitations ? 
+R. Oui, en tant que planète, plusieurs étoiles peuvent vous donner des invitations à utiliser.
 
-Q. What can you do if you send an invite to an email address by mistake?
-A. Planets that have been sent but not yet claimed live at the
-ownership address of the star that created the invite pool. Log into Bridge
-using the ownership address for the star and you will be able to cancel the
-pending invite. Once an invite has been accepted, nothing can be done!
+Q. Que faire si vous envoyez une invitation à une adresse électronique par erreur ? 
+R. Les planètes qui ont été envoyées, mais pas encore réclamées, vivent à l'adresse de propriété de l'étoile qui a créé le groupe d'invitations. Connectez-vous à Bridge en utilisant l'adresse de propriété de la star et vous pourrez annuler l'invitation en attente. Une fois qu'une invitation a été acceptée, rien ne peut être fait !
