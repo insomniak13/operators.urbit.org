@@ -4,38 +4,28 @@ weight = 60
 template = "doc.html"
 +++
 
-This is a brief summary of the three possible options for star owners with
-respect to use of [layer 2](https://developers.urbit.org/reference/glossary/rollups).
+Voici un bref résumé des trois options possibles pour les propriétaires d’étoiles concernant l'utilisation de la [couche 2](https://developers.urbit.org/reference/glossary/rollups).
 
-## One-way trip
+## Voyage à sens unique
 
-Stars have three options with respect to layer 2:
+Les étoiles ont trois options en ce qui concerne la couche 2 :
 
-- Layer 1
-- Layer 1 with Layer 2 spawn proxy
-- Layer 2
+- Couche 1
+- Couche 1 avec proxy de génération de couche 2
+- Couche 2
 
-A layer 1 star can move to layer 1 with layer 2 spawn proxy, or to layer 2. A
-star on layer 1 with layer 2 spawn proxy can move to layer 2. None of these
-actions are currently reversible.
+Une étoile sur couche 1 peut se déplacer vers la couche 1 avec le proxy de génération sur couche 2, ou vers la couche 2. Une étoile de la couche 1 avec un proxy de génération de couche 2 peut se déplacer vers la couche 2. Aucune de ces actions n'est actuellement réversible.
 
-Moving between layers has no effect on sponsorship status of any of its
-sponsees, nor its sponsorship status with its galaxy. It also has no effect on
-planets spawned by the star prior to moving between layers.
+Le déplacement entre les couches n'a aucun effet sur le statut de parrainage de l'un de ses filleuls, ni sur son statut de parrainage avec sa galaxie. Il n'a également aucun effet sur les planètes engendrées par l'étoile avant le déplacement entre les couches.
 
-## Layer 1
+## Couche 1
 
-A star on layer 1 performs all Urbit ID-related actions on layer 1, except for
-sponsorship actions, which can be performed on either layer.
+Une étoile sur la couche 1 effectue toutes les actions liées à l'Urbit ID sur la couche 1, à l'exception des actions de parrainage, qui peuvent être effectuées sur n'importe quelle couche.
 
-## Layer 1 with Layer 2 spawn proxy
+## Couche 1 avec proxy de génération de la couche 2
 
-A star on layer 1 with layer 2 spawn proxy can spawn planets on layer 2 using
-either their ownership proxy or spawn proxy. They will no longer be able to
-spawn planets on layer 1. They may also perform sponsorship actions on either
-layer, identical to layer 1 stars.
+Une étoile sur la couche 1 avec un proxy de génération de couche 2 peut générer des planètes sur la couche 2 en utilisant soit leur proxy de propriété, soit leur proxy de génération. Elle ne pourra plus générer de planètes sur la couche 1. Elles peuvent également effectuer des actions de parrainage sur l'une des deux couches, identiques à celles des étoiles de la couche 1.
 
-## Layer 2
+## Couche 2
 
-A star on layer 2 must perform all Urbit ID related actions on layer 2. All
-planets spawned by the star will be on layer 2.
+Une étoile de la couche 2 doit effectuer toutes les actions liées à l'Urbit ID sur la couche 2. Toutes les planètes générées par l'étoile seront sur la couche 2.
