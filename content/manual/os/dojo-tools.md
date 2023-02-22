@@ -1,756 +1,756 @@
 +++
-title = "Dojo Tools"
+title = "Les outils disponible dans votre dojo"
 weight = 9
 template = "doc.html"
 
-[glossaryEntry."Print out the status of Gall agents on a desk"]
-name = "Print out the status of Gall agents on a desk"
+[glossaryEntry."Afficher le résultat du statut des agents Gall sur un bureau"]
+name = "Afficher le résultat du statut des agents Gall sur un bureau"
 symbol = "+agents"
 usage = "Dojo"
 slug = "#agents"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Try to apply a kernel update"]
-name = "Try to apply a kernel update"
+[glossaryEntry."Essayez d'appliquer une mise à jour du noyau"]
+name = "Essayez d'appliquer une mise à jour du noyau"
 symbol = "|bump"
 usage = "Dojo"
 slug = "#bump"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Install a desk, starting its agents and listening for updates"]
-name = "Install a desk, starting its agents and listening for updates"
+[glossaryEntry."Installez un bureau, démarrez ses agents et écoutez les mises à jour"]
+name = "Installez un bureau, démarrez ses agents et écoutez les mises à jour"
 symbol = "|install"
 usage = "Dojo"
 slug = "#install"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Shut down an agent and permanently delete its state"]
-name = "Shut down an agent and permanently delete its state"
+[glossaryEntry."Arrêtez un agent et supprimez définitivement son état"]
+name = "Arrêtez un agent et supprimez définitivement son état"
 symbol = "|nuke"
 usage = "Dojo"
 slug = "#nuke"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base.
 
 [glossaryEntry."Set the source for kernel updates (%base desk)"]
 name = "Set the source for kernel updates (%base desk)"
 symbol = "|ota"
 usage = "Dojo"
 slug = "#ota"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Pause updates on a desk"]
-name = "Pause updates on a desk"
+[glossaryEntry."Mettez en pause les mises à jour sur un bureau"]
+name = "Mettez en pause les mises à jour sur un bureau"
 symbol = "|pause"
 usage = "Dojo"
 slug = "#pause"
-desc = "Dojo utility included in the Base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Adjust the state of a desk"]
-name = "Adjust the state of a desk"
+[glossaryEntry."Ajustez l'état d'un bureau"]
+name = "Ajustez l'état d'un bureau"
 symbol = "|rein"
 usage = "Dojo"
 slug = "#rein"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Resume updates on a desk"]
-name = "Resume updates on a desk"
+[glossaryEntry."Reprenez les mises à jour sur un bureau"]
+name = "Reprenez les mises à jour sur un bureau"
 symbol = "|resume"
 usage = "Dojo"
 slug = "#resume"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Revive all agents on a desk, migrating archived states"]
-name = "Revive all agents on a desk, migrating archived states"
+[glossaryEntry."Relancez tous les agents sur un bureau, en déplaçant les états archivés"]
+name = "Relancez tous les agents sur un bureau, en déplaçant les états archivés"
 symbol = "|revive"
 usage = "Dojo"
 slug = "#revive"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
 [glossaryEntry."Print kelvin version and manifest"]
 name = "Print kelvin version and manifest"
 symbol = "+show-vat"
 usage = "Dojo"
 slug = "#show-vat"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Start an agent"]
-name = "Start an agent"
+[glossaryEntry."Démarrez un agent"]
+name = "Démarrez un agent"
 symbol = "|start"
 usage = "Dojo"
 slug = "#start"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Shut down all agents on a desk, archiving their states"]
-name = "Shut down all agents on a desk, archiving their states"
+[glossaryEntry."Arrêtez tous les agents sur un bureau, archive leurs états"]
+name = "Arrêtez tous les agents sur un bureau, archive leurs états"
 symbol = "|suspend"
 usage = "Dojo"
 slug = "#suspend"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Uninstall a desk, suspending its agents and ignoring updates"]
-name = "Uninstall a desk, suspending its agents and ignoring updates"
+[glossaryEntry."Désinstallez un bureau, suspendre ses agents et ignorez les mises à jour"]
+name = "Désinstallez un bureau, suspendre ses agents et ignorez les mises à jour"
 symbol = "|uninstall"
 usage = "Dojo"
 slug = "#uninstall"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print out the status of a single installed desk"]
-name = "Print out the status of a single installed desk"
+[glossaryEntry."Affichez le résultat de l'état d'un seul bureau installé"]
+name = "Affichez le résultat de l'état d'un seul bureau installé"
 symbol = "+vat"
 usage = "Dojo"
 slug = "#vat"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print out the status of each installed desk"]
-name = "Print out the status of each installed desk"
+[glossaryEntry."Affichez le résultat de l’état de chaque bureau installé"]
+name = "Affichez le résultat de l’état de chaque bureau installé"
 symbol = "+trouble"
 usage = "Dojo"
 slug = "#trouble"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print the most recent Ethereum block that has been processed"]
-name = "Print the most recent Ethereum block that has been processed"
+[glossaryEntry."Affichez le résultat du bloc Ethereum le plus récemment traité"]
+name = "Affichez le résultat du bloc Ethereum le plus récemment traité"
 symbol = "+azimuth-block"
 usage = "Dojo"
 slug = "#azimuth-block"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Restart %eth-watcher, resubscribe, re-process snapshot and updates"]
-name = "Restart %eth-watcher, resubscribe, re-process snapshot and updates"
+[glossaryEntry."Redémarrez `%eth-watcher`, réabonnez-vous, retraitez la capture instantanée et les mises à jour."]
+name = "Redémarrez `%eth-watcher`, réabonnez-vous, retraitez la capture instantanée et les mises à jour."
 symbol = ":azimuth|kick"
 usage = "Dojo"
 slug = "#azimuthkick"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Add a source for PKI updates for a list of ships"]
-name = "Add a source for PKI updates for a list of ships"
+[glossaryEntry."Ajoutez une source pour les mises à jour des clés privées pour une liste de vaisseau"]
+name = "Ajoutez une source pour les mises à jour des clés privées pour une liste de vaisseau"
 symbol = ":azimuth|listen"
 usage = "Dojo"
 slug = "#azimuthlisten"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Refetch and load Azimuth snapshot"]
-name = "Refetch and load Azimuth snapshot"
+[glossaryEntry."Récupérez et chargez la capture instantanée d’Azimuth"]
+name = "Récupérez et chargez la capture instantanée d’Azimuth"
 symbol = "-azimuth-load"
 usage = "Dojo"
 slug = "#-azimuth-load"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."List all Azimuth sources"]
-name = "List all Azimuth sources"
+[glossaryEntry."Liste de toutes les sources d'Azimuth"]
+name = "Liste de toutes les sources d'Azimuth"
 symbol = "+azimuth-source"
 usage = "Dojo"
 slug = "#azimuth-sources"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Change node URL and network for Azimuth"]
-name = "Change node URL and network for Azimuth"
+[glossaryEntry."Modifiez l’URL du noeud et le réseau pour Azimuth"]
+name = "Modifiez l’URL du noeud et le réseau pour Azimuth"
 symbol = ":azimuth|watch"
 usage = "Dojo"
 slug = "#azimuthwatch"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Show which ships you've allowed remote access to your dojo"]
+[glossaryEntry."Montrez à quels vaisseaux vous avez autorisé l’accès à distance à votre dojo"]
 name = "Show which ships you've allowed remote access to your dojo"
 symbol = ":dojo|acl"
 usage = "Dojo"
 slug = "#dojoacl"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base.
 
-[glossaryEntry."Allow a ship to |link your dojo"]
-name = "Allow a ship to |link your dojo"
+[glossaryEntry."Autorisez un vaisseau à |link votre dojo"]
+name = "Autorisez un vaisseau à |link votre dojo"
 symbol = ":dojo|allow-remote-login"
 usage = "Dojo"
 slug = "#dojoallow-remote-login"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Clear the dojo's subject"]
-name = "Clear the dojo's subject"
+[glossaryEntry."Effacez le sujet dojo"]
+name = "Effacez le sujet dojo"
 symbol = ":dojo|wipe"
 usage = "Dojo"
 slug = "#dojowipe"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Revoke permission for a remote ship to |link your dojo"]
-name = "Revoke permission for a remote ship to |link your dojo"
+[glossaryEntry."Révoquez l’autorisation pour un vaisseau à distance de se |link à votre dojo"]
+name = "Révoquez l’autorisation pour un vaisseau à distance de se |link à votre dojo"
 symbol = ":dojo|revoke-remote-login"
 usage = "Dojo"
 slug = "#dojorevoke-remote-login"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Connect a local or remote CLI app"]
-name = "Connect a local or remote CLI app"
+[glossaryEntry."Connectez une application CLI localement ou à distance"]
+name = "Connectez une application CLI localement ou à distance"
 symbol = "|link"
 usage = "Dojo"
 slug = "#link"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Disconnect a local or remote CLI app"]
-name = "Disconnect a local or remote CLI app"
+[glossaryEntry."Déconnectez une application localement ou à distance"]
+name = "Déconnectez une application localement ou à distance"
 symbol = "|unlink"
 usage = "Dojo"
 slug = "#unlink"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print details of Ames flows by ship"]
-name = "Print details of Ames flows by ship"
+[glossaryEntry."Affichez le résultat des détails des flux Ames pour chaque vaisseau"]
+name = "Affichez le résultat des détails des flux Ames pour chaque vaisseau"
 symbol = "+ames-flows"
 usage = "Dojo"
 slug = "#ames-flows"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Reset Ames congestion control; re-send packets immediately"]
-name = "Reset Ames congestion control; re-send packets immediately"
+[glossaryEntry."Réinitialisez le contrôle de congestion; réexpédiez les paquets immédiatement"]
+name = "Réinitialisez le contrôle de congestion; réexpédiez les paquets immédiatement"
 symbol = "|ames-prod"
 usage = "Dojo"
 slug = "#ames-prod"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Filter Ames debug printing by ship"]
-name = "Filter Ames debug printing by ship"
+[glossaryEntry."Filtre les affichages liés au *debugging* des Ames pour chaque vaisseau"]
+name = "Filtre les affichages liés au *debugging* des Ames pour chaque vaisseau"
 symbol = "|ames-sift"
 usage = "Dojo"
 slug = "#ames-sift"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print Ames messag-pump timers by ship"]
-name = "Print Ames messag-pump timers by ship"
+[glossaryEntry."Affichez le résultat du minuteur des messages popups pour chaque vaisseau"]
+name = "Affichez le résultat du minuteur des messages popups pour chaque vaisseau"
 symbol = "+ames-timers"
 usage = "Dojo"
 slug = "#ames-timers"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Enable verbose Ames debug printing"]
-name = "Enable verbose Ames debug printing"
+[glossaryEntry."Activez l’affichage des résultats de debug d’Ames"]
+name = "Activez l’affichage des résultats de debug d’Ames"
 symbol = "|ames-verb"
 usage = "Dojo"
 slug = "#ames-verb"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Clean up Ames timers"]
-name = "Clean up Ames timers"
+[glossaryEntry."Nettoyez les minuteurs d'Ames"]
+name = "Nettoyez les minuteurs d'Ames"
 symbol = "|ames-wake"
 usage = "Dojo"
 slug = "#ames-wake"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Build a brass pill"]
-name = "Build a brass pill"
+[glossaryEntry."Construisez une pilule brass"]
+name = "Construisez une pilule brass"
 symbol = "+brass"
 usage = "Dojo"
 slug = "#brass"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Build a static mark conversion gate"]
-name = "Build a static mark conversion gate"
+[glossaryEntry."Construisez un portail de conversion mark statique"]
+name = "Construisez un portail de conversion mark statique"
 symbol = "-build-cast"
 usage = "Dojo"
 slug = "#-build-cast"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Build a Hoon file"]
-name = "Build a Hoon file"
+[glossaryEntry."Construisez un fichier Hoon"]
+name = "Construisez un fichier Hoon"
 symbol = "-build-file"
 usage = "Dojo"
 slug = "#-build-file"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Build a dynamic mark core"]
-name = "Build a dynamic mark core"
+[glossaryEntry."Construisez un noyau mark dynamique"]
+name = "Construisez un noyau mark dynamique"
 symbol = "-build-mark"
 usage = "Dojo"
 slug = "#-build-mark"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Build a static mark core"]
-name = "Build a static mark core"
+[glossaryEntry."Construisez un noyau mark statique"]
+name = "Construisez un noyau mark statique"
 symbol = "-build-nave"
 usage = "Dojo"
 slug = "#-build-nave"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Build a dynamic mark conversion gate"]
-name = "Build a dynamic mark conversion gate"
+[glossaryEntry."Construisez un portail de conversation avec une mark dynamique"]
+name = "Construisez un portail de conversation avec une mark dynamique"
 symbol = "-build-tube"
 usage = "Dojo"
 slug = "#-build-tube"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Query the state or bowl of a running agent"]
-name = "Query the state or bowl of a running agent"
+[glossaryEntry."Interrogez l’état ou le bow d’un agent en cours d’exécution"]
+name = "Interrogez l’état ou le bowl d’un agent en cours d’exécution"
 symbol = "+dbug"
 usage = "Dojo"
 slug = "#dbug"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Clear pending Gall move queue from a ship"]
-name = "Clear pending Gall move queue from a ship"
+[glossaryEntry."Effacez le file d’attende move d’un vaisseau"]
+name = "Effacez le file d’attende move d’un vaisseau"
 symbol = "|gall-sear"
 usage = "Dojo"
 slug = "#gall-sear"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Set Gall verbosity by agent"]
-name = "Set Gall verbosity by agent"
+[glossaryEntry."Définissez la communication d’un agent"]
+name = "Définissez la communication d’un agent"
 symbol = "|gall-sift"
 usage = "Dojo"
 slug = "#gall-sift"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Toggle Gall debug printing"]
-name = "Toggle Gall debug printing"
+[glossaryEntry."Affichez le résultat de l'erreur Gall"]
+name = "Affichez le résultat de l'erreur Gall"
 symbol = "|gall-verb"
 usage = "Dojo"
 slug = "#gall-verb"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Pass a task to a vane"]
-name = "Pass a task to a vane"
+[glossaryEntry."Passez une fonction à travers vane"]
+name = "PPassez une fonction à travers vane"
 symbol = "|pass"
 usage = "Dojo"
 slug = "#pass"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Read a file, local or remote"]
-name = "Read a file, local or remote"
+[glossaryEntry."Lire un fichier, localement ou à distance"]
+name = "Lire un fichier, localement ou à distance"
 symbol = "-read"
 usage = "Dojo"
 slug = "#-read"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Bind a generator to a URL path"]
-name = "Bind a generator to a URL path"
+[glossaryEntry."Liez un générateur à un chemin URL"]
+name = "Liez un générateur à un chemin URL"
 symbol = "|serve"
 usage = "Dojo"
 slug = "#serve"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Build a solid pill"]
-name = "Build a solid pill"
+[glossaryEntry."Construisez une pilule solid"]
+name = "Construisez une pilule solid"
 symbol = "+solid"
 usage = "Dojo"
 slug = "#solid"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Run tests for a library"]
-name = "Run tests for a library"
+[glossaryEntry."Exécutez des tests pour une bibliothèque"]
+name = "Exécutez des tests pour une bibliothèque"
 symbol = "-test"
 usage = "Dojo"
 slug = "#-test"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print out currently running Behn timers"]
-name = "Print out currently running Behn timers"
+[glossaryEntry."Affichez le résultat des minuteurs Behn en cours d’exécution"]
+name = "Affichez le résultat des minuteurs Behn en cours d’exécution"
 symbol = "+timers"
 usage = "Dojo"
 slug = "#timers"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Read a file at the given location and print its contents in the dojo"]
-name = "Read a file at the given location and print its contents in the dojo"
+[glossaryEntry."Lire un fichier à l’emplacement donné et afficher son contenu dans le dojo"]
+name = "Lire un fichier à l’emplacement donné et afficher son contenu dans le dojo"
 symbol = "+cat"
 usage = "Dojo"
 slug = "#cat"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Copy a file"]
-name = "Copy a file"
+[glossaryEntry."Copiez un fichier"]
+name = "Copiez un fichier"
 symbol = "|cp"
 usage = "Dojo"
 slug = "#cp"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Change working directory"]
-name = "Change working directory"
+[glossaryEntry."Changez de répertoire de travail"]
+name = "Changez de répertoire de travail"
 symbol = "=dir"
 usage = "Dojo"
 slug = "#dir"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."List files and directories at the specified location"]
-name = "List files and directories at the specified location"
+[glossaryEntry."Listez les fichiers et les répertoires à un emplacement spécifié"]
+name = "Listez les fichiers et les répertoires à un emplacement spécifié"
 symbol = "+ls"
 usage = "Dojo"
 slug = "#ls"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Move a file from one location to another"]
-name = "Move a file from one location to another"
+[glossaryEntry."Déplacez un fichier d’un emplacement à un autre"]
+name = "Déplacez un fichier d’un emplacement à un autre"
 symbol = "+mv"
 usage = "Dojo"
 slug = "#mv"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Delete a file"]
-name = "Delete a file"
+[glossaryEntry."Supprimez un fichier"]
+name = "Supprimez un fichier"
 symbol = "|rm"
 usage = "Dojo"
 slug = "#rm"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Display all files in the given directory and its sub-directories"]
-name = "Display all files in the given directory and its sub-directories"
+[glossaryEntry."Affichez tous les fichiers du répertoire donné et de ses sous-répertoires"]
+name = "Affichez tous les fichiers du répertoire donné et de ses sous-répertoires"
 symbol = "+tree"
 usage = "Dojo"
 slug = "#tree"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Enable automatic commits for a mounted desk"]
-name = "Enable automatic commits for a mounted desk"
+[glossaryEntry."Activez les auto-commits pour installer un bureau"]
+name = "Activez les auto-commits pour installer un bureau"
 symbol = "|autocommit"
 usage = "Dojo"
 slug = "#autocommit"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base.
 
-[glossaryEntry."Cancel automatic commits for all mounted desks"]
-name = "Cancel automatic commits for all mounted desks"
+[glossaryEntry."Annulez les auto-commits pour tous les bureaux instalé"]
+name = "Annulez les auto-commits pour tous les bureaux instalé"
 symbol = "|cancel-autocommit"
 usage = "Dojo"
 slug = "#cancel-autocommit"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Commit changes to a mounted desk"]
-name = "Commit changes to a mounted desk"
+[glossaryEntry."Validez les modifications sur un bureau instalé"]
+name = "Validez les modifications sur un bureau instalé"
 symbol = "|commit"
 usage = "Dojo"
 slug = "#commit"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base.
 
-[glossaryEntry."Perform an octopus merge"]
-name = "Perform an octopus merge"
+[glossaryEntry."Effectuez une fusion multi-branches"
+name = "Effectuez une fusion multi-branches"
 symbol = "|fuse"
 usage = "Dojo"
 slug = "#fuse"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print tracked fuse sources for a desk"]
-name = "Print tracked fuse sources for a desk"
+[glossaryEntry."PAfficher le résultat des sources fuse traquées pour un bureau"]
+name = "Afficher le résultat des sources fuse traquées pour un bureau"
 symbol = "|fuse-list"
 usage = "Dojo"
 slug = "#fuse-list"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Add a label to a desk revision"]
-name = "Add a label to a desk revision"
+[glossaryEntry."Ajouter un label dans un bureau en révision"]
+name = "Ajouter un label dans un bureau en révision"
 symbol = "|label"
 usage = "Dojo"
 slug = "#label"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Merge one desk into another"]
-name = "Merge one desk into another"
+[glossaryEntry."Fusionnez (merge) un bureau dans un autre"]
+name = "Fusionnez (merge) un bureau dans un autre"
 symbol = "|merge"
 usage = "Dojo"
 slug = "#merge"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Mount a desk or directory to the host filesystem"]
-name = "Mount a desk or directory to the host filesystem"
+[glossaryEntry."Attachez (mount) un bureau ou un répertoire sur le système de fichiers hôte"]
+name = "Attachez (mount) un bureau ou un répertoire sur le système de fichiers hôte"
 symbol = "|mount"
 usage = "Dojo"
 slug = "#mount"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Add a tombstone policy rule"]
-name = "Add a tombstone policy rule"
+[glossaryEntry."Ajoutez une règle de stratégie avec tombstone"]
+name = "Ajoutez une règle de stratégie avec tombstone"
 symbol = "|norm"
 usage = "Dojo"
 slug = "#norm"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print tombstone policyies for all desk"]
-name = "Print tombstone policyies for all desk"
+[glossaryEntry."Affichez le résultat des règles de désactivations pour tous les bureaux"]
+name = "Affichez le résultat des règles de désactivations pour tous les bureaux"
 symbol = "+norms"
 usage = "Dojo"
 slug = "#norms"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base.
 
-[glossaryEntry."Apply tombstoning policies; collect garbage"]
+[glossaryEntry."Appliquez les règles de désactivation; récupérer la mémoire"]
 name = "Apply tombstoning policies; collect garbage"
 symbol = "|pick"
 usage = "Dojo"
 slug = "#pick"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Make a desk, directory or file private (prevent remote ships from reading it)"]
-name = "Make a desk, directory or file private (prevent remote ships from reading it)"
+[glossaryEntry."Rendre privé un bureau, un répertoire ou un fichier (empêcher les vaisseau à distance d’y avoir accès)"]
+name = "Rendre privé un bureau, un répertoire ou un fichier (empêcher les vaisseau à distance d’y avoir accès))"
 symbol = "|private"
 usage = "Dojo"
 slug = "#private"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Make a desk, directory or file publicly readable (allow remote ships to read it)"]
-name = "Make a desk, directory or file publicly readable (allow remote ships to read it)"
+[glossaryEntry."Rendre publiquement lisible un bureau, un répertoire ou un fichier (autoriser les vaisseaux à distance à le lire)"]
+name = "Rendre publiquement lisible un bureau, un répertoire ou un fichier (autoriser les vaisseaux à distance à le lire)"
 symbol = "|public"
 usage = "Dojo"
 slug = "#public"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Create a new story file (commit message log) for a desk"]
-name = "Create a new story file (commit message log) for a desk"
+[glossaryEntry."Créez un nouveau fichier historique (commit un registre de message) pour un bureau"]
+name = "Créez un nouveau fichier historique (commit un registre de message) pour un bureau"
 symbol = "|story-init"
 usage = "Dojo"
 slug = "#story-init"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print out a desk's story (commit messages), unordered"]
-name = "Print out a desk's story (commit messages), unordered"
+[glossaryEntry."Affichez le résultat de l’historique d’un bureau (commit messages), sans ordre"]
+name = "Affichez le résultat de l’historique d’un bureau de (commit messages), sans ordre"
 symbol = "+story-list"
 usage = "Dojo"
 slug = "#story-list"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print out a desk's story (commit messages) in order"]
-name = "Print out a desk's story (commit messages) in order"
+[glossaryEntry."Affichez le résultat de l’historique d’un bureau (commit messages) dans l’ordre"]
+name = "Affichez le résultat de l’historique d’un bureau (commit messages) dans l’ordre"
 symbol = "+story-read"
 usage = "Dojo"
 slug = "#story-read"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Remove commit message(s) for a given commit from a desk's story"]
-name = "Remove commit message(s) for a given commit from a desk's story"
+[glossaryEntry."Supprimez le(s) message(s) commit pour un commit donné dans l’historique d’un bureau"]
+name = "Supprimez le(s) message(s) commit pour un commit donné dans l’historique d’un bureau"
 symbol = "|story-remove"
 usage = "Dojo"
 slug = "#story-remove"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Add a commit message to a desk's story"]
-name = "Add a commit message to a desk's story"
+[glossaryEntry."Ajoutez un commit message à l’historique d’un bureau"]
+name = "Ajoutez un commit message à l’historique d’un bureau"
 symbol = "|story-write"
 usage = "Dojo"
 slug = "#story-write"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Continuously merge int local desk from another local or remote desk"]
-name = "Continuously merge int local desk from another local or remote desk"
+[glossaryEntry."Fusionnez en continu dans le bureau en local à partir d’un autre bureau en local ou à distance"]
+name = "Fusionnez en continu dans le bureau en local à partir d’un autre bureau en local ou à distance"
 symbol = "|sync"
 usage = "Dojo"
 slug = "#sync"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."List currently active desk syncs"]
-name = "List currently active desk syncs"
+[glossaryEntry."Listez les synchronisations de bureau actuellement actives"]
+name = "Listez les synchronisations de bureau actuellement actives"
 symbol = "|syncs"
 usage = "Dojo"
 slug = "#syncs"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Tombstone a file at a particular revision"]
-name = "Tombstone a file at a particular revision"
+[glossaryEntry."Supprimer un fichier avec une révision particulière"]
+name = "Supprimer un fichier avec une révision particulière"
 symbol = "|tomb"
 usage = "Dojo"
 slug = "#tomb"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Unmount a previously mounted desk or directory"]
-name = "Unmount a previously mounted desk or directory"
+[glossaryEntry."Détachez un bureau ou un répertoire précédemment attaché"]
+name = "Détachez un bureau ou un répertoire précédemment attaché"
 symbol = "|unmount"
 usage = "Dojo"
 slug = "#unmount"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Stop syncing a desk with another"]
-name = "Stop syncing a desk with another"
+[glossaryEntry."Arrêtez la synchronisation entre deux bureaux"]
+name = "Arrêtez la synchronisation entre deux bureaux"
 symbol = "|unsync"
 usage = "Dojo"
 slug = "#unsync"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
 [glossaryEntry."Hello, world"]
 name = "Hello, world"
 symbol = "+hello"
 usage = "Dojo"
 slug = "#hello"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Ping another ship with an optional message"]
-name = "Ping another ship with an optional message"
+[glossaryEntry."Notifiez un autre vaisseau avec un message facultatif"]
+name = "Notifiez un autre vaisseau avec un message facultatif"
 symbol = "|hi"
 usage = "Dojo"
 slug = "#hi"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print out the sponsor of this ship"]
-name = "Print out the sponsor of this ship"
+[glossaryEntry."Afficher le résultat du sponsor d’un vaisseau"]
+name = "Afficher le résultat du sponsor d’un vaisseau"
 symbol = "+sponsor"
 usage = "Dojo"
 slug = "#sponsor"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print the life and rift for a ship"]
-name = "Print the life and rift for a ship"
+[glossaryEntry."Affichez le résultat `Life` et `rift` pour un vaisseau"]
+name = "Affichez le résultat `Life` et `rift` pour un vaisseau"
 symbol = "+keys"
 usage = "Dojo"
 slug = "#keys"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Spawn a new moon"]
-name = "Spawn a new moon"
+[glossaryEntry."Générez une nouvelle lune"]
+name = "Générez une nouvelle lune"
 symbol = "|moon"
 usage = "Dojo"
 slug = "#moon"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Breach (factory reset) a moon"]
-name = "Breach (factory reset) a moon"
+[glossaryEntry."Réinitialisation d'usine (factory reset) d’une lune"]
+name = "Réinitialisation d'usine (factory reset) d’une lune"
 symbol = "|moon-breach"
 usage = "Dojo"
 slug = "#moon-breach"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Change the keys of a moon"]
-name = "Change the keys of a moon"
+[glossaryEntry."Changez les clés d'une lune"]
+name = "Changez les clés d'une lune"
 symbol = "|moon-cycle-keys"
 usage = "Dojo"
 slug = "#moon-cycle-keys"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Kill all running threads"]
-name = "Kill all running threads"
+[glossaryEntry."Stoppez tous les threads actuellement en cours"]
+name = "Stoppez tous les threads actuellement en cours"
 symbol = ":spider|kill"
 usage = "Dojo"
 slug = "#spiderkill"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Poke a running thread"]
-name = "Poke a running thread"
+[glossaryEntry."Poussez l’exécution d’un thread"]
+name = "Poussez l’exécution d’un thread"
 symbol = ":spider|poke"
 usage = "Dojo"
 slug = "#spiderpoke"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Start a thread"]
-name = "Start a thread"
+[glossaryEntry."Démarrez un thread"]
+name = "Démarrez un thread"
 symbol = ":spider|start"
 usage = "Dojo"
 slug = "#spiderstart"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Stop a running thread"]
-name = "Stop a running thread"
+[glossaryEntry."Arrêtez l’exécution d’un thread"]
+name = "Arrêtez l’exécution d’un thread"
 symbol = ":spider|stop"
 usage = "Dojo"
 slug = "#spiderstop"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."List all currently running threads"]
-name = "List all currently running threads"
+[glossaryEntry."Répertoriez tous les threads en cours d’exécution"]
+name = "Répertoriez tous les threads en cours d’exécution"
 symbol = "+spider/tree"
 usage = "Dojo"
 slug = "#spidertree"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print memory reports periodically"]
-name = "Print memory reports periodically"
+[glossaryEntry."Affichez périodiquement le résultat des rapports de mémoire"]
+name = "Affichez périodiquement le résultat des rapports de mémoire"
 symbol = "|automass"
 usage = "Dojo"
 slug = "#automass"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Cancel periodic memory reports (enabled by |automass)"]
-name = "Cancel periodic memory reports (enabled by |automass)"
+[glossaryEntry."Annulez les rapports de mémoire périodiques (activés par [|automass)"]
+name = "Annulez les rapports de mémoire périodiques (activés par [|automass)"
 symbol = "|cancel-automass"
 usage = "Dojo"
 slug = "#cancel-automass"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print out your web login code"]
-name = "Print out your web login code"
+[glossaryEntry."Affichez le résultat de votre code de connexion web"]
+name = "Affichez le résultat de votre code de connexion web"
 symbol = "+code"
 usage = "Dojo"
 slug = "#code"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Change your web login code"]
-name = "Change your web login code"
+[glossaryEntry."Changez votre code de connexion web"]
+name = "Changez votre code de connexion web"
 symbol = "|code"
 usage = "Dojo"
 slug = "#code"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Approve a CORS origin"]
-name = "Approve a CORS origin"
+[glossaryEntry."Approuvez une origine CORS"]
+name = "Approuvez une origine CORS"
 symbol = "|cors-approve"
 usage = "Dojo"
 slug = "#cors-approve"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print approved, rejected and requested CORS origins"]
-name = "Print approved, rejected and requested CORS origins"
+[glossaryEntry."Affichez, rejeter et demander les origines CORS approuvées"]
+name = "Affichez, rejeter et demander les origines CORS approuvées"
 symbol = "+cors-registry"
 usage = "Dojo"
 slug = "#cors-registry"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Reject a CORS origin"]
-name = "Reject a CORS origin"
+[glossaryEntry."Rejetez l’origine CORS"]
+name = "Rejetez l’origine CORS"
 symbol = "|cors-reject"
 usage = "Dojo"
 slug = "#cors-reject"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Requests a <ship>.arvo.network subdomain and configure SSL"]
-name = "Requests a <ship>.arvo.network subdomain and configure SSL"
+[glossaryEntry."Demandez un sous-domaine <ship>.arvo.network et configurer SSL"]
+name = "Demandez un sous-domaine <ship>.arvo.network et configurer SSL"
 symbol = "-dns-address"
 usage = "Dojo"
 slug = "#-dns-address"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Shut down this ship"]
-name = "Shut down this ship"
+[glossaryEntry."Eteindre ce vaisseau"]
+name = "Eteindre ce vaisseau"
 symbol = "|exit"
 usage = "Dojo"
 slug = "#exit"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Adjust vane error verbosity"]
-name = "Adjust vane error verbosity"
+[glossaryEntry."Ajustez la explicitement de l’erreur vane"]
+name = "Ajustez la explicitement de l’erreur vane"
 symbol = "|knob"
 usage = "Dojo"
 slug = "#knob"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Print a memory report"]
-name = "Print a memory report"
+[glossaryEntry."Affichez le résultat d’un rapport de mémoire"]
+name = "Affichez le résultat d’un rapport de mémoire"
 symbol = "|mass"
 usage = "Dojo"
 slug = "#mass"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Deduplicate memory"]
-name = "Deduplicate memory"
+[glossaryEntry."Dédupliquez la mémoire"]
+name = "Dédupliquez la mémoire"
 symbol = "|meld"
 usage = "Dojo"
 slug = "#meld"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Defragment memory"]
-name = "Defragment memory"
+[glossaryEntry."Défragmentez la mémoire"]
+name = "Défragmentez la mémoire"
 symbol = "|pack"
 usage = "Dojo"
 slug = "#pack"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Rotate private keys"]
-name = "Rotate private keys"
+[glossaryEntry."Changez les clés privées"]
+name = "Changez les clés privées"
 symbol = "|rekey"
 usage = "Dojo"
 slug = "#rekey"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Toggle kernel event tracing verbose mode"]
-name = "Toggle kernel event tracing verbose mode"
+[glossaryEntry."Basculez en mode détails de suivi des évènements du noyau"]
+name = "Basculez en mode détails de suivi des évènements du noyau"
 symbol = "|verb"
 usage = "Dojo"
 slug = "#verb"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
-[glossaryEntry."Trim kernel state"]
-name = "Trim kernel state"
+[glossaryEntry."Trim (découpez) l'état du noyau"]
+name = "Trim (découpez) l'état du noyau"
 symbol = "|trim"
 usage = "Dojo"
 slug = "#trim"
-desc = "Dojo utility included in the %base desk."
+desc = "Utilitaire Dojo inclus dans le bureau %base."
 
 +++
 
@@ -787,21 +787,17 @@ desc = "Dojo utility included in the %base desk."
 [ames]: https://developers.urbit.org/reference/glossary/ames
 [azimuth]: https://developers.urbit.org/reference/glossary/azimuth
 
-Below are the various [generators][generator], [threads][thread] and other tools
-included with the `%base` desk and usable in the [dojo][dojo]. These are
-organized into rough categories for convenience.
+Retrouvez ci-dessous les différents [générateurs](https://developers.urbit.org/reference/glossary/generator) [threads](https://developers.urbit.org/reference/glossary/thread) et autres outils inclus avec le bureau `%base` et utilisables dans le [dojo](https://developers.urbit.org/reference/glossary/dojo). Ils sont classés en catégories approximatives pour plus de commodité.
 
-## Apps and updates
+## Applications et mises à jour
 
-These tools are for managing [desks][desk], apps and updates. Install,
-uninstall, suspend, resume, pause updates, etc.
+Ces outils sont destinés à la gestion des [bureaux](https://developers.urbit.org/reference/glossary/desk), des applications et des mises à jour. Installer, désinstaller, suspendre, reprendre, mettre en pause les mises à jour, etc.
 
 ### `+agents`
 
-Print out the status of Gall agents on a desk.
+Afficher le résultat du statut des agents Gall sur un bureau.
 
-Agents may either be `archived` or `running`. Nuked or unstarted agents which
-are not on the manifest are omitted.
+Les agents peuvent être `archived` ou `running`. Ceux éliminés ou inactifs qui ne figurent pas sur le manifeste sont omis.
 
 #### Arguments
 
@@ -809,7 +805,7 @@ are not on the manifest are omitted.
 desk
 ```
 
-#### Example
+#### Exemple
 
 ```
 > +agents %garden
@@ -824,37 +820,33 @@ status: running   %hark-store
 
 ### `|bump`
 
-Try to apply a kernel update.
+Essayez d'appliquer une mise à jour du noyau.
 
-If `%zuse`'s kelvin version has decreased, try to apply the update. If any desks
-are incompatible with the new `%zuse` version, the update will fail. The update
-can be forced with the optional `force` argument, in which case incompatible
-desks will be `|suspend`ed. The `set` of desks to omit (and therefore suspend)
-can also be explicitly specified with the optional `except` argument.
+Si la version kelvin de `%zuse` a diminuée, essayez d'appliquer la mise à jour. Si des bureaux sont incompatibles avec la nouvelle version de `%zuse`, la mise à jour échouera. La mise à jour peut être forcée avec l'argument optionnel `force`, auquel cas les bureaux incompatibles seront `|suspend`. Le `set` des bureaux à omettre (et donc à suspendre) peut aussi être explicitement spécifié avec l'argument optionnel `except`.
 
-#### Arguments
+### Arguments
 
-All optional:
+Toutes les options :
 
 ```
 , =force ?, =except (set desk)
 ```
 
-#### Examples
+#### Exemples
 
-Try to apply update, failing if blocked by any desks:
+Essayez d’appliquer des mises à jour bloquées par un bureau.
 
 ```
 |bump
 ```
 
-Force the update, suspending incompatible desks:
+Forcez la mise à jour en suspendant les bureaux incompatibles :
 
 ```
 |bump, =force &
 ```
 
-Apply kernel update, omitting and suspending the specified desks:
+Appliquez la mise à jour du noyau, en omettant et en suspendant les bureaux spécifiés :
 
 ```
 |bump, =except (silt ~[%bitcoin %webterm])
@@ -864,16 +856,11 @@ Apply kernel update, omitting and suspending the specified desks:
 
 ### `|install`
 
-Install a desk, starting its agents and listening for updates.
+Installez un bureau, démarrez ses agents et écoutez les mises à jour.
 
-If it's a remote desk we don't already have, it will be fetched. The agents
-started will be those specified in the `desk.bill` manifest. If it has a docket
-file, its tile will be added to the homescreen and its glob fetched. If we
-already have the desk, the source for updates will be switched to the ship
-specified.
+S'il s'agit d'un bureau à distance que nous n'avons pas encore, il sera récupéré. Les agents démarrés seront ceux spécifiés dans le manifeste `desk.bill`. S'il a un fichier *docket*, sa mosaïque sera ajoutée à l'écran d'accueil et son *glob* sera récupéré. Si nous avons déjà le bureau, la source des mises à jour sera envoyée sur le vaisseau spécifié.
 
-It takes a `ship` and `desk` as its mandatory arguments. The desk may be
-installed with a different name specified in the optional `local` argument.
+Il prend un `ship`et un `desk` comme ses arguments obligatoires. Le bureau peut être installé avec un nom différent spécifié dans l'option `local`.
 
 #### Arguments
 
@@ -881,7 +868,7 @@ installed with a different name specified in the optional `local` argument.
 ship desk, =local desk
 ```
 
-#### Examples
+#### Exemples
 
 ```
 |install ~zod %bitcoin
@@ -899,13 +886,9 @@ ship desk, =local desk
 
 ### `|nuke`
 
-Shut down an agent and permanently delete its state.
+Arrêtez un agent et supprimez définitivement son état.
 
-The default behaviour is to shut down the specified Gall agent and discard its
-state, similar to the now-deprecated `|fade` generator. **Note this irreversibly
-wipes the app's state**. Additionally, if the optional `desk` argument is `%.y`,
-it takes a desk rather than an agent name and nukes every agent on the specified
-desk.
+Le comportement par défaut est d'arrêter l'agent Gall spécifié et de jeter son état, semblable au générateur `|fade` maintenant obsolète. **Notez que cela efface irréversiblement l'état de l'application**. De plus, si l'argument optionnel `desk` est `%.y`, il se réfère au bureau du même nom au lieu de son agent et détruit tous les agents du bureau.
 
 #### Arguments
 
@@ -913,15 +896,15 @@ desk.
 @tas, =desk ?
 ```
 
-#### Examples
+#### Exemples
 
-Nuke a single agent:
+Nuke est un agent simple :
 
 ```
 |nuke %btc-wallet
 ```
 
-Nuke every agent on a desk:
+Élimine tout agent sur un bureau :
 
 ```
 |nuke %bitcoin, =desk &
@@ -931,9 +914,7 @@ Nuke every agent on a desk:
 
 ### `|ota`
 
-Set the source of updates for the `%base` desk (the kernel and core apps) to the
-specified ship. Automatic updates will be enabled, and any new updates available
-will be fetched and installed.
+Définissez la source des mises à jour pour le bureau`%base` (le noyau et les applications du noyau) sur le vaisseau spécifié. Les mises à jour automatiques seront activées, et toutes les nouvelles mises à jour disponibles seront récupérées et installées.
 
 #### Arguments
 
@@ -943,15 +924,15 @@ ship
 
 #### Examples
 
-`|ota ~marzod` is equivalent to `|install ~marzod %kids, =local %base`.
+`|ota ~marzod` est équivalent à `|install ~marzod %kids, =local %base`.
 
 ---
 
 ### `|pause`
 
-Pause updates on a desk.
+Mettez en pause les mises à jour sur un bureau.
 
-The specified desk will stop tracking updates from its upstream source.
+Le bureau spécifié cessera de suivre les mises à jour à partir de sa source en amont.
 
 #### Arguments
 
@@ -959,7 +940,7 @@ The specified desk will stop tracking updates from its upstream source.
 desk
 ```
 
-#### Examples
+#### Exemples
 
 ```
 |pause %bitcoin
@@ -969,11 +950,9 @@ desk
 
 ### `|rein`
 
-Adjust the state of a desk.
+Ajustez l'état d'un bureau.
 
-This allows you to stop and start agents on a desk, regardless of whether
-they're on the manifest. Stopped agents have their states archived. It can also
-suspend and revive the whole desk with the optional `liv` argument.
+Cela vous permet d'arrêtez et de démarrez des agents sur un bureau, qu'ils soient ou non sur le manifeste. Les agents arrêtés ont leurs états archivés. Il est possible de suspendre ou relancer l'ensemble du bureau avec l'argument optionnel `liv`.
 
 #### Arguments
 
@@ -981,33 +960,33 @@ suspend and revive the whole desk with the optional `liv` argument.
 desk (list [? dude:gall]), =liv ?
 ```
 
-#### Examples
+#### Exemples
 
-Start an agent:
+Démarrez un agent : 
 
 ```
 |rein %bitcoin [& %btc-provider]
 ```
 
-Stop an agent, archiving its state:
+Arrêtez un agent, archivez son état :
 
 ```
 |rein %bitcoin [| %btc-wallet]
 ```
 
-Stop one agent, start another:
+Arrêtez un agent, en démarrez un autre :
 
 ```
 |rein %bitcoin [| %btc-wallet] [& %btc-provider]
 ```
 
-Suspend a desk:
+Suspendez un bureau :
 
 ```
 |rein %bitcoin, =liv |
 ```
 
-Revive a desk:
+Relancez un bureau :
 
 ```
 |rein %bitcoin
@@ -1017,10 +996,9 @@ Revive a desk:
 
 ### `|resume`
 
-Resume updates on a desk.
+Reprenez les mises à jour sur un bureau.
 
-Start tracking previously [`|pause`](#pause)d updates from a desk's upstream
-source.
+Commencez à suivre les mises à jour précédemment mises en `|pause` à partir de la source en amont.
 
 #### Arguments
 
@@ -1028,7 +1006,7 @@ source.
 desk
 ```
 
-#### Examples
+#### Exemples
 
 ```
 |resume %bitcoin
@@ -1038,12 +1016,9 @@ desk
 
 ### `|revive`
 
-Revive all agents on a desk, migrating archived states.
+Relancez tous les agents sur un bureau, en déplaçant les états archivés.
 
-All agents specified in `desk.bill` which are suspended will be restarted. If
-updates to the agents have occurred since their states were archived, they'll be
-migrated with the state transition functions in the agent. This generator does
-the same thing as selecting "Resume App" from the app tile's hamburger menu.
+Tous les agents spécifiés dans `desk.bill` qui sont suspendus seront redémarrés. Si les agents ont été mis à jour depuis l'archivage de leurs états, ils seront déplacez avec les fonctions de transition d'état de l'agent. Ce générateur fait la même chose que la sélection "*Resume App*" dans le menu hamburger de la mosaïque de l’ app.
 
 #### Arguments
 
@@ -1051,21 +1026,21 @@ the same thing as selecting "Resume App" from the app tile's hamburger menu.
 desk
 ```
 
-#### Examples
+#### Exemples
 
 ```
-|revive %bitcoin
+|receive %bitcoin
 ```
 
 ---
 
 ### `+show-vat`
 
-Print kelvin version and manifest.
+Utilisez la fonction print pour la version kelvin et le manifeste.
 
-This prints the contents of `/sys/kelvin` and `/desk/bill`.
+Ceci affiche le résultat le contenu de `/sys/kelvin` et `/desk/bill`.
 
-#### Example
+#### Exemple
 
 ```
 > +show-vat %garden
@@ -1079,7 +1054,7 @@ This prints the contents of `/sys/kelvin` and `/desk/bill`.
 
 ### `|start`
 
-Start an [agent][agent].
+Démarrez un [agent][agent].
 
 #### Arguments
 
@@ -1087,12 +1062,9 @@ Start an [agent][agent].
 term term
 ```
 
-This first `term` is mandatory, the second is optional. If two terms are
-provided, the first is the [desk][desk] and the second is the agent on that desk
-to start. If only one term is provided, it's the name of the agent, and the desk
-is inferred to be the current desk (typically `%base`).
+Le premier `term` est obligatoire, le second est facultatif. Si deux termes sont fournis, le premier est le [bureau][desk] et le second est l'agent assigné à ce bureau pour commencer. Si un seul terme est fourni, c'est le nom de l'agent, et le bureau est supposé être le bureau actuel (générallement`%base`).
 
-#### Example
+#### Exemple
 
 ```
 > |start %landscape %chat-cli
@@ -1103,11 +1075,9 @@ is inferred to be the current desk (typically `%base`).
 
 ### `|suspend`
 
-Shut down all agents on a desk, archiving their states.
+Arrêtez tous les agents sur un bureau, archive leurs états.
 
-The tile in the homescreen (if it has one) will turn gray and say "Suspended" in
-the top-left corner. This generator does the same thing as selecting "Suspend"
-from an app tile's hamburger menu.
+La mosaïque de l'écran d'accueil (s’il en a une) deviendra grise et indiquera "Suspendu" dans le coin supérieur gauche. Ce générateur fait la même chose que la sélection "Suspendre" à partir du menu hamburger de l’app.
 
 #### Arguments
 
@@ -1115,7 +1085,7 @@ from an app tile's hamburger menu.
 desk
 ```
 
-#### Examples
+#### Exemples
 
 ```
 |suspend %bitcoin
@@ -1125,15 +1095,11 @@ desk
 
 ### `|uninstall`
 
-Uninstall a desk, suspending its agents and ignoring updates.
+Désinstallez un bureau, suspendre ses agents et ignorez les mises à jour.
 
-The specified desk will be retained in Clay, but its agents will all be stopped
-and have their states archived like [`|suspend`](#suspend). This is the reverse
-of [`|install`](#install).
+Le bureau spécifié sera conservé dans Clay, mais ses agents seront tous arrêtés et auront leurs états archivés en [`|suspend`](#suspend). C'est l'inverse de [`|install`](#install).
 
-Note that this will not remove the tile or glob from the homescreen, so if the
-desk has a tile it should be uninstalled with the "Remove App" button in the
-tile's hamburger menu.
+Notez que cela ne supprimera pas la mosaïque de l'écran d'accueil, donc si le bureau a une mosaïque, il devrait être désinstallé avec le bouton "Supprimer l'application" dans le menu hamburger de la mosaïque.
 
 #### Arguments
 
@@ -1141,7 +1107,7 @@ tile's hamburger menu.
 desk
 ```
 
-#### Examples
+#### Exemples
 
 ```
 |uninstall %bitcoin
@@ -1151,16 +1117,15 @@ desk
 
 ### `+vat`
 
-Print out the status of a single installed desk.
+Affichez le résultat de l'état d'un seul bureau installé.
 
-Desks in Clay which aren't installed will be omitted. See the related
-[`+vats`](#vats) command for details of the individual status fields.
+Les bureaux dans Clay qui ne sont pas installés seront omis. Voir la commande [`+vats`](#vats) correspondante pour plus de détails sur les champs d'état individuels.
 
 #### Arguments
 
 `desk`
 
-#### Examples
+#### Exemples
 
 ```
 > +vat %base
@@ -1184,36 +1149,31 @@ Desks in Clay which aren't installed will be omitted. See the related
 
 ### `+vats`
 
-Print out the status of each installed desk.
+Affichez le résultat de l'état de chaque bureau installé.
 
-Desks in Clay which aren't installed will be omitted. Also see the related
-[`+vat`](#vat) command, which prints the status of a single desk rather than all
-desks.
+Les bureaux dans Clay qui ne sont pas installés seront omis. Voir aussi la commande associée [`+vats`](#vats), qui affiche l'état d'un seul bureau au lieu de tous les bureaux.
 
-Fields:
+Champs :
 
-- `/sys/kelvin` - The version of `%zuse` the desk is compatible with.
-- `base hash` - The merge base (common ancestor) between the desk and its upstream source.
-- `%cz hash` - The hash of the desk.
-- `app status` - May be `suspended` or `running`.
-- `force on` - The set of agents on the desk which have been manually started
-  despite not being on the `desk.bill` manifest.
-- `force off` - The set of agents on the desk which have been manually stopped
-  despite being on the `desk.bill` manifest.
-- `publishing ship` - The original publisher if the source ship is republishing
-  the desk.
-- `updates` - May be `local`, `tracking` or `paused`. Local means it will
-  receive updates via commits on the local ship. Tracking means it will receive
-  updates from the `source ship`. Paused means it will not receive updates.
-- `source desk` - The desk on the `source ship`.
-- `source aeon` - The revision number of the desk on the `source ship`.
-- `pending updates` - Updates waiting to be applied due to incompatibility.
+- `/sys/kelvin` - La version de `%zuse` avec laquelle le bureau est compatible.
+- `base hash` - La base de 
+
+(ancêtre commun) entre le desk et sa source amont.
+- `%cz hash` - Le hash du bureau.
+- `app status` - Peut être `suspended` ou `running`.
+- `force on` - L’ensemble des agents sur le bureau qui ont été démarrés manuellement bien qu'ils ne figurent pas sur le manifeste `desk.bill`.
+- `force off` - L’ensemble des agents sur le bureau qui ont été arrêtés manuellement bien qu'ils soient sur le manifeste `desk.bill`.
+- `publishing ship` - L'éditeur original si le vaisseau source est en train de republier le bureau.
+- `updates` - Peut être `local`, `tracking` ou `paused`. *Local* signifie qu'il recevra des mises à jour via des commits sur le vaisseau local. Le *tracking* signifie qu'il recevra des mises à jour du vaisseau source. *Paused* signifie qu'il ne recevra pas de mises à jour.
+- `source desk` - Le bureau sur `ship source`.
+- `source aeon` - Le numéro de révision du bureau sur `ship source`.
+- `pending updates` - Mises à jour en attente d'application en raison d'incompatibilité.
 
 #### Arguments
 
-None.
+Aucun.
 
-#### Examples
+#### Exemples
 
 ```
 > +vats
@@ -1250,29 +1210,27 @@ None.
 
 ### `+trouble`
 
-Print out the status of each installed desk.
+Affichez le résultat de l’état de chaque bureau installé.
 
-This is a synonym for [`+vats`](#vats).
+Ceci est un synonyme de [`+vats`](#vats).
 
 #### Example
 
-See [`+vats`](#vats).
+See [`+vats`](#vats).
 
 ---
 
 ## Azimuth
 
-Tools for managing PKI updates from [Azimuth][azimuth].
+C’est un outil pour gérer les mises à jour des clés privées d'[Azimuth](https://developers.urbit.org/reference/glossary/azimuth).
 
 ### `+azimuth-block`
 
-Print the most recent Ethereum block that has been processed.
+Affichez le résultat du bloc Ethereum le plus récemment traité.
 
-This is a good way to check if your ship's somehow got behind on PKI state. If
-the block printed is substantially behind the most recent Ethereum block, it
-indicates a problem. Note it's normal for it to be a little behind.
+C'est un bon moyen de vérifier si votre vaisseau est en retard sur l'état des clés privées. Si le bloc affiché est considérablement derrière le bloc Ethereum le plus récent, cela indique un problème. Notez qu'il est normal que votre vaisseau soit un peu en retard.
 
-#### Example
+#### Exemple
 
 ```
 > +azimuth-block
@@ -1281,13 +1239,16 @@ indicates a problem. Note it's normal for it to be a little behind.
 
 ---
 
-### `:azimuth|kick`
+```
+> +azimuth-block
+15.664.748
+```
 
-Kick Azimuth.
+### ":azimuth|kick"
 
-Restart `%eth-watcher`, resubscribe, re-process snapshot and updates.
+Redémarrez `%eth-watcher`, réabonnez-vous, retraitez la capture instantanée et les mises à jour.
 
-#### Example
+#### Exemple
 
 ```
 > :azimuth|kick
@@ -1299,31 +1260,27 @@ ship: processing azimuth snapshot (0 points)
 
 ### `:azimuth|listen`
 
-Add a source for PKI updates for a list of ships.
+Ajoutez une source pour les mises à jour des clés privées pour une liste de vaisseau.
 
-Sets the source that the public keys for a set of ships should be obtained from.
-This can either be a Gall agent that communicates with an Ethereum node as in
-the case of galaxies, stars, and planets, or a ship, as in the case of moons.
+La source permet de définir à partir de quel ensemble de vaisseaux les clés publiques doivent être obtenues l peut s'agir soit d'un agent Gall qui communique avec un nœud Ethereum comme dans le cas des galaxies, des étoiles et des planètes, soit d'un vaisseau comme dans le cas des lunes.
 
 #### Arguments
 
-Either:
+Soit :
 
 ```
 (list ship) %ship ship
 ```
 
-Or:
+ou :
 
 ```
 (list ship) %app term
 ```
 
-The list of ships are those for which you want Azimuth updates from the
-specified source. The source is either a ship (`%ship ~sampel`) or an agent
-(`%app %some-agent`).
+Les vaisseaux listés sont ceux pour lesquels vous souhaitez les mises à jour d’Azimuth à partir d’une source spécifiée. La source est soit un vaisseau(`%ship ~sampel`) soit un agent (`%app %some-agent`).
 
-#### Example
+#### Exemple
 
 ```
 > :azimuth|listen ~[~sampel ~palnet] %ship ~wet
@@ -1334,9 +1291,9 @@ specified source. The source is either a ship (`%ship ~sampel`) or an agent
 
 ### `-azimuth-load`
 
-Refetch and load Azimuth snapshot.
+Récupérez et chargez la capture instantanée d’Azimuth.
 
-#### Example
+#### Exemple
 
 ```
 > -azimuth-load
@@ -1347,16 +1304,13 @@ ship: processing azimuth snapshot (106.177 points)
 
 ---
 
-### `+azimuth-sources`
+### `+sources d'azimuth`
 
-List all Azimuth sources.
+Liste de toutes les sources d'Azimuth.
 
-This will print a
-[`state-eth-node:jael`](https://developers.urbit.org/reference/arvo/jael/data-types#state-eth-node)
-structure. Its contents is mostly other ships who are sources for updates about
-moons, but it will also include `%azimuth`.
+Ceci affiche le résultat de la structure [state-eth-node:jael](https://developers.urbit.org/reference/arvo/jael/data-types#state-eth-node). Elle contient principalement d'autres vaisseaux qui sont des sources de mises à jour sur les lunes, mais inclut aussi `%azimuth`.
 
-#### Example
+#### Exemple
 
 ```
 > +azimuth-sources
@@ -1373,7 +1327,7 @@ moons, but it will also include `%azimuth`.
 
 ### `:azimuth|watch`
 
-Change node URL and network for Azimuth.
+Modifiez l’URL du noeud et le réseau pour Azimuth.
 
 #### Arguments
 
@@ -1381,28 +1335,24 @@ Change node URL and network for Azimuth.
 cord ?(%mainnet %ropsten %local %default)
 ```
 
-The first argument is the note URL in a cord like
-`'http://eth-mainnet.urbit.org:8545' `. The second argument specifies the
-network.
+Le premier argument est l’URL dans une cord (structure de donnée), tel que `'http://eth-mainnet.urbit.org:8545'`. Le second argument spécifie le réseau.
 
-#### Example
+#### Exemple
 
 ```
 > :azimuth|watch 'http://eth-mainnet.urbit.org:8545' %default
 >=
 ```
 
----
+## Applications CLI
 
-## CLI Apps
+Les commandes permettent de gérer le dojo ainsi que d’autres applications CLI.
 
-These commands are for managing the dojo and other CLI apps.
+### `**:dojo|acl**`
 
-### `:dojo|acl`
+Montrez à quels vaisseaux vous avez autorisé l’accès à distance à votre dojo.
 
-Show which ships you've allowed remote access to your dojo.
-
-#### Example
+#### Exemple
 
 ```
 ~zod:dojo> :dojo|allow-remote-login ~bus
@@ -1417,19 +1367,19 @@ Show which ships you've allowed remote access to your dojo.
 
 ### `:dojo|allow-remote-login`
 
-Allow a ship to `|link` your dojo.
+Autorisez un vaisseau à `|link` votre dojo.
 
 #### Arguments
 
-The ship you want to allow remote access.
+Le vaisseau auquel vous souhaitez autoriser l’accès à distance.
 
 ```
 ship
 ```
 
-#### Example
+#### Exemple
 
-Allow ~bus to link ~zod's dojo:
+Autorisez ~bus à accéder au dojo de ~zod’s :
 
 ```
 ~zod:dojo> :dojo|allow-remote-login ~bus
@@ -1440,7 +1390,7 @@ Allow ~bus to link ~zod's dojo:
 {~bus}
 ```
 
-Link ~zod's dojo on ~bus:
+Liez le dojo de ~zod au ~bus :
 
 ```
 ~bus:dojo> |link ~zod %dojo
@@ -1452,14 +1402,13 @@ Link ~zod's dojo on ~bus:
 
 ---
 
-### `:dojo|wipe`
+### `**:dojo|wipe**`
 
-Clear the dojo's subject.
+Effacez le sujet dojo.
 
-This will clear all values pinned to the dojo's subject with commands like `=foo
-42`.
+Cela effacera toutes les valeurs attribuées au sujet du dojo par rapport au sujet dojo avec des commandes comme `=foo 42`.
 
-#### Example
+### Exemple
 
 ```
 > =foo 42
@@ -1479,17 +1428,17 @@ dojo: hoon expression failed
 
 ### `:dojo|revoke-remote-login`
 
-Revoke permission for a remote ship to `|link` your dojo.
+Révoquez l’autorisation pour un vaisseau à distance de se `|link` à votre dojo.
 
 #### Arguments
 
-The ship whose permission you wish to revoke.
+Le vaisseau dont vous souhaitez révoquer l’autorisation.
 
 ```
 ship
 ```
 
-#### Example
+#### Exemple
 
 ```
 ~zod:dojo> :dojo|allow-remote-login ~bus
@@ -1511,10 +1460,9 @@ ship
 
 ### `|link`
 
-Connect a local or remote CLI app.
+Connectez une application CLI localement ou à distance.
 
-Note a ship's moons can automatically link its dojo, but other ships require
-explicit permission with [`:dojo|allow-remote-login`](#dojoallow-remote-login).
+Notez que les lunes d’un vaisseau peuvent automatiquement se lier à leur dojo, mais d’autres vaisseaux auront besoin d’une autorisation explicite avec : [`:dojo|allow-remote-login`](#dojoallow-remote-login).
 
 #### Arguments
 
@@ -1522,13 +1470,11 @@ explicit permission with [`:dojo|allow-remote-login`](#dojoallow-remote-login).
 ship term
 ```
 
-The `ship` is optional, it's only necessary if the app is on a remote ship. The
-`term` is mandatory, and is the name of the CLI app to connect.
+`Ship` est facultatif, il n’est nécessaire que si l’application se trouve sur un vaisseau à distance. `term` est obligatoire et correspond au nom de l’application CLI à connecter.
 
-#### Example
+#### Exemple
 
-Connect to the dojo on a remote ship (this is only possible if you have
-permission):
+Connectez-vous au dojo sur un vaisseau à distance (ceci n’est possible que si vous en avez la permission) :
 
 ```
 |link ~sampel-palnet %dojo
@@ -1537,23 +1483,22 @@ permission):
 ~sampel-palnet:dojo>
 ```
 
-Connect to the `%chat-cli` app locally:
+Connectez-vous localement à l’application `%chat-cli`.
 
 ```
 |link %chat-cli
 >=
 [linked to [p=~zod q=%chat-cli]]
-~zod:chat-cli/ 
+~zod:chat-cli/
 ```
 
-Note you can cycle between CLI apps with Ctrl+x. You can disconnect a CLI app
-with the [|unlink](#unlink) command.
+Notez que vous pouvez passer d’une application CLI à une autre avec Ctrl+x. Vous pouvez déconnecter une application CLI avec la commande [|unlink](#unlink).
 
 ---
 
 ### `|unlink`
 
-Disconnect a local or remote CLI app.
+Déconnectez une application localement ou à distance.
 
 #### Arguments
 
@@ -1561,12 +1506,11 @@ Disconnect a local or remote CLI app.
 ship term
 ```
 
-The `ship` is optional, it's only necessary if the app is on a remote ship. The
-`term` is mandatory, and is the name of the CLI app to disconnect.
+`Ship` est facultatif, il n’est nécessaire que si l’application se trouve sur un vaisseau à distance. `term` est obligatoire et correspond au nom de l’application CLI à déconnecter.
 
-#### Example
+#### Exemple
 
-Disconnect the local `%chat-cli` app:
+Déconnectez localement l’application `%chat-cli` :
 
 ```
 > |unlink %chat-cli
@@ -1574,7 +1518,7 @@ Disconnect the local `%chat-cli` app:
 [unlinked from [p=~zod q=%chat-cli]]
 ```
 
-Disconnect from a remote dojo session:
+Déconnectez-vous d’une session dojo à distance :
 
 ```
 > |unlink ~sampel-palnet %dojo
@@ -1584,29 +1528,27 @@ Disconnect from a remote dojo session:
 
 ---
 
-## Developer tools
+## Outils de développement
 
-These tools are mostly useful to developers or similarly technical people.
+Ces outils sont principalement utiles aux développeurs mais également aux utilisateurs avertis.
 
 ### `+ames-flows`
 
-Print details of [Ames][ames] flows by ship.
+Affichez le résultat des détails des flux [Ames][ames] pour chaque vaisseau.
 
 #### Arguments
 
-This argument is optional:
+Cet argument est facultatif :
 
 ```
 @ud
 ```
 
-If no argument is provided, it will print details of Ames flows for all ships,
-sorted by the number of flows. If a number n is provided as an argument, it'll
-only print the top n results.
+Si aucun argument n’est fourni, les détails des flux d’Ames seront affichés pour tous les vaisseaux et triés par le nombre de flux. Il manque ça : Si un nombre (n) est fournit comme argument, seuls les (n) premiers résultats seront affichés.
 
-#### Example
+#### Exemple
 
-All flows:
+Tous les flux :
 
 ```
 > +ames-flows
@@ -1627,7 +1569,7 @@ All flows:
 ]
 ```
 
-Top 2 ships:
+Top 2 vaisseaux :
 
 ```
 > +ames-flows 2
@@ -1644,28 +1586,26 @@ Top 2 ships:
 
 ### `|ames-prod`
 
-Reset congestion control; re-send packets immediately.
+Réinitialisez le contrôle de congestion; réexpédiez les paquets immédiatement.
 
-Ames uses a backoff algorithm for congestion control. This can be inconvenient
-when debugging in certain cases, you may have to wait a couple of minutes before
-an unacknowledged packet is re-sent. This generator resets congestion control,
-causing at least one pending packet to be immediately re-sent for each flow.
+Ames utilise un algorithme rétroactif pour le contrôle de la congestion. Dans certains cas, cela peut-être gênant lors du *debugging*; vous devrez peut-être attendre quelques minutes avant qu'un paquet non reconnu ne soit renvoyé. Ce générateur réinitialise le contrôle de congestion, provoquant la réexpédition immédiate d’au moins un paquet pour chaque flux.
 
 #### Arguments
 
 ```
-ship ship ship ...
+ship ship ship …
 ```
 
-If no argument is given, congestion control will be reset for all flows.
-Otherwise, you can specify a number of `ship`s, and congestion control will only
-be reset for flows to those ships.
+Si aucun argument n’est donné, le contrôle de congestion sera réinitialisé pour tous les flux.
 
-#### Example
+Autrement, vous pouvez spécifier un certain nombre de `ship` et le contrôle de gestion ne sera réinitialisé que pour les flux vers ces vaisseaux.
+
+#### Exemple
 
 ```
 > |ames-prod
 >=
+
 
 > |ames-prod ~bus ~wex
 >=
@@ -1675,29 +1615,28 @@ be reset for flows to those ships.
 
 ### `|ames-sift`
 
-Filter Ames debug printing by ship.
+Filtre les affichages liés au *debugging* des Ames pour chaque vaisseau.
 
-This filters the output controlled by [`|ames-verb`](#ames-verb).
+Ces filtres contrôle les sorties (output) par [`|ames-verb`](#ames-verb).
 
 #### Arguments
 
 ```
-ship ship ship ....
+ship ship ship …
 ```
 
-If no argument is given, filtering is disabled. Otherwise, Ames debug printing
-will be filter to only include the specified ships.
+Si aucun argument n’est donné; le filtrage est désactivé. Sinon, l’affichage des message de débugging Ames n’inclura que les vaisseaux spécifiés.
 
-#### Example
+#### Exemple
 
-Enable filtering:
+Activez le filtrage :
 
 ```
 > |ames-sift ~nec ~bus
 >=
 ```
 
-Disable filtering:
+Désactivez le filtrage :
 
 ```
 > |ames-sift
@@ -1708,7 +1647,7 @@ Disable filtering:
 
 ### `+ames-timers`
 
-Print Ames message-pump timers by ship.
+Affichez le résultat du minuteur des messages popups pour chaque vaisseau.
 
 #### Arguments
 
@@ -1716,13 +1655,11 @@ Print Ames message-pump timers by ship.
 @ud
 ```
 
-If no argument is provided, it will print details of Ames timers for all ships,
-sorted by the number of timers. If a number n is provided as an argument, it'll
-only print the top n results.
+Si aucun argument n’est fourni, les détails des minuteries Ames seront *affichés* pour tous les vaisseaux, et seront triés par nombre de minuteries. Si un nombre n est fourni comme argument, le l’affichage se fera seulement sur les n premiers résultats
 
-#### Example
+#### Exemple
 
-Print all the Ames timers for all ships:
+Affichez le résultat tous les minuteurs Ames pour chacun des vaisseaux :
 
 ```
 > +ames-timers
@@ -1733,7 +1670,7 @@ Print all the Ames timers for all ships:
 ]
 ```
 
-Print the top two ships:
+Affichez le résultat pour les 2 premiers vaisseaux :
 
 ```
 > +ames-timers 2
@@ -1744,23 +1681,20 @@ Print the top two ships:
 
 ### `|ames-verb`
 
-Enable verbose Ames debug printing.
+Activez l’affichage des résultats de debug d’Ames.
 
 #### Arguments
 
 ```
-verb verb verb...
+`verb verb verb...`
 ```
 
-A `verb:ames` is one of `%snd %rcv %odd %msg %ges %for %rot`. Each one enables
-printing of different kinds of events. You can enable as many as you want at one
-time. If `|ames-verb` is given no argument, it disables all Ames debug printing.
 
-For details of the meaning of these `verb`s, see its entry in the [Ames Data
-Types
-documentation](https://developers.urbit.org/reference/arvo/ames/data-types#verb).
+ `verb:ames` est l’un des `%snd %rcv %odd %msg %ges %for %rot`. Chacun permet l’affichage de différents types d'événements. Vous pouvez en activer autant que vous le souhaitez à la fois. Si `|ames-verb` ne reçoit aucun argument, il désactive toutes les affichages de debug Ames.
 
-#### Example
+Pour plus de détails sur la signification de ces `verb`, se référer à la [documentation Ames Data Types](https://developers.urbit.org/reference/arvo/ames/data-types#verb).
+
+#### Exemple
 
 ```
 > |ames-verb %msg
@@ -1778,12 +1712,11 @@ ames: ~nec: plea [[~zod 1] [~nec 1] bone=[0 %g /ge/hood]]
 
 ### `|ames-wake`
 
-Clean up Ames timers.
+Nettoyez les minuteurs d'Ames.
 
-Set timers for [Ames][ames] flows that lack them, cancel timers for Ames flows
-that have them but shouldn't.
+Définissez les minuteries pour les flux [Ames][ames] qui n’en n’ont pas, annulez les minuteries pour les flux Ames qui en ont mais qui ne devraient pas.
 
-#### Example
+#### Exemple
 
 ```
 > |ames-wake
@@ -1794,10 +1727,9 @@ that have them but shouldn't.
 
 ### `+brass`
 
-Build a brass [pill][pill].
+Construisez une [pilule][pill] brass.
 
-A *brass* pill is a complete bootstrap sequence that recompiles the vanes,
-unlike a [`+solid`](#solid) pill which does not.
+Une pilule *brass* est une séquence bootstrap complète qui recompile les vanes, contrairement à une pilule [`+solid`](#solid) qui ne le fait pas.
 
 #### Arguments
 
@@ -1805,18 +1737,13 @@ unlike a [`+solid`](#solid) pill which does not.
 %base-desk %extra-desk-1 %extra-desk-2 ...
 ```
 
-The first argument is the desk to be used as "base", containing the kernel etc.
-Any extra desks are optional.
+Le premier argument est le bureau à utiliser comme “base”, contenant le noyau, etc. Les bureaux supplémentaires sont facultatifs.
 
-The base desk may alternatively be specified as a [path][path] to a `/sys`
-directory including the [path prefix][path prefix] like
-`/=some-desk=/foo/bar/sys`. In that case, the path prefix from that path will be
-used to determine the base desk. This is only useful if you want the start-up
-events in the pill to use an alternative compiler or Arvo source.
+Le bureau de base peut aussi être spécifié comme un [chemin][path] vers un répertoire `/sys` en incluant le [préfixe du chemin][path prefiex] comme ceci  `/=some-desk=/foo/bar/sys`. Dans ce cas, le *préfixe de ce chemin* sera utilisé pour déterminer la base du bureau. Ceci n'est utile que si vous voulez que les évènements de démarrage de la pilule utilisent un compilateur alternatif ou la source Arvo.
 
-#### Example
+#### Exemple
 
-Export a brass pill containing just the `%base` desk:
+Exportez une pilule brass contenant uniquement le bureau `%base`:
 
 ```
 > .brass/pill +brass %base
@@ -1827,10 +1754,7 @@ Export a brass pill containing just the `%base` desk:
 [%user-files 420]
 ```
 
-The pill will now be available in `<pier>/.urb/brass.pill` in the host
-filesystem.
-
-Export a brass pill with multiple desks:
+La pilule sera désormais disponible dans `<pier>/.urb/brass.pill`  situé dans le système de fichiers hôte. 
 
 ```
 > .brass/pill +brass %base %garden %webterm
@@ -1847,7 +1771,7 @@ Export a brass pill with multiple desks:
 
 ### `-build-cast`
 
-Build a static mark conversion gate.
+Construisez un portail de conversion mark statique.
 
 #### Arguments
 
@@ -1855,11 +1779,9 @@ Build a static mark conversion gate.
 path
 ```
 
-The [path][path] is of the format `%/from-mark/to-mark`. It must being with the
-[path prefix][path prefix] denoting the desk that contains the specified mark
-files.
+Le [chemin][path] est au format `%/from-mark/to-mark`. Il doit commencer avec le [préfixe du chemin][path prefix] désignant le bureau qui contient les fichiers spécifiés.
 
-#### Example
+#### Exemple
 
 ```
 > =tape-to-json -build-cast %/tape/json
@@ -1871,7 +1793,7 @@ files.
 
 ### `-build-file`
 
-Build a Hoon file.
+Construisez un fichier Hoon.
 
 #### Arguments
 
@@ -1879,10 +1801,9 @@ Build a Hoon file.
 path
 ```
 
-The [path][path] points to a [Hoon][hoon] file in [Clay][clay]. It must begin
-with the [path prefix][path prefix].
+Le [chemin][path] pointe vers un fichier [Hoon][hoon] dans [Clay][clay]. Il doit commencer par le [préfixe du chemin][path prefix].
 
-#### Example
+#### Exemple
 
 ```
 > =numbers -build-file %/lib/number-to-words/hoon
@@ -1894,10 +1815,9 @@ with the [path prefix][path prefix].
 
 ### `-build-mark`
 
-Build a dynamic mark core.
+Construisez un noyau mark dynamique.
 
-A dynamic [mark][mark] [core][core] is one that deals with `vase`s rather direct
-values. Its type is a `dais:clay`.
+Un [noyau][core] [mark][mark] dynamique est un noyau qui traite `vase` avec des valeurs plutôt direct. Son type est `dais:clay`.
 
 #### Arguments
 
@@ -1905,10 +1825,9 @@ values. Its type is a `dais:clay`.
 path
 ```
 
-The path is a [path prefix][path prefix] followed by the mark, like `%/txt`. The
-mark in question must exist in the desk specified by the prefix.
+Le chemin est le [préfixe du chemin][path prefix] suivi de la mark, comme `%/txt`. La mark en question doit exister dans le bureau spécifié par le préfixe.
 
-#### Example
+#### Exemple
 
 ```
 > =txt-dais -build-mark %/txt
@@ -1920,10 +1839,9 @@ mark in question must exist in the desk specified by the prefix.
 
 ### `-build-nave`
 
-Build a static mark core.
+Construisez un noyau mark statique.
 
-A static [mark][mark] [core][core] is one that deals with values directly rather
-than vases. Its type is a `nave:clay`.
+Un [noyau][core] [mark][mark] statique est celui qui traite directement des valeurs plutôt que des vases. Son type est `nave:clay`.
 
 #### Arguments
 
@@ -1931,10 +1849,9 @@ than vases. Its type is a `nave:clay`.
 path
 ```
 
-The path is a [path prefix][path prefix] followed by the mark, like `%/txt`. The
-mark in question must exist in the desk specified by the prefix.
+Le chemin est le [préfixe du chemin][path prefix] suivi de la mark, comme `%/txt.` La mark en question doit exister dans le bureau spécifié par le préfixe.
 
-#### Example
+#### Exemple
 
 ```
 > =txt-nave -build-nave %/txt
@@ -1946,10 +1863,11 @@ mark in question must exist in the desk specified by the prefix.
 
 ### `-build-tube`
 
-Build a dynamic mark conversion gate.
+Construisez un portail de conversation avec une mark dynamique.
 
-A *dynamic* [mark][mark] conversion [gate][gate] is one that deals with `vase`s
-rather that plain nouns. Its type is a `tube:clay`.
+Un [portail][gate] de conversation avec une [mark][mark] *dynamique* est une porte qui traite vases plutôt que des noms simples. 
+
+Il est du type `tube:clay`.
 
 #### Arguments
 
@@ -1957,33 +1875,29 @@ rather that plain nouns. Its type is a `tube:clay`.
 path
 ```
 
-The [path][path] is of the format `%/from-mark/to-mark`. It must being with the
-[path prefix][path prefix] denoting the desk that contains the specified mark
-files.
+Le [chemin][path] est au format `%/from-mark/to-mark`. Il doit commencer par le [préfixe du chemin][path prefix] suivi de la mark, comme `%/txt`. La mark en question doit exister dans le bureau spécifié par le préfixe.
 
-#### Example
+#### Exemple
 
 ```
-> =txt-mime-tube -build-tube %/txt/mime
-> !<  mime  (txt-mime-tube !>(~['foo']))
-[p=/text/plain q=[p=3 q=7.303.014]]
+> =txt-dais -build-mark %/txt
+> !<  (urge:clay cord)  (~(diff txt-dais !>(~['foo' 'bar'])) !>(~['foo' 'baz']))
+~[[%.y p=1] [%.n p=<|bar|> q=<|baz|>]]
 ```
 
 ---
 
 ### `+dbug`
 
-Query the state or [bowl][bowl] of a running agent.
+Interrogez l’état ou le [bowl][bowl] d’un agent en cours d’exécution.
 
 #### Arguments
 
-See the [dbug section of App School lesson
-3](https://developers.urbit.org/guides/core/app-school/3-imports-and-aliases#dbug)
-for details of usage.
+Voir la section [dbug section of App School lesson 3](https://developers.urbit.org/guides/core/app-school/3-imports-and-aliases#dbug) pour plus de détails sur son utilisation.
 
-#### Example
+#### Exemple
 
-This is only used with an `:agent`, not by itself.
+Ceci n’est utilisé qu’avec un `:agent`, et non seul.
 
 ```
 > :graph-store +dbug [%state '(~(got by graphs) ~zod %dm-inbox)']
@@ -1995,7 +1909,7 @@ This is only used with an `:agent`, not by itself.
 
 ### `|gall-sear`
 
-Clear pending `move` queue from a ship.
+Effacez le file d’attende `move` d’un vaisseau.
 
 #### Arguments
 
@@ -2003,9 +1917,9 @@ Clear pending `move` queue from a ship.
 ship
 ```
 
-The ship from which queued moves should be cleared.
+Le vaisseau à partir duquel les mouvements en file d’attente doivent être effacés.
 
-#### Example
+#### Exemple
 
 ```
 > |gall-sear ~nec
@@ -2016,9 +1930,10 @@ The ship from which queued moves should be cleared.
 
 ### `|gall-sift`
 
-Set Gall verbosity by agent.
+Définissez la communication d’un agent.
 
-This filters the debug output toggled by [`|gall-verb`](#gall-verb).
+Cette commande filtre les résultats de *debugging* 
+générés par `|gall-verb`.
 
 #### Arguments
 
@@ -2026,19 +1941,18 @@ This filters the debug output toggled by [`|gall-verb`](#gall-verb).
 %agent1 %agent2 %agent3....
 ```
 
-If agents are specified, debug prints will be filtered to only those agents. If
-no arguments are given, filtering will be disabled.
+Si des agents sont spécifiés, l’affichage des résultats de debug seront filtrés uniquement sur ces agents. Si aucun argument n’est fourni, le filtrage sera désactivé.
 
-#### Example
+#### Exemple
 
-Filter to just these agents:
+Filtrez uniquement ces agents :
 
 ```
 > |gall-sift %graph-store %dojo
 >=
 ```
 
-Disable filtering:
+Filtre désactivé :
 
 ```
 > |gall-sift
@@ -2049,7 +1963,7 @@ Disable filtering:
 
 ### `|gall-verb`
 
-Toggle Gall debug printing.
+Affichez le résultat de l'erreur Gall.
 
 #### Arguments
 
@@ -2057,22 +1971,20 @@ Toggle Gall debug printing.
 %odd
 ```
 
-If the `%odd` argument is provided, Gall will print debug information about
-errors like duplicate `%watch` acks, subscriptions closing due to an agent
-crashing on a `%fact`, etc.
+Si l’argument `%odd` est fourni, Gall affiche le résultat des informations de debug sur les erreurs en doubles tel que `%watch` acks, la fermeture des abonnements en raison du crash d’un agent sur un `%fact`, etc.
 
-If no argument is given, such debug printing will be disabled.
+Si aucun argument n’est donné, l’affichage des résultats de debug sera désactive.
 
-#### Example
+#### Exemple :
 
-Turn on error messages:
+Activez les messages d’erreur :
 
 ```
 > |gall-verb %odd
 >=
 ```
 
-Turn off error messages:
+Désactivez les messages d’erreur :
 
 ```
 hi ~nec successful
@@ -2084,16 +1996,16 @@ hi ~nec successful
 
 ### `|pass`
 
-Pass a task to a vane.
+Passez une fonction à travers vane.
 
 {% callout %}
 
-**Warning**
+**Attention**
 
-This is a powerful command and has the potential to break things if
-you're not careful.
+C'est une commande puissante qui a le potentiel de casser des choses si vous ne faites pas attention
 
-{% /callout %}
+{% callout %}
+
 
 #### Arguments
 
@@ -2101,7 +2013,7 @@ you're not careful.
 note-arvo
 ```
 
-A `note-arvo` is defined in `lull.hoon` as:
+Une `note-arvo` est définie dans `lull.hoon` comme :
 
 ```
 +$  note-arvo
@@ -2120,22 +2032,21 @@ A `note-arvo` is defined in `lull.hoon` as:
   ==
 ```
 
-It's a [vane][vane] letter (`%a` for Ames, `%b` for Behn, etc) followed by one
-of that vane's tasks.
+C’est une lettre [vane][vane] (`%a` pour Ames, `%b` pour Behn, etc) suivie d’une des fonctions de cette vane.
 
-Note that you can't receive any gifts in response.
+Notez que vous ne pouvez pas recevoir de cadeaux en réponse.
 
-#### Example
+#### Exemple
 
-Run `-hi our "foo"` via Khan:
+Exécutez`-hi our “foo”` via Khan :
 
 ```
-> |pass [%k %fard %base %hi noun+!>([~ our "foo"])] 
+> |pass [%k %fard %base %hi noun+!>([~ our "foo"])]
 >=
 < ~zod: foo
 ```
 
-Pass a `%text` task to Dill:
+Passez la fonction `%text` vers Dill :
 
 ```
 > |pass [%d %text "foo"]
@@ -2147,17 +2058,11 @@ foo
 
 ### `-read`
 
-Read a file, local or remote.
+Lire un fichier, localement ou à distance.
 
-While [`+cat`](#cat) can only read text files, the `-read` [thread][thread] can
-read any kind of file, directory or [desk][desk] on any ship it has permission
-to read. This thread doesn't pretty-print the result like `+cat`, it just
-produces the data.
+Alors que [`+cat`](#cat) ne peut lire que des fichiers texte, le [thread][hread] `-read` peut lire n'importe quel type de fichier, que ce soit dans le répertoire ou le bureau [desk][desk], et ce, sur n'importe quel vaisseau dont il a la permission de lecture. Ce *thread* n’affiche pas aussi bien le résultat que`+cat`, il produit juste les données.
 
-`-read` isn't limited to ordinary file reads, but can make requests using any
-[care][care]. Some `care`s might be useful, such as `%u` to check file
-existence. Others have obscure technical uses. The most common is `%x`, which is
-a normal read.
+`-read` ne se limite pas à lire des fichiers ordinaires, mais peut faire des requêtes en utilisant n'importe quel [care][care]. Certains `care` peuvent être utiles, comme `%u` pour vérifier l'existence d'un fichier. D'autres ont des utilisations techniques obscures. Le plus courant est `%x`, qui est une lecture normale.
 
 #### Arguments
 
@@ -2165,32 +2070,25 @@ a normal read.
 care ship desk case path
 ```
 
-- [care][care]: One of `%a %b %c %d %e %f %p %r %s %t %u %v %w %x %y %z`,
-  denoting a [Clay][clay] submodule. For details of their meaning, see the [Clay
-  data types
-  documentation](https://developers.urbit.org/reference/arvo/clay/data-types#careclay-clay-submode)
-  and [Clay scry
-  reference](https://developers.urbit.org/reference/arvo/clay/scry).
-- [ship][ship]: The target ship like `~sampel`, or `our` for the local ship.
-- [desk][desk]: The [desk] on that ship like `%base`.
-- [case][case]: The revision you're requesting. This can be one of:
-  - `ud+123` - A revision number.
-  - `da+now` - The revision at that date-time. You can use `now` for the most
-    recent or an `@da` for another time.
-  - `tas+foobar`: A revision label, these are rarely used.
-- [path][path]: The filepath like `/gen/code/hoon`. Note the Clay path prefix is
-  not included since that data was specified separately.
+- [care][care] : l’un des `%a %b %c %d %e %f %p %r %s %t %u %v %w %x %y %z`, désignant un sous-module de [Clay][clay]. Pour plus de détails sur leur signification, consultez la documentation sur les types de données [Clay data types documentation](https://developers.urbit.org/reference/arvo/clay/data-types#careclay-clay-submode) et [Clay scry reference](https://developers.urbit.org/reference/arvo/clay/scry).
+- [ship][ship] : Le vaisseau cible comme `~sampel`, ou `our` pour le vaisseau local.
+- [desk][desk] : Le [bureau][desk] de ce vaisseau tel que `%base`.
+- [case][case] : La révision que vous demandez. Cela peut-être l’une des fonctions suivantes :
+    - `ud+123` - Un numéro de révision.
+    - `da+now` - Une révision à cet horaire. Vous pouvez utiliser `now` pour la plus récente ou `@da` pour un autre horaire.
+    - `tas+foobar`: Une étiquette de révision, celles-ci sont rarement utilisées.
+- [path][path] : Le chemin du fichier `/gen/code/hoon`. Notez que le *préfixe du chemin* Clay n’est pas inclus car ces données sont spécifiquement séparées.
 
-#### Example
+#### Exemple
 
-Read `sys.kelvin` in the `%base` desk on the local ship at the current revision:
+Lisez `sys.kelvin` dans le bureau `%base` sur le vaisseau local à la révision en cours :
 
 ```
 > -read %x our %base da+now /sys/kelvin
 kel=[lal=%zuse num=418]
 ```
 
-Check for the existence of that same file:
+Vérifiez l’existence de ce même fichier :
 
 ```
 > -read %u our %base da+now /sys/kelvin
@@ -2201,11 +2099,9 @@ Check for the existence of that same file:
 
 ### `|serve`
 
-Bind a generator to a URL path.
+Liez un générateur à un chemin URL.
 
-See the [Eyre
-Guide](https://developers.urbit.org/reference/arvo/eyre/guide#generators) for
-details of writing web-facing generators.
+Consultez le [Eyre Guide](https://developers.urbit.org/reference/arvo/eyre/guide#generators) pour plus de détails sur l’écriture de générateur web.
 
 #### Arguments
 
@@ -2213,21 +2109,17 @@ details of writing web-facing generators.
 path desk path
 ```
 
-The first [path][path] is the URL path to bind like `/foo/bar/baz`. The second
-`path` is the path to the generator in `desk` like `/gen/who/hoon` (note it does
-not include the [path prefix][path prefix]).
+Le premier [chemin][path] est le chemin URL à lier comme `/foo/bar/baz`. Le second `path`) est le chemin vers le générateur dans le `desk` comme `/gen/who/hoon` (notez qu’il n’inclut pas de [préfixe du chemin][path prefix].
 
-#### Example
+#### Exemple :
 
-Bind `/gen/who/hoon` in the `%base` desk to the `/who` URL path:
+Liez `/gen/who/hoon` dans le bureau `%base` vers le chemin URL `/who` :
 
 ```
 > |serve /who %base /gen/who/hoon
 >=
 bound: %.y
 ```
-
-In a Unix terminal, try requesting it:
 
 ```
 > curl http://localhost:8080/who
@@ -2238,11 +2130,9 @@ In a Unix terminal, try requesting it:
 
 ### `+solid`
 
-Build a solid [pill][pill].
+Construisez une [pilule][pill] *solid*.
 
-A *solid* pill is a partial [`+brass`](#brass) pill, it doesn't recompile the
-vanes and so boots faster. It is intended for development purposes, not
-production.
+Une pilule *solid* est une pilule partielle [`+brass`](#brass), elle ne recompile pas les vanes et démarre donc plus vite. Elle est destinée à des fins de développement et non de production.
 
 #### Arguments
 
@@ -2250,18 +2140,13 @@ production.
 %base-desk %extra-desk-1 %extra-desk-2 ...
 ```
 
-The first argument is the desk to be used as "base", containing the kernel etc.
-Any extra desks are optional.
+Le premier argument est le bureau à utiliser comme “base”, contenant le noyau, etc. Les bureaux supplémentaires sont facultatifs.
 
-The base desk may alternatively be specified as a [path][path] to a `/sys`
-directory including the [path prefix][path prefix] like
-`/=some-desk=/foo/bar/sys`. In that case, the path prefix from that path will be
-used to determine the base desk. This is only useful if you want the start-up
-events in the pill to use an alternative compiler or Arvo source.
+Le bureau de base peut aussi être spécifié comme un [chemin][path] vers un répertoire `/sys` en incluant le [préfixe du chemin][path prefix] comme `/=some-desk=/foo/bar/sys`. Dans ce cas, le *préfixe du chemin* de ce chemin sera utilisé pour déterminer le bureau base. Ceci n'est utile que si vous voulez que les évènements au démarrage de la pilule en utilisent un compilateur alternatif ou la source Arvo.
 
-#### Example
+#### Exemple
 
-Export a solid pill containing just the `%base` desk:
+Exporter une pilule *solid* contenant uniquement le `%base` desk :
 
 ```
 > .solid/pill +solid %base
@@ -2284,10 +2169,9 @@ vane: %khan: ~mosryp-donleg
 [%user-files 420]
 ```
 
-The pill will now be available in `<pier>/.urb/solid.pill` in the host
-filesystem.
+La pilule sera désormais disponible dans `<pier>/.urb/solid.pill` dans le système de fichiers hôte.
 
-Export a solid pill with multiple desks:
+Exportez une pilule *solid* avec plusieurs bureaux :
 
 ```
 > .solid/pill +solid %base %garden %webterm
@@ -2316,7 +2200,7 @@ vane: %khan: ~mosryp-donleg
 
 ### `-test`
 
-Run tests for a library.
+Exécutez des tests pour une bibliothèque.
 
 #### Arguments
 
@@ -2324,22 +2208,19 @@ Run tests for a library.
 (list path)
 ```
 
-Each [path][path] is a path to a file to test, and must include the [path
-prefix][path prefix].
+Chaque [chemin][path] est un chemin vers un fichier à tester, et doit inclure le [préfixe du chemin][path prefix].
 
-#### Example
+#### Exemple
 
-Refer to the [Unit Test
-Guide](https://developers.urbit.org/guides/additional/unit-tests) for details of
-using the `-test` thread.
+Reportez-vous au [Unit Test Guide](https://developers.urbit.org/guides/additional/unit-tests) pour des détails sur l'utilisation du thread `-test`.
 
 ---
 
 ### `+timers`
 
-Print out currently running [Behn][behn] timers.
+Affichez le résultat des minuteurs [Behn][benh] en cours d’exécution.
 
-#### Examples
+#### Exemples
 
 ```
 > +timers
@@ -2355,40 +2236,33 @@ Print out currently running [Behn][behn] timers.
 
 ---
 
-## Filesystem (Basic)
+## Système de fichiers (Basique)
 
-These are basic tools for things like copying files, navigating directories,
-etc.
+Ce sont des outils de base pour des choses comme la copie de fichiers, la navigation dans les répertoires, etc.
 
 ### `+cat`
 
-Read a file at the given location and print its contents in the dojo.
+Lire un fichier à l’emplacement donné et afficher son contenu dans le dojo.
 
-If the specified [path][path] points to a directory rather than file, it will
-list the files in that directory like the [`+ls`](#ls) command documented below.
+Si le [chemin][path] indiqué pointe vers un répertoire plutôt que vers un fichier, il listera les fichiers de ce répertoire avec la commande [`+ls`](#ls) décrite ci-dessous.
 
-`+cat` can only print text-based files like `.hoon` source-code, `.txt`,
-`.html`, etc. It won't work for binary blobs or other non-text files.
+`+cat` ne peut afficher le résultat que des fichiers texte tel que du code source `.hoon` , `.txt`, `.html`, etc. Cela ne fonctionnera pas pour l’exécutable blobs et autres fichiers non textuels.
 
 #### Arguments
 
-The `path` is mandatory, the `vane` is optional. 
+Le `path` est obligatoire, `vane` est facultatif.
 
 ```
 path, =vane ?(%c %g)
 ```
 
-The past must include a [path prefix][path prefix].
+Le chemin doit inclure le [préfixe du chemin][path prefix] 
 
-It *can* query [Gall][gall] [agents][agent] rather than [Clay][clay] files if
-the optional `, =vase %g` argument is given. In that case, it will perform a
-`%gx` [scry][scry] to the given scry path. The type returned must be some kind
-of text file, either a `@t` or a `wain` (a `(list @t)`). Most agents do not have
-scry endpoints that produce text files so the `%g` feature is rarely useful.
+Il *peut* interroger les [agents][agent] [Gall][gall] plutôt que les fichiers [Clay][clay] si l'option `, =vase %g` est donnée. Dans ce cas, il effectuera un [scry][scry] `%gx` vers le chemin scry donné. Le résultat attendu doit être un fichier texte, soit un `@t` ou un `wain` (une `(list @t)` ). La plupart des agents n'ont pas de terminaison scry qui produisent des fichiers texte donc la fonction `%g` est rarement utile.
 
-#### Example
+#### Exemple
 
-Read a [hoon][hoon] file:
+Lire un fichier [hoon][hoon] :
 
 ```
 > +cat %/gen/cat/hoon
@@ -2408,7 +2282,7 @@ Read a [hoon][hoon] file:
 .......(truncated for brevity)..........
 ```
 
-List the files in a directory:
+Lister les fichiers dans un répertoire :
 
 ```
 > +cat %/sys/vane
@@ -2425,26 +2299,26 @@ List the files in a directory:
 ```
 
 ---
-### `|cp`
 
-Copy a file.
+### `|cp` 
+
+Copiez un fichier.
 
 #### Arguments
 
-The first [path][path] is to the file and the second is where to copy it.
+Le premier [chemin][path] pointe vers le fichier et le second point vers où le copier.
 
 ```
 input=path output=path
 ```
 
-Both the input and output paths must include the full [path prefix][path prefix].
+Les chemins d'entrée et de sortie doivent inclure le [préfixe du chemin][path prefix] complet.
 
-The output path must end with an explicit filename and [mark][mark], you can't
-just point it at a directory.
+Le chemin de sortie doit se terminer par un nom de fichier et une [mark][mark] explicites, vous ne pouvez pas simplement le pointer vers un répertoire.
 
-#### Example
+#### Exemple
 
-Copy the `code.hoon` generator to the root of `%base` with the name `foo.hoon`:
+Copiez le générateur `code.hoon` à la racine de `%base` avec le nom `foo.hoon` :
 
 ```
 > |cp %/gen/code/hoon %/foo/hoon
@@ -2452,7 +2326,7 @@ Copy the `code.hoon` generator to the root of `%base` with the name `foo.hoon`:
 + /~zod/base/9/foo/hoon
 ```
 
-Let's list the files in the root of `%base`:
+Listez les fichiers à la racine de `%base` :
 
 ```
 > +ls %
@@ -2471,10 +2345,9 @@ Let's list the files in the root of `%base`:
 
 ### `=dir`
 
-Change working directory.
+Changez de répertoire de travail.
 
-Note this is not a [generator][generator] or [thread][thread] as are most other
-tools documented. Rather, it is a special command built directly into the dojo.
+Notez qu’il ne s’agit pas d’un [générateur][generator] ou d’un [thread][thread] comme la plupart des autres outils documentés. Il s’agit plutôt d’une commande spécial directement intégrée dans le dojo.
 
 #### Arguments
 
@@ -2482,61 +2355,52 @@ tools documented. Rather, it is a special command built directly into the dojo.
 path
 ```
 
-The path must include the [path prefix][path prefix].
+Le chemin doit inclure le préfixe du chemin [préfixe du chemin][path prefix].
 
-If no path is specified, it will switch back to the default location (the root
-of the `%base` desk at its most recent revision).
+Si aucun chemin n’est spécifié, il reviendra à l’emplacement par défaut (à savoir la racine du bureau `%base` ou la révision la plus récente a eu lieu).
 
-#### Example
+#### Exemple
 
-Let's try changing to the root of the `%garden` [desk][desk]:
+Essayez de passer à la racine du [bureau][desk] `%garden` :
 
 ```
 > =dir /=garden=
 =% /~zod/garden/~2022.9.4..13.15.48..5e81
 ```
 
-The dojo prompt will now look like:
+L’invitation de commande du dojo ressemble maintenant à :
 
 ```
 ~zod:dojo/=/garden/~2022.9.4..13.15.48..5e81>
 ```
 
-`%` and `/===` now resolve to this location, so any commands like 
-[`+ls %`](#ls), [`+tree %`](#tree), etc, will be run against this location.
+`%` et `/===` sont maintenant résolues à cet emplacement, donc toutes les commandes comme [`+ls %`](#ls), [`+tree %`](#tree), etc, seront exécutées à cet emplacement.
 
-The working directory doesn't need to be the root of a desk, you can also do
-`=dir /=base=/gen/hood`, etc.
+Le répertoire de travail n'a pas besoin d'être la racine d'un bureau, vous pouvez aussi faire `=dir /=base=/gen/hood`, etc.
 
-If you specify a different [case][case] in the path prefix like `=dir /=base/1`,
-you will switch to that revision.
+Si vous spécifiez un cas différent dans le préfixe de chemin comme `=dir /=base/1`, vous basculerez vers cette révision.
 
-To switch back to the default location (the root of the `%base` desk at its most
-recent revision), you just run `=dir` without an argument.
+Pour revenir à l'emplacement par défaut (à savoir la racine du bureau `%base` ou la révision la plus récente a eu lieu), il suffit d'exécuter `=dir` sans argument.
 
 ---
 
 ### `+ls`
 
-List files and directories at the specified location.
+Listez les fichiers et les répertoires à un emplacement spécifié.
 
-#### Arguments
+#### Argument
 
-The `path` is mandatory, the `vane` is optional:
+Le `path` est obligatoire, `vane` est facultatif :
 
 ```
 path, =vane ?(%c %g)
 ```
 
-The path must include the [path prefix][path prefix].
+Le chemin doit inclure le préfixe du chemin [préfixe du chemin][path prefix].
 
-The default behavior of `+ls` is to query Clay, but [Gall][gall] [agents][agent]
-can also be queried by specifying the optional `=vane %g` argument like `+ls
-/=some-agent=/foo/bar, =vane %g`. This will perform a [scry][scry] of the form
-`.^(arch %gy /=some-agent=/foo/bar)`. Very few Gall agents implement `%y` scry
-endpoints that produce `arch` types, so this feature is almost entirely useless.
+Le comportement par défaut de `+ls` est d'interroger Clay, mais les [agents][agent] [Gall][gall] peuvent aussi être interrogés en spécifiant l'argument facultatif `=vane %g` comme `+ls /=some-agent=/foo/bar`, `=vane %g`. Ceci effectuera un [scry][scry] de la forme `.^(arch %gy /=some-agent=/foo/bar)`. Très peu d'agents Gall implémentent `%y` scry endpoints qui produisent des `arch`. Cette fonction est presque entièrement inutile.
 
-#### Example
+#### Exemple
 
 ```
 > +ls %/sys/vane
@@ -2551,40 +2415,36 @@ endpoints that produce `arch` types, so this feature is almost entirely useless.
   khan/hoon
 ```
 
-Note the [mark][mark] (file type/extension) is separated with a `/` rather than
-a `.` as is common in other systems: `hoon` is not a sub-directory of `ames`
-here, it is the mark. Directories can be distinguished from files by their lack
-of a mark; they'll just look like `app/`.
+Notez que [mark][mark] (type/extension de fichier) est séparé par un `/` au lieu d'un `.` comme il est courant de voir dans d'autres systèmes : ici `hoon` n'est pas un sous-répertoire d’`ames`, c'est la mark. Les répertoires se distinguent des fichiers par leur absence de mark; ils ressembleront simplement à `app/`.
 
 ---
 
 ### `+mv`
 
-Move a file from one location to another.
+Déplacez un fichier d’un emplacement à un autre.
 
 #### Arguments
 
-The first [path][path] is to the file and the second is where to move it.
+Le premier [chemin][path] pointe vers le fichier et le seconde point vers où le déplacer.
 
 ```
 input=path output=path
 ```
 
-Both paths must include the [path prefix][path prefix].
+Les deux chemins doivent inclure le [préfixe du chemin][path prefix]
 
-The output path must end with an explicit filename and [mark][mark], you can't
-just point it at a directory.
+Le chemin de sortie doit se terminer par un nom de fichier explicite et une [mark][mark]. Vous ne pouvez pas simplement le pointer vers un répertoire.
 
-#### Example
+#### Exemple
 
-Create a file:
+Créer un fichier :
 
 ```
 > *foo/txt ~['foo' 'bar' 'baz']
 + /~zod/base/16/foo/txt
 ```
 
-Move it:
+Déplacer-le :
 
 ```
 > |mv %/foo/txt %/bar/txt
@@ -2597,10 +2457,9 @@ Move it:
 
 ### `|rm`
 
-Delete a file.
+Supprimez un fichier.
 
-Note you cannot delete a directory, but a directory will be disappear once all
-its files are gone.
+Notez que vous ne pouvez pas supprimer un répertoire, cependant un répertoire disparait une fois que tous ses fichiers auront disparu.
 
 #### Arguments
 
@@ -2608,18 +2467,16 @@ its files are gone.
 path
 ```
 
-The path must include the [path prefix][path prefix].
+Le chemin doit inclure le [préfixe du chemin][path prefix].
 
-#### Example
-
-Create a file:
+Créez un fichier :
 
 ```
 > *foo/txt ~['foo' 'bar' 'baz']
 + /~zod/base/22/foo/txt
 ```
 
-Delete it:
+Supprimez-le :
 
 ```
 > |rm %/foo/txt
@@ -2631,7 +2488,7 @@ Delete it:
 
 ### `+tree`
 
-Display all files in the given directory and its sub-directories.
+Affichez tous les fichiers du répertoire donné et de ses sous-répertoires.
 
 #### Arguments
 
@@ -2639,9 +2496,9 @@ Display all files in the given directory and its sub-directories.
 path
 ```
 
-The path must include the [path prefix][path prefix].
+Le [chemin][path] doit inclure le [préfixe du chemin][path prefix]
 
-#### Example
+#### Exemple
 
 ```
 > +tree %/sys
@@ -2663,16 +2520,15 @@ The path must include the [path prefix][path prefix].
 
 ---
 
+## Système de fichiers (Avancé)
 
-## Filesystem (Advanced)
-
-These are more advanced desk and filesystem tools.
+Ce sont des outils système de fichiers de bureau plus avancés.
 
 ### `|autocommit`
 
-Enable automatic commits for a mounted [desk][desk].
+Activez les auto-commits pour installer un [bureau][desk].
 
-Auto-commits can be disabled with [`|cancel-autocommit`](#cancel-autocommit).
+Les auto-commits peuvent être désactivés avec `[|cancel-autocomit](https://operators.urbit.org/manual/os/dojo-tools#cancel-autocommit)`.
 
 #### Arguments
 
@@ -2680,9 +2536,9 @@ Auto-commits can be disabled with [`|cancel-autocommit`](#cancel-autocommit).
 desk
 ```
 
-#### Example
+#### Exemple
 
-In the dojo:
+Dans le dojo :
 
 
 ```
@@ -2693,13 +2549,13 @@ In the dojo:
 >=
 ```
 
-In a separate Unix shell session:
+Dans une session shell Unix séparée :
 
 ```
 echo "foo" > ~/piers/zod/garden/foo.txt
 ```
 
-Back in the dojo:
+De retour dans le dojo :
 
 ```
 + /~zod/garden/8/foo/txt
@@ -2709,12 +2565,11 @@ Back in the dojo:
 
 ### `|cancel-autocommit`
 
-Cancel automatic commits for all mounted [desks][desk].
+Annulez les auto-commits pour tous les [bureaux][desk] instalé.
 
-Note this will cancel automatic commits for all desks, it's not possible to
-target a single desk.
+Notez que cela annulera les auto-commits pour tous les bureaux, il n’est pas possible de cibler un seul bureau.
 
-#### Examples
+#### Exemples
 
 ```
 > |cancel-autocommit
@@ -2725,7 +2580,7 @@ target a single desk.
 
 ### `|commit`
 
-Commit changes to mounted [desk][desk].
+Validez les modifications sur un [bureau][desk] instalé.
 
 #### Arguments
 
@@ -2733,29 +2588,28 @@ Commit changes to mounted [desk][desk].
 desk, =auto ?
 ```
 
-The `desk` is mandatory, the `=auto` is optional.
+Le `desk` est obligatoire, `=auto` est facultatif.
 
-If `=auto` is `.y`, auto-commits will be enabled, meaning changes to that desk
-on the host side will automatically be committed as soon as they happen.
+Si `=auto` vaut `.y`, auto-commits sera activé, ce qui signifie que les modifications apportées à ce bureau, du côté de l’hôte seront automatiquement prises en charge dès qu’elles se produisent.
 
-Auto-commits can be disabled with [`|cancel-autocommit`](#cancel-autocommit).
+Les auto-commits peuvent être désactivés [`|cancel-autocommit`](#cancel-autocommit).
 
-#### Example
+#### Exemple
 
-In the dojo:
+Dans le dojo :
 
 ```
 > |mount %garden
 >=
 ```
 
-In a separate Unix shell session:
+Dans une session shell Unix séparée :
 
 ```
 echo "foo" > ~/piers/zod/garden/foo.txt
 ```
 
-Back in the dojo:
+De retour dans le dojo :
 
 ```
 > |commit %garden
@@ -2767,49 +2621,33 @@ Back in the dojo:
 
 ### `|fuse`
 
-Perform an octopus merge.
+Effectuez une fusion multi-branches.
 
-A `%fuse` request in [Clay][clay] replaces the contents of `%destination-desk`
-with the merge of the specified `beak`s according to their merge strategies.
-This has no dependence on the previous state of `%dest` so any commits/work
-there will be overwritten.
+Une requête `%fuse` dans [Clay][clay] remplace le contenu de `%destination-desk` par la fusion des `beak` s spécifiés en fonction de leurs stratégies de fusion. Cela ne dépend pas de l'état précédent de `%dest` donc tous les commits/travaux qu'il contient seront écrasés.
 
-`|fuse` extends this concept with the idea of a tracked source. When specifying
-beaks to include in your fuse, specify `%track` instead of a [case][case]. This
-will tell `|fuse` to retrieve the latest version of the source beak *and* to
-rerun the `%fuse` request whenever that tracked source changes. A fuse can have
-many tracked sources, or none. The base may be tracked as well.
+`|fuse` agrandit ce concept avec l'idée de traquer une source. Lorsque vous spécifiez des beaks à inclure dans votre fuse, spécifiez `%track` au lieu de [case][case]. Cela indiquera à `|fuse` de récupérer la dernière version du beak source *et* de relancer la requête `%fuse` chaque fois que la source pistée change. Fuse peut avoir plusieurs sources pistées, ou aucune. La base peut aussi être pistée.
 
 #### Arguments
 
-Either:
+Soit :
 
 ```
 desk %cancel
 ```
 
-Or:
+ou : 
 
 ```
 desk path [germ path] [germ path]..., =overwrite ?
 ```
 
-The first argument is the target `desk` that will be overwritten. After that is
-either `%cancel` to cancel an existing tracked fuse, or else a `path` followed
-by a series of `[germ path]`. The first `path` is a `beak` like
-`/~zod/foo/track` or `/~zod/foo/5`, and is the base of the octopus merge. For
-the remaining `[germ path]`, the `germ` is the merge strategy (for details run
-`|merge` without arguments and read the help text it prints), and the `path` is
-another `beak`.
+Le premier argument est le `desk` cible qui sera écrasé. Après cela, soit `%cancel` pour annuler un fuse pisté existant, soit un `path` suivie d'une série de `[path germ]`. Le premier `path` est un beak comme `/~zod/foo/track ou /~zod/foo/5`, et c’est la base d’une fusion multi-branches. Pour le `[path germ]` restant , le `germ` est la stratégie de fusion (pour plus de détails, exécutez `|merge` sans arguments et lisez le texte d'aide qu'il affiche), et le `path` est un autre `beak`.
 
-The optional `=overwrite` flag allows you to overwrite a currently ongoing fuse.
-Without this flag, attempting a fuse into a desk that you already `|fuse`'d into
-will error.
+La notification facultative `=overwrite` vous permet d'écraser la commande fuse en cours. Sans cette option, une tentative de fusion dans un bureau dans lequel vous avez déjà |`fuse` sera source d’erreur.
 
-For usage details, you can run `|fuse` without arguments and it'll print out a
-help text.
+Pour les détails d'utilisation, vous pouvez exécuter `|fuse` sans arguments et il affichera un texte d'aide.
 
-#### Examples
+#### Exemple
 
 ```
 |fuse %dest /=kids= mate+/~nel/base= meet+/~zod/kids/track
@@ -2823,11 +2661,11 @@ help text.
 
 ### `|fuse-list`
 
-Print tracked fuse sources for a desk.
+Afficher le résultat des sources fuse traquées pour un bureau.
 
-See the [`|fuse`](#fuse) command for details.
+Voir la commande [`|fuse`](#fuse) pour plus de détails.
 
-#### Example
+#### Exemple
 
 ```
 > |fuse-list %base
@@ -2839,10 +2677,9 @@ no ongoing fuse for %base
 
 ### `|label`
 
-Add a label to a [desk][desk] revision.
+Ajouter un label dans un [bureau][desk] en révision.
 
-Labels let you name particular commits, and then refer to them by that name
-rather than date or revision number.
+Labels vous permet de nommer des commits particuliers, puis de vous y référer par ce nom plutôt que par la date ou le numéro de révision.
 
 #### Arguments
 
@@ -2850,11 +2687,9 @@ rather than date or revision number.
 desk term, =aeon @ud
 ```
 
-The `desk` and `term` are mandatory, the `=aeon` is optional. The `term` is the
-label to give the revision. If an `aeon` is not specified, it will default to
-the most recent revision.
+Le `desk` et le `term` sont obligatoires,  `=aeon` est facultatif. Le `term` est le label pour donner la révision. Si `aeon` n’est pas spécifié, il s’agira par défaut de la révision la plus récente.
 
-#### Example
+#### Exemple
 
 ```
 > |label %base %foo
@@ -2876,7 +2711,7 @@ labeled /~zod/base/bar
 
 ### `|merge`
 
-Merge one desk into another.
+Fusionnez (merge) un bureau dans un autre.
 
 #### Arguments
 
@@ -2884,17 +2719,11 @@ Merge one desk into another.
 desk ship desk, =cas case, =gem ?(germ %auto)
 ```
 
-The first `desk` is the local merge target. The second `desk` is the merge
-source on the specified `ship`. The optional `=cas` argument specifies a
-particular [case][case] (revision reference) like `ud+5`, `da+now`, etc. The
-optional `=gem` argument specifies a merge strategy. The default merge
-strategies is `%auto`, which does a fast-forward `%fine` merge if the target
-desk exists, and creates a new desk with `%init` if not.
+Le premier `desk` est la cible de fusion locale. Le second `desk` est la source de fusion sur le `ship` (vaisseau) spécifié. L'argument optionnel `=cas` spécifie un [case][case] particulier (référence de révision) comme `ud+5`, `da+now`, etc. L'argument optionnel `=gem` spécifie une stratégie de fusion. La stratégie de fusion par défaut est `%auto,` qui effectue une fusion rapide `%fine` si le bureau cible existe, et crée un nouveau bureau avec `%init` si ce n'est pas le cas.
 
-For details of usage and all the different merge strategies, run `|merge`
-without arguments for a help text.
+Pour plus de détails sur l'utilisation et les différentes stratégies de fusion, exécutez `|merge` sans arguments pour un texte d'aide.
 
-#### Example
+#### Exemple
 
 ```
 > |merge %bitcoin ~bus %bitcoin, =gem %only-this
@@ -2906,54 +2735,53 @@ merged with strategy %only-this
 
 ### `|mount`
 
-Mount a [desk][desk] or directory to the host filesystem.
+Attachez (mount) un [bureau][desk] ou un répertoire sur le système de fichiers hôte.
 
-#### Arguments
+#### Argument
 
-A whole desk:
+L’intégralité d’un bureau :
 
 ```
 desk
 ```
 
-A directory:
+Un répertoire :
 
 ```
 path
 ```
 
-If it's a [path][path], it must include the full [path prefix][path prefix].
+S’il s’agit d’un [chemin][path], il doit inclure le [préfixe du chemin][path prefix] complet.
 
-Note you can't mount a single file directly.
+Notez que vous ne pouvez pas attacher directement un seul fichier. 
 
-#### Example
+#### Exemple
 
-Mount the whole `%base` desk:
+Attachez l’ensemble du bureau avec `%base` :
 
 ```
 > |mount %base
 >=
 ```
 
-The desk is now accessible at `<pier>/base` in the host filesystem.
+Le bureau est maintenant accessible via `<pier>/base` dans le système de fichiers hôte.
 
-Mount the `/gen` directory of the `%base` desk:
+Attachez le répertoire `/gen` du bureau `%base` :
 
 ```
 > |mount %/gen
 >=
 ```
 
-The `/gen` directory is now accessible at `<pier>/gen` in the host filesystem.
+Le répertoire `/gen` est maintenant accessible via `<pier>/gen` dans le système du fichiers hôte.
 
 ---
 
 ### `|norm`
 
-Add a tombstone policy rule.
+Ajoutez une règle de stratégie avec tombstone.
 
-Note that the policy will not be automatically applied when set, you'll need to
-run [`|pick`](#pick) for the garbage collection to occur.
+Notez que la règle ne sera pas appliquée automatiquement lorsqu’elle sera définie, vous devez exécuter [`|pick`](#pick) pour que la récupération de mémoire (*garbage collection*) se produise.
 
 #### Arguments
 
@@ -2961,10 +2789,9 @@ run [`|pick`](#pick) for the garbage collection to occur.
 ship desk path keep=?
 ```
 
-The [path][path] is to a file or directory on the given `desk` on the given
-`ship`. The `?` is `.n` if it should be tombstoned, `.y` if it should be kept.
+Le [chemin][path] pointe vers un fichier ou un répertoire sur le `desk` donné sur le `ship` spécifié. Si `?` et `.n` sont désactivez, `.y` doit être conservé.
 
-#### Examples
+#### Exemple
 
 ```
 > |norm our %bitcoin /gen .n
@@ -3000,9 +2827,9 @@ The [path][path] is to a file or directory on the given `desk` on the given
 
 ### `+norms`
 
-Print tombstone policies for all desks.
+Affichez le résultat des règles de désactivations pour tous les bureaux.
 
-#### Example
+#### Exemple
 
 ```
 > +norms
@@ -3022,16 +2849,15 @@ Print tombstone policies for all desks.
 ~tus/%landscape:
 ```
 
-`%.y` means old revisions of the file or directory will be kept, `%.n` means
-they'll be tombstoned.
+`%.y` signifie que les anciennes révisions du fichier ou du répertoire seront conservées,`%.n` signifie qu’elles seront supprimées.
 
 ---
 
 ### `|pick`
 
-Apply tombtoning policies; collect garbage.
+Appliquez les règles de désactivation; récupérer la mémoire.
 
-#### Example
+#### Exemple
 
 ```
 > |pick
@@ -3042,16 +2868,11 @@ Apply tombtoning policies; collect garbage.
 
 ### `|private`
 
-Make a [desk][desk], directory or file private (prevent remote ships from
-reading it).
+Rendre privé un [bureau][desk], un répertoire ou un fichier (empêcher les vaisseau à distance d’y avoir accès).
 
-Note that if a desk or directory is publicly readable, making any directories or
-files inside of it private will prevent remote ships from syncing the entire
-desk/directory. They'll still be able to read the individual parts that aren't
-private though, just not the whole thing.
+Notez que si un bureau ou un répertoire est accessible au public, rendre privé tous les répertoires ou fichiers qu'il contient empêchera les vaisseaux à distance de synchroniser l'ensemble du bureau/répertoire. Ils pourront toujours lire les parties individuelles qui ne sont pas privées, mais pas tout.
 
-Desks, files and directories can be made publicly readable again with
-[|public](#public).
+Les bureaux, les fichiers et les répertoires peuvent être à nouveau rendus lisibles par le public avec [|public](public).
 
 #### Arguments
 
@@ -3059,10 +2880,9 @@ Desks, files and directories can be made publicly readable again with
 desk path
 ```
 
-The `desk` is mandatory, the [path][path] is optional. If specified, the `path`
-is a directory or file in the given desk.
+Le `desk` est obligatoire, le [chemin][path] est facultatif. S’il est spécifié, le `path` est un répertoire ou un fichier dans le bureau donné.
 
-#### Example
+#### Exemple
 
 ```
 > |private %garden
@@ -3076,10 +2896,9 @@ is a directory or file in the given desk.
 
 ### `|public`
 
-Make a [desk][desk], directory or file publicly readable (allow remote ships to
-read it).
+Rendre publiquement lisible un [bureau][desk], un répertoire ou un fichier (autoriser les vaisseaux à distance à le lire). 
 
-Things can be made private again with [`|private`](#private).
+Les choses peuvent redevenir privées avec [`|private`](#private).
 
 #### Arguments
 
@@ -3087,10 +2906,9 @@ Things can be made private again with [`|private`](#private).
 desk path
 ```
 
-The `desk` is mandatory, the [path][path] is optional. If specified, the `path`
-is a directory or file in the given desk.
+`desk` est obligatoire, tandis que le [chemin][path] est facultatif. S’il est spécifié, `path` est un répertoire ou un fichier dans le bureau donné.
 
-#### Example
+#### Exemple
 
 ```
 > |public %garden
@@ -3104,21 +2922,19 @@ is a directory or file in the given desk.
 
 ### `|story-init`
 
-Create a new story file (commit message log) for a [desk][desk].
+Créez un nouveau fichier historique (commit un registre de message) pour un [bureau][desk].
 
-#### Arguments
+#### Argument
 
-All arguments are optional:
+Tous les arguments sont facultatifs :
 
 ```
 , =desk desk, =overwrite ?
 ```
 
-If no desk is given, the current desk will be used (typically `%base`).
-Otherwise, the specified `=desk` will be used. If `=overwrite` is `.y`, any
-existing story file in the desk will be overwritten with a blank one.
+Si aucun bureau n’est donné, le bureau actuel sera utilisé (généralement `%base`). Sinon, le `=desk` spécifié sera utilisé. Si `=overwrite` est `.y`, tout fichier de l’historique existant dans le bureau sera remplacé par un fichier vierge.
 
-#### Example
+#### Exemple
 
 ```
 > |story-init
@@ -3134,20 +2950,19 @@ existing story file in the desk will be overwritten with a blank one.
 
 ---
 
-### `+story-list`
+#### `+story-list`
 
-Print out a [desk][desk]'s story (commit messages), unordered.
+Affichez le résultat de l’historique d’un [bureau][desk] (commit messages), sans ordre.
 
-#### Arguments
+#### Argument
 
 ```
 , =desk
 ```
 
-If the optional `=desk` argument is not specified, it'll infer the current desk
-(typically `%base`).
+Si l’argument facultatif `=desk` n’est pas spécifié, il en sera déduit qu’il s’agit du bureau actuel (généralement `%base`).
 
-#### Example
+#### Exemple
 
 ```
 > +story-list, =desk %garden
@@ -3167,19 +2982,17 @@ commit: 0v10.blbfu.8a414.qrjqo.ov847.gc6v7.6dpob.49i6s.ndi49.ve74j.a04qr
 
 ### `+story-read`
 
-Print out a [desk][desk]'s story (commit messages) in order.
+Affichez le résultat de l’historique d’un [bureau[desk] (commit messages) dans l’ordre.
 
-#### Arguments
+### Arguments
 
 ```
 , =desk desk
 ```
 
-If the optional `=desk` argument is provided, it'll print out the story for that
-desk. If no argument is provided, it'll infer the current desk (typically
-`%base`).
+Si l’argument facultatif `=desk` est fourni, il affiche le résultat de l’historique pour ce bureau. Si aucun argument n’est fourni, il en sera déduit qu’il s’agit du bureau actuel (généralement `%base`)
 
-#### Example
+#### Exemple
 
 ```
 > +story-read, =desk %garden
@@ -3193,45 +3006,39 @@ some body
 
 ### `|story-remove`
 
-Remove commit message(s) for a given commit from a desk's story.
+Supprimez le(s) message(s) commit pour un commit donné dans l’historique d’un bureau.
 
-#### Arguments
+#### Argument
 
 ```
 cash, =desk desk, =prz prose
 ```
 
-A `cash` is either a [case][case] like `ud+2`, `da+now`, etc, or a `[%tako
-tako:clay]` commit reference. If the optional `=desk` argument is not given,
-it'll infer the current desk (typically `%base`). The optional `=prz` argument
-is a `prose`, which is `[title=@t body=@t]`. If `=prz` is given, only that
-specific prose will be removed from the messsages of the specified commit.
+Un cash est soit [case][case] comme `ud+2`, `da+now`, etc, soit un commit référence `[%takotako:clay]`. Si l’argument facultatif `=desk` n’est pas donné, le bureau actuel sera déduit (généralement `%base`).
 
-#### Example
+L’argument facultatif `=prz` est une prose, qui est `[title=@tbody=@t].` Si `=prz` est donné, seul cette prose spécifique sera supprimée des messages du commit spécifié.
+
+#### Exemple
 
 ---
 
 ### `|story-write`
 
-Add a commit message to a desk's story.
+Ajoutez un commit message à l’historique d’un bureau.
 
-Note that you can run this more than once to add multiple messages to the same
-commit.
+Notez que vous pouvez l’exécuter plusieurs fois pour ajouter plusieurs messages au même commit.
 
-#### Arguments
+#### Argument
 
 ```
 title=@t body=@t, =desk desk, =cas cash
 ```
 
-Only the `title` is mandatory. If the `=desk` argument is not provided, it'll
-infer the current desk (typically `%base`).
+Seulement `title` est obligatoire. Si l’argument `=desk` n’est pas fourni, le bureau actuel sera déduit (généralement `%base`). 
 
-The optional `=cas` may either be a [case][case] like `da+now`, `ud+2`, etc, or
-else a `[%tako tako:clay]` commit reference. If a `=cas` is not provided, it'll
-default to the most recent.
+`=cas` est facultatif et peut-être soit [case][case] comme `da+now`, `ud+2,` etc, soit `[%tako tako:clay]` un commit de référence. Si `=cas` n’est pas fourni, il sera par défaut la plus récent.
 
-#### Example
+#### Exemple
 
 ```
 > |story-write 'some title' 'some body', =desk %garden, =cas ud+1
@@ -3249,10 +3056,9 @@ some body
 
 ### `|sync`
 
-Continuously merge into local desk from another local or remote desk.
+Fusionnez en continu dans le bureau en local à partir d’un autre bureau en local ou à distance.
 
-Every change on the source desk will be merged into the local one. This tracking
-can be stopped with [`|unsync`](#unsync).
+Chaque changement sur le bureau source sera fusionné avec le bureau en local. Ce tracking peut être arrêté avec [`|unsync`](#unsync).
 
 #### Arguments
 
@@ -3260,10 +3066,9 @@ can be stopped with [`|unsync`](#unsync).
 desk ship desk
 ```
 
-The first `desk` is the local target, the second is the source on the specified
-`ship`.
+Le premier `desk` est la cible en local, le second est la source sur le `ship` spécifié.
 
-#### Example
+#### Exemple
 
 ```
 > |sync %webterm ~bus %webterm
@@ -3278,9 +3083,9 @@ kiln: sync succeeded from %webterm on ~bus to %webterm
 
 ### `|syncs`
 
-List currently active desk syncs.
+Listez les synchronisations de bureau actuellement actives.
 
-#### Example
+#### Exemple
 
 ```
 > |syncs
@@ -3292,32 +3097,25 @@ kiln: sync configured from %webterm on ~bus to %webterm
 
 ### `|tomb`
 
-Tombstone a file at a particular revision.
+Supprimer un fichier avec une révision particulière.
 
-Tombstoning means deleting a file's data in an old revision in [Clay][clay],
-only leaving the file reference.
+*Tombstoneing* signifie supprimer les données d'un fichier dans une ancienne révision dans [Clay][clay], ne laissant que la référence du fichier.
 
-This can only tombstone a single file, it cannot recursively tombstone a
-directory. If a directory is specified, it will fail.
+Cela ne peut supprimer (tombstone) qu'un seul fichier, il ne peut pas supprimer récursivement un répertoire. Si un répertoire est spécifié, il échouera.
 
-The desk revision number specified cannot be the current revision, it must be an
-old one. This will only tombstone the file at the specified revision, not any
-revisions before it.
+Le numéro de révision indiqué ne peut pas être la révision actuelle, il doit s'agir d'une ancienne révision. Cela désactivera le fichier vers la révision spécifiée, et non vers les révisions précédentes.
 
-Note this will also execute any other unapplied tombstone policies as it sends
-Clay a `%pick` garbage collection task.
+Notez que cela supprimera également toutes les autres politiques de désactivation non appliquées car cela enverra à Clay une fonction `%pick` de récupération de mémoire.
 
-#### Arguments
+#### Argument
 
 ```
 path, =dry ?
 ```
 
-The [path][path] is mandatory, it's a path to a file including the full [path
-prefix][path prefix]. If the optional `=dry` argument is `.y`, it will perform a
-dry run and not actually tombstone the file.
+Le [chemin][path] est obligatoire, c’est un chemin vers un fichier incluant le [préfixe du chemin][path prefix] complet. Si l’argument facultatif `=dry` est `.y`, il effectuera un test à blanc (dry run) et ne désactivera pas le fichier actuel.
 
-#### Examples
+#### Exemple
 
 ```
 > -read %x our %base ud+3 /foo/txt
@@ -3335,24 +3133,21 @@ tomb: [~tus %base /foo/txt 0vr.46d5h.ocj13.age48.mnpnd.567me.1f6uc.9haq8.5ihru.b
 
 ### `|unmount`
 
-Unmount a previously [mounted](#mount) desk or directory.
+Détachez un bureau ou un répertoire précédemment [attaché][mounted].
 
-Note that any uncommitted changes on the host side will be discarded.
+Notez que notez que toutes les modifications non validée du côté de l’hôte sera ignorée.
 
-#### Arguments
+#### Argument
 
 ```
 term
 ```
 
-If the thing you're unmount is a [desk][desk], you'll just specify the desk
-name. If it's a sub-directory of a desk, you must specify the mount-point, which
-is whatever the directory is called in the host filesystem. For example, if you
-mounted `%/gen` and it's at `<pier>/gen`, you'd specify `%gen` here.
+Si la chose que vous détacher est un [bureau][desk], vous n’aurez qu’à spécifier le nom de celui-ci. S’il s’agit d’un sous-répertoire d’un bureau, vous devez spécifier le point à relier, correspondant au nom du répertoire dans le système de fichiers hôte. Par exemple, si vous avez attaché `%/gen` et qu’il pointe vers `<pier>/gen`, vous devez spécifier `%gen`.
 
-#### Example
+#### Exemple
 
-Unmount the `%base` desk:
+Attachez le bureau `%base` :
 
 ```
 > |unmount %base
@@ -3363,7 +3158,7 @@ Unmount the `%base` desk:
 
 ### `|unsync`
 
-Stop syncing a desk with another.
+Arrêtez la synchronisation entre deux bureaux.
 
 #### Arguments
 
@@ -3371,10 +3166,9 @@ Stop syncing a desk with another.
 desk ship desk
 ```
 
-The first `desk` is the local one receiving updates, the second `desk` is the
-source for updates on the specified `ship`.
+Le premier `desk` est le bureau en local qui reçoit les mises à jour, le second bureau est la source des mises à jour sur le `ship` spécifié.
 
-#### Example
+#### Exemple
 
 ```
 > |unsync %webterm ~bus %webterm
@@ -3382,10 +3176,9 @@ source for updates on the specified `ship`.
 kiln: ended autosync from %webterm on ~bus to %webterm
 ```
 
----
-## Miscellaneous
+# Divers
 
-Miscellaneous utilities.
+Diverses outils.
 
 ### `+hello`
 
@@ -3397,7 +3190,7 @@ Hello, world.
 term
 ```
 
-#### Example
+#### Exemple
 
 ```
 > +hello %foo
@@ -3408,10 +3201,9 @@ term
 
 ### `|hi`
 
-Ping another ship with an optional message.
+Notifiez un autre vaisseau avec un message facultatif.
 
-The hi and message will be displayed in that ship's dojo. This is useful for
-testing connectivity.
+Le *hi* et le message seront affichés dans le dojo de ce vaisseau. Ceci est utile pour tester la connectivité.
 
 #### Arguments
 
@@ -3419,11 +3211,11 @@ testing connectivity.
 ship tape
 ```
 
-The target `ship` is mandatory, the `tape` is an optional message.
+Le `ship` cible est obligatoire, la `tape` est un message facultatif.
 
-#### Example
+#### Exemple
 
-Without a message:
+Sans message :
 
 ```
 :: in ~zod's dojo:
@@ -3437,7 +3229,7 @@ hi ~bus successful
 < ~zod:
 ```
 
-With a message:
+Avec un message :
 
 ```
 :: in ~zod's dojo:
@@ -3455,9 +3247,9 @@ hi ~bus successful
 
 ### `+sponsor`
 
-Print out the sponsor of this ship.
+Afficher le résultat du sponsor d’un vaisseau.
 
-#### Examples
+#### Exemples
 
 ```
 > +sponsor
@@ -3466,10 +3258,9 @@ Print out the sponsor of this ship.
 
 ---
 
-### `+keys`
+### `+key`
 
-Print the `life` (key revision number) and `rift` (continuity number aka factory
-reset number) for a ship.
+Affichez le résultat `Life` (numéro de révision de la clé) et `rift` (numéro de continuité alias numéro de réinitialisation à l’état d’usine) pour un vaisseau.
 
 #### Arguments
 
@@ -3477,7 +3268,7 @@ reset number) for a ship.
 ship
 ```
 
-#### Example
+#### Exemple
 
 ```
 > +keys our
@@ -3489,13 +3280,13 @@ ship
 
 ---
 
-## Moons
+# Lunes
 
-These tools are for spawning and managing [moons][moon].
+Ces outils sont pour la générations et la gestion des [lunes][moon].
 
 ### `|moon`
 
-Spawn a new moon.
+Générez une nouvelle lune.
 
 #### Arguments
 
@@ -3503,25 +3294,21 @@ Spawn a new moon.
 ship, =public-key pass
 ```
 
-All arguments are optional. If the `ship` is not specified, it'll spawn a random
-moon. If it's specified, it will spawn the given moon.
+Tous les arguments sont facultatifs. Si le `ship` n'est pas spécifié, il générera une lune aléatoire. S'il est spécifié, il générera à la lune spécifique.
 
-If `=public-key` is specified, it'll configure the moon with the given public
-key rather than generating a new key pair. This is useful if your planet has
-breached and forgotten about its moon.
+Si `=public-key` est spécifié, il configurera la lune avec la clé publique donnée au lieu de générer une nouvelle paire de clés. Ceci est utile si votre planète a été transgressée et a oublié sa lune.
 
-If spawning a new moon, it will spit out the moon's private key, a long code
-which looks like `0wn6bMe.l1......`. You can copy this and save it in a `.key` file, then give the key file as an argument to the runtime when booting the moon like:
+S'il génère une nouvelle lune, il donne la clé privée de la lune, un long code ressemblant à `0wn6bMe.l1.......` Vous pouvez copier ceci et l'enregistrer dans un fichier `.key`, puis donner le fichier clé comme argument au *runtime* lors de l’initialisation de la lune tel que :
 
 ```
-urbit -w sampel-sampel-sampel -k my-moon.key
+urbit -w sampel-sampel-sampel -k my-moon.ke
 ```
 
-You can also give the runtime the key directly by using `-G` rather than `-k`.
+Vous pouvez également donner directement la clé au *runtime* en utilisant `-G` plutôt que `-k`.
 
-#### Example
+#### Exemple
 
-Spawn a random moon:
+Génération aléatoire d’une lune :
 
 ```
 > |moon
@@ -3530,7 +3317,7 @@ moon: ~maglys-filted-dozzod-dozbus
 0wn6bMe.l1~4K.KDRwj.rJMO1.4Km4h.xqXPo.0MNPP.HjyJF.5y6yc.vMYuc.6ZLW~.JOfLa.nVCm2.VH7sl.xTDAE.inSBu.EL7M5.gx0y0.1NPYe.57000.0mTU1
 ```
 
-Spawn a specific moon:
+Génération d’une lune spécifique :
 
 ```
 > |moon ~sampel-dozzod-dozbus
@@ -3539,7 +3326,7 @@ moon: ~sampel-dozzod-dozbus
 0w1p.ihqFP.tIP1f.BhPf3.DLZDr.MomhE.~NyqB.wpkPN.KiYhA.rkTbo.OApoe.V0AIx.NI2-Q.Y-vBU.aKOMW.NwagX.iML~Q.mjFzE.g6w0s.oTw00.0mOU1
 ```
 
-Register an existing moon with the given public key:
+Enregistrez une lune existante avec la clé publique donnée :
 
 ```
 |moon ~sampel-dozzod-dozbus, =public-key 0w8H.oarut.wDiYO.P~5KZ.PFFtm.jpOVa.k2n6r.hsbbN.fBi9w.L4ftw.wlajH.-exB5.BdaRC.EVfD1.zfR~f.e73-W.KtaY-.Qdchy
@@ -3550,12 +3337,9 @@ Register an existing moon with the given public key:
 
 ### `|moon-breach`
 
-Breach (factory reset) a [moon][moon].
+Réinitialisation d'usine (factory reset) d’une [lune][moon].
 
-This is run on the moon's parent planet. Note that breaching a moon will require
-to you boot it from scratch with its original keys. Breaching a moon, unlike a
-planet, will not change its keys. If you no longer have its original keys you'll
-also need to run [`|moon-cycle-keys`](#moon-cycle-keys) to generate new ones.
+Ceci s’exécute sur la planète parente de la Lune. Notez que réinitialiser une lune vous obligera à l’initialiser à partir de zéro avec ses clés d'origine. Réinitialiser une lune, contrairement à une planète, ne changera pas ses clés. Si vous n'avez plus ses clés d'origine, vous devrez aussi exécuter [|moon-cycle-keys](#moon-cycle-keys) pour en générer de nouvelles.
 
 #### Arguments
 
@@ -3563,12 +3347,9 @@ also need to run [`|moon-cycle-keys`](#moon-cycle-keys) to generate new ones.
 ship, =rift @ud
 ```
 
-The `ship` is mandatory, it's the moon to breach. The `=rift` is optional, it's
-the continuity number (factory reset number). You'd specify a `=rift` if you'd
-factory reset the parent planet and need to skip ahead to a particular rift to
-match the existing moon. Note you can't turn the rift backwards, only forwards.
+Le `ship` est obligatoire, c'est la lune à réinitialiser. `=rift` est facultatif, c'est le numéro de continuité (numéro de réinitialisation). Vous spécifiez `=rift` si vous réinitialisez la planète parente et devez sauter à un rift en particulier pour correspondre à la lune existante. Vous ne pouvez pas changez le rift de sens, et seulement aller en avant.
 
-#### Example
+#### Exemple
 
 ```
 > +keys ~lisret-namdev-ralnup-ribsyr
@@ -3591,11 +3372,9 @@ match the existing moon. Note you can't turn the rift backwards, only forwards.
 
 ### `|moon-cycle-keys`
 
-Change the keys of a [moon][moon].
+Changez les clés d'une [lune][moon].
 
-This is run on the moon's parent. Once you've cycled the moon's keys on its
-parent, you'll need to run [`|rekey`](#rekey) on the moon itself with the new
-keys that are printed.
+Ceci s’exécute sur le lune parente. Une fois que vous avez utilisé les clés de la lune sur son parent, vous devez exécuter [`|rekey`](#rekey) sur cette même lune avec les nouvelles clés qui sont imprimées.
 
 #### Arguments
 
@@ -3603,19 +3382,13 @@ keys that are printed.
 ship, =life life, =public-key pass
 ```
 
-The `ship` is mandatory, it's the moon to rekey. The `=life` and `=public-key`
-are optional.
+Le `ship` est obligatoire, c'est la lune à réintroduire. Les `=life` et `=public-key` sont optionnelles.
 
-You'd only specify a `=life` if you needed to jump ahead to a particular key
-revision. You'd only specify a `=public-key` if you need the moon to have a
-particular public key. The only time you'd need either of these optional
-arguments is if you've breach the moon's planet and need to get it back in sync
-with the existing moon. Note you can only go forward with the `=life`, not
-backwards.
+Vous spécifieriez `=life` que si vous devez passer à une révision de clé particulière. Vous spécifieriez *=public-key* que si vous avez besoin que la lune ait une clé publique particulière. La seule fois où vous aurez besoin de l'un ou l'autre de ces arguments facultatifs, serandans le cas ou vous auriez réinitialisé la planète de la lune et aviez besoin de la resynchroniser avec la lune existante. Notez que vous ne pouvez aller de l'avant qu'avec le `=life`, pas en arrière.
 
-#### Example
+#### Exemple
 
-Change the keys for a moon:
+Changez les clés pour une lune :
 
 ```
 > |moon-cycle-keys ~lisret-namdev-ralnup-ribsyr
@@ -3623,10 +3396,9 @@ moon: ~lisret-namdev-ralnup-ribsyr
 0w1.Nqi99.2~xO3.XtTv8.PRR1N.j-Fxu.PqlYT.rgqdD.RVNCD.TQA9R.Chk-n.mKLsQ.oSgu1.6fc7j.8p7h1.BrKuE.5Wdc2.8j2h4
 ```
 
-The long code beginning with `0w1.Nq...` are its new private keys. You'd give
-that code to the [`|rekey`](#rekey) command on the moon itself.
+La partie longue du code commençant par `0w1.Nq…` représente les nouvelles clés privées. Vous attribuez ce code à la commande [`|rekey`](#rekey) sur la lune elle-même.
 
-Rekey to a specific `life` (key revision):
+Rekey portant sur une `life` spécifique, (key revision) :
 
 ```
 > |moon-cycle-keys ~lisret-namdev-ralnup-ribsyr, =life 5
@@ -3635,24 +3407,22 @@ moon: ~lisret-namdev-ralnup-ribsyr
 0w2.FP28W.93aWD.FMyO-.j0z4e.x2cLA.bDnbB.OQNJY.A5DdJ.PbnzU.bAPVr.nb6uF.i1HvF.jQYwS.TDLJf.oVMr4.c-WyM.JLcm3
 ```
 
-Rekey to a specific `life` and with a specific public key:
+Rekey à une `life` spécifique ainsi qu’une clé publique spécifique :
 
 ```
 > |moon-cycle-keys ~lisret-namdev-ralnup-ribsyr, =life 10, =public-key 0w2.oLIwB.dH7BH.GCx3Y.ZQRZe.opK44.GK-HB.Mttqw.lz4FF.neRU3.SudC4.3l0we.UyMWg.dNmLx.rmT-i.SwZtg.nXy7o.wwzGC
 >=
 ```
 
----
-
 ## Spider
 
-Tools for interacting with [threads][thread] and Spider.
+Un outils pour interagir avec des  [threads][thread] et Spider.
 
 ### `:spider|kill`
 
-Kill all running threads.
+Stoppez tous les threads actuellement en cours.
 
-#### Example
+#### Exemple
 
 ```
 > :spider|kill
@@ -3663,7 +3433,7 @@ Kill all running threads.
 
 ### `:spider|poke`
 
-Poke a running thread.
+Poussez l’exécution d’un thread.
 
 #### Arguments
 
@@ -3671,14 +3441,13 @@ Poke a running thread.
 @ta mark vase
 ```
 
-The `@ta` is a thread ID of a running thread. The `mark` and `vase` are the data
-to poke the thread with.
+`@ta` est l’ID de thread d’un thread en cours d’exécution.`mark` et `vase` sont les données avec lesquelles vous poussez le thread.
 
 ---
 
 ### `:spider|start`
 
-Start a thread.
+Démarrez un thread.
 
 #### Arguments
 
@@ -3686,13 +3455,11 @@ Start a thread.
 term vase
 ```
 
-The `term` is mandatory, it's the name of a thread in `/ted` in the current
-desk. The `vase` is optional, it's the start arguments for the thread if needed.
+`term` est obligatoire, c'est le nom d'un thread dans `/ted` dans le bureau actuel.  `vase` est facultatif, c'est l'argument de départ du thread si nécessaire.
 
-Note this tool looks for the thread in the *current desk*, so you'll have to
-change desk with `=dir` if you want to run one elsewhere.
+Notez que cet outil recherche le thread dans le bureau actuel, donc vous devrez changer de bureau avec `=dir` si vous voulez en lancer un autre ailleurs.
 
-#### Example
+#### Exemple
 
 ```
 > :spider|start %hi !>([~ our "foo"])
@@ -3704,7 +3471,7 @@ change desk with `=dir` if you want to run one elsewhere.
 
 ### `:spider|stop`
 
-Stop a running thread.
+Arrêtez l’exécution d’un thread.
 
 #### Arguments
 
@@ -3712,33 +3479,30 @@ Stop a running thread.
 @ta
 ```
 
-The `@ta` is a thread ID of a running thread.
+`@ta` est l’ID de thread d’un thread en cours d’exécution.
 
 ---
 
 ### `+spider/tree`
 
-List all currently running threads.
+Répertoriez tous les threads en cours d’exécution.
 
-#### Example
+#### Exemple
 
 ```
 > +spider/tree
 /eth-watcher--0v2j.5is08.v2ukg.8h6mr.evgt4.o86mf.p3ujf.l2teu.v6q3v.uk1fm.shrog.0pc5o.82tq1.skve4.22nu8.gkr9d.j4tvd.k8bdg.43cgs.rjcvr.eb6lv
 ```
 
----
+## Système
 
-## System
-
-System information and management tools.
+Informations système et outils de gestion.
 
 ### `|automass`
 
-Print memory reports periodically.
+Affichez périodiquement le résultat des rapports de mémoire.
 
-Automatic memory reports can be cancelled with
-[`|cancel-automass`](#cancel-automass).
+Les rapports de mémoire automatiques peuvent être annulés avec [`|cancel-automass`](#cancel-automass).
 
 #### Arguments
 
@@ -3746,17 +3510,16 @@ Automatic memory reports can be cancelled with
 @dr
 ```
 
-A `@dr` is a relative time, for example `~s30`, `~m5`, `~h1`, `~d1`,
-`~d1.h1.m5.s30`, etc.
+Un `@dr` est un temps relatif, par exemple `~s30`, `~m5`, `~h1`, `~d1`, `~d1.h1.m5.s30` etc.
 
-#### Example
+#### Exemple
 
 ```
 > |automass ~s30
 >=
 ```
 
-Thirty seconds later:
+Trente secondes plus-tard :
 
 ```
 .....(truncated for brevity).....
@@ -3767,15 +3530,15 @@ free lists: MB/35.927.760
 sweep: MB/176.019.156
 ```
 
-(and every thirty seconds after)
+(et toutes les trente secondes après)
 
 ---
 
 ### `|cancel-automass`
 
-Cancel periodic memory reports (enabled by [`|automass`](#automass)).
+Annulez les rapports de mémoire périodiques (activés par [`|automass`](#automass)).
 
-#### Example
+#### Exemple
 
 ```
 > |cancel-automass
@@ -3786,9 +3549,9 @@ Cancel periodic memory reports (enabled by [`|automass`](#automass)).
 
 ### `+code`
 
-Print out your web login code.
+Affichez le résultat de votre code de connexion web.
 
-#### Example
+#### Exemple
 
 ```
 > +code
@@ -3799,12 +3562,11 @@ lidlut-tabwed-pillex-ridrup
 
 ### `|code`
 
-Change your web login code.
+Changez votre code de connexion web.
 
-You'll be logged out of all existing web sessions when you change the code.
+Vous serez déconnecté de toutes les sessions web existantes lorsque vous changerez le code.
 
-Note that [Bridge][bridge] won't be able to automatically derive your web login
-code if you change it.
+Notez que [Bridge][bridge] ne sera pas en mesure d’extraire automatiquement votre code de connexion web si vous le modifiez.
 
 #### Arguments
 
@@ -3812,12 +3574,11 @@ code if you change it.
 %reset
 ```
 
-With the `%reset` argument, the web login code will be changed. With no
-argument, it'll just print out your existing code and code revision number.
+Avec l’argument `%reset`, le code de connexion web sera modifié. Sans argument, seuls votre code existant et le numéro de révision du code seront affiché.
 
-#### Example
+#### Exemple
 
-With no argument:
+Sans argument :
 
 ```
 > |code
@@ -3827,7 +3588,7 @@ use |code %reset to invalidate this and generate a new code
 >=
 ```
 
-With the `%reset` argument:
+Avec l’argument `%reset` :
 
 ```
 > |code %reset
@@ -3847,7 +3608,7 @@ use |code %reset to invalidate this and generate a new code
 
 ### `|cors-approve`
 
-Approve a CORS origin.
+Approuvez une origine CORS.
 
 #### Arguments
 
@@ -3855,14 +3616,13 @@ Approve a CORS origin.
 @t
 ```
 
-The argument is a [cord][cord] containing the origin to approve.
+L’argument est une [cord][cord] contenant l’origine à approuver.
 
-#### Example
+#### Exemple
 
 ```
 > |cors-approve 'http://example.com'
 >=
-
 > +cors-registry
 [ requests={~~http~3a.~2f.~2f.localhost~3a.8081}
   approved={~~http~3a.~2f.~2f.example~.com}
@@ -3871,7 +3631,6 @@ The argument is a [cord][cord] containing the origin to approve.
 
 > |cors-approve 'http://localhost:8081'
 >=
-
 > +cors-registry
 [ requests={}
     approved
@@ -3886,9 +3645,9 @@ The argument is a [cord][cord] containing the origin to approve.
 
 ### `+cors-registry`
 
-Print approved, rejected and requested CORS origins.
+Affichez, rejeter et demander les origines CORS approuvées.
 
-#### Example
+#### Exemple
 
 ```
 > +cors-registry
@@ -3902,7 +3661,7 @@ Print approved, rejected and requested CORS origins.
 
 ### `|cors-reject`
 
-Reject a CORS origin.
+Rejetez l’origine CORS.
 
 #### Arguments
 
@@ -3910,14 +3669,13 @@ Reject a CORS origin.
 @t
 ```
 
-The argument is a [cord][cord] containing the origin to reject.
+L’argument est un [cord][cord] contenant l’origine à rejeter.
 
-#### Examples
+#### Exemples
 
 ```
 > |cors-reject 'http://foo.com'
 >=
-
 > +cors-registry
 [ requests={}
     approved
@@ -3932,13 +3690,11 @@ The argument is a [cord][cord] containing the origin to reject.
 
 ### `-dns-address`
 
-Request a `<ship>.arvo.network` subdomain and configure SSL.
+Demandez un sous-domaine `<ship>.arvo.network` et configurer SSL.
 
-Note this only works for stars and planets. Note your ship must be accessible on
-port 80.
+Notez que cela ne fonctionne que pour les étoiles et les planètes. Notez que votre vaisseau doit être accessible sur le port 80.
 
-If successful, you'll be able to access your ship's web interface at
-`https://<ship>.arvo.network`.
+Si vous réussissez, vous pourrez accéder à l'interface web de votre vaisseau à l'adresse `https://<ship>.arvo.network`.
 
 #### Arguments
 
@@ -3946,10 +3702,10 @@ If successful, you'll be able to access your ship's web interface at
 [%if @if]
 ```
 
-The `@if` is a *public* IPv4 address in the format `.x.x.x.x` like
-`.192.168.1.254`.
+`@if` est une adresse *publique* IPv4 au format`.x.x.x.x`
+ comme`.192.168.1.254`.
 
-#### Example
+#### Exemple
 
 ```
 > -dns-address [%if .150.230.14.135]
@@ -3963,24 +3719,22 @@ dns: confirmed access via ralnup-ribsyr.arvo.network
 
 ### `|exit`
 
-Shut down this ship.
+Eteindre ce vaisseau.
 
-#### Example
+#### Exemple
 
 ```
 > |exit
 >=
 %drum-exit
-(ship is now shut down and you're back at the host shell)
+(le vaisseau est maintenant arrêté et vous êtes de retour à l'hôte shel)
 ```
-
----
 
 ### `|knob`
 
-Adjust [vane][vane] error verbosity.
+Ajustez la explicitement de l’erreur [vane][vane].
 
-Note this only applies to `%crud` error messages that look something like:
+Notez que cela ne s’applique qu’aux message d’erreur `%crud` qui ressemblent à :
 
 ```
 crud: %foo event failed
@@ -3992,18 +3746,15 @@ crud: %foo event failed
 term ?(%hush %soft %loud)
 ```
 
-The `term` is an error tag like `%foo`. The verbosity level for the specified
-tag may be one of:
+`term`  est un tag d'erreur comme `%foo`. Le niveau de verbosité du tag spécifié peut être l'un des suivants :
 
-- `%hush` - Completely silent, print nothing.
-- `%soft` - Just print `crud: %error-tag event failed`, ignore any `tang` given
-  in the `%crud`.
-- `%loud` - Print the `%soft` message as well as the full `tang` given in the
-  `%crud` `task`.
-  
-#### Example
+- `%hush` - Complètement silencieux, aucun affichage de résultat.
+- `%soft` - Afficher simplement le `crud: %error-tag event failed`, ignorez tous les  `tangs` obtenues dans les `%crud`.
+- `%loud` - Affiche le message `%soft` et complètement `tang` donnée dans la `task` `%crud`.
 
-Loud:
+#### Exemple
+
+Fort :
 
 ```
 > |knob %foo %loud
@@ -4013,9 +3764,10 @@ Loud:
 >=
 crud: %foo event failed
 blah blah
+
 ```
 
-Soft:
+Doux :
 
 ```
 > |knob %foo %soft
@@ -4026,7 +3778,7 @@ Soft:
 crud: %foo event failed
 ```
 
-Hush:
+Discret :
 
 ```
 > |knob %foo %hush
@@ -4039,9 +3791,9 @@ Hush:
 
 ### `|mass`
 
-Print a memory report.
+Affichez le résultat d’un rapport de mémoire.
 
-#### Examples
+#### Exemples
 
 ```
 ~zod:dojo> |mass
@@ -4057,14 +3809,11 @@ sweep: MB/176.019.156
 
 ### `|meld`
 
-Deduplicate memory.
+Dédupliquez la mémoire.
 
-Note this can take a large amount of memory to complete if the ship's existing
-memory footprint is large. If the host OS has limited memory, it may be more
-efficient to shut down the ship and [run it directly from the
-runtime](/manual/running/vere#meld).
+Notez que cela peut prendre une grande quantité de mémoire à compléter si la mémoire footprint du vaisseau existante est importante. Si l’OS hôte a une mémoire limitée, il peut être plus efficient d'arrêter le vaisseau et de [l'exécuter directement à partir du runtime](/manual/running/vere#meld).
 
-#### Example
+#### Exemple
 
 ```
 > |meld
@@ -4089,12 +3838,11 @@ pier: meld complete
 
 ### `|pack`
 
-Defragment memory.
+Défragmentez la mémoire.
 
-This is lighter than [`|meld`](#meld) on memory usage but does not compact the
-ship's state as much.
+Ceci a un impact moindre que [`|meld`](#meld) sur l’utilisation de la mémoire mais ne comprise pas pour autant l’état du vaisseau.
 
-#### Example
+#### Exemple
 
 ```
 > |pack
@@ -4105,20 +3853,15 @@ pier: pack complete
 
 ---
 
-
 ### `|rekey`
 
-Rotate private keys.
+Changez les clés privées.
 
-**Note this should not be used unless you've changed your network keys on
-[Bridge][bridge] first. Using this incorrectly will render your ship unable to
-communicate.**
+**Notez que ceci ne doit pas être utilisé à moins que vous n'ayez d'abord changé vos clés réseau sur [Bridge][bridge] Si vous ne l'utilisez pas correctement, votre vaisseau sera incapable de communiquer.**
 
-Note also this is not for when you perform a factory reset, this is specifically
-for if you change your keys *without* a factory reset.
+Notez également que ce n’est pas à utiliser dans le cadre d’une réinitialisation d'usine, c'est spécifiquement dans le cas ou vous changez vos clés *sans* réinitialisation d'usine.
 
-If your ship is a [moon][moon], you'd do the key change on its parent planet
-rather than through Bridge, and then use `|rekey` on the moon itself.
+Si votre vaisseau est une [lune][moon], vous effectuerez le changement de clé sur sa planète parente au lieu de passer par Bridge, puis utiliserez `|rekey` sur la lune elle-même.
 
 #### Arguments
 
@@ -4126,12 +3869,9 @@ rather than through Bridge, and then use `|rekey` on the moon itself.
 @t
 ```
 
-This is the long code inside the `sampel-palnet-1.key` file you downloaded from
-Bridge (or the code that your planet printed out in the dojo if a moon). It'll
-look like `0w9oBR.dfY5Z.LSxut.YHe3u....`. You must wrap it in single-quotes when
-giving it to this generator, like `'0w9oBR.dfY5Z.LSxut.YHe3u...'`.
+Il s’agit du long code à l’intérieur du fichier `sampel-palnet-1.key`que vous avez téléchargé depuis Bridge (ou le code que votre planète a afficher le résultat dans le dojo s’il s’agit d’une lune). Cela ressemblera à `0w9oBR.dfY5Z.LSxut.YHe3u....`. Vous devez l’entourer d’apostrophe lorsque vous le donnez à ce générateur comme `'0w9oBR.dfY5Z.LSxut.YHe3u...'`.
 
-#### Example
+#### Exemple
 
 ```
 |rekey '0w3.N7qWC.LmuS5.rY6Rb.DQxmF.ta3vf.sOQvP.xOnhv.3P7sL.SjQqb.IbAKo.EU2vM.04S6U.VStzI.RNXij.YntkC.RRG29.AqaLf'
@@ -4141,14 +3881,13 @@ giving it to this generator, like `'0w9oBR.dfY5Z.LSxut.YHe3u...'`.
 
 ### `|verb`
 
-Toggle kernel event tracing verbose mode.
+Basculez en mode détails de suivi des évènements du noyau.
 
-When enabled, this will print a [move][move] trace for every event in
-[Arvo][arvo].
+Lorsqu’il est activé, cela afficher le résultat d’une trace [move][move] de chaque évènement dans [Arvo][arvo].
 
-#### Example
+#### Exemple
 
-Toggle on:
+Activez :
 
 ```
 > |verb
@@ -4171,20 +3910,15 @@ Toggle on:
 ........
 ```
 
-Run `|verb` again to turn it off.
+Exécutez à nouveau `|verb` pour le désactiver.
 
 ---
 
 ### `|trim`
 
-Trim kernel state.
+Trim (découpez) l'état du noyau.
 
-This command is used to reduce memory pressure. Currently, the only two
-[vanes][vane] that do anything with a `%trim` task are [Eyre][eyre] and
-[Clay][clay]. Eyre closes inactive channels and Clay clears its build cache.
-Typically these things use little memory so the impact of `|trim` is minimal and
-it is not useful. For significant memory reduction, see [`|meld`](#meld) and
-[`|pack`](#pack).
+Cette commande sert à réduire la pression sur la mémoire. Actuellement, les deux seules [vanes][vane] qui font quoi que ce soit avec une fonction %trim sont [Eyre][eyre] et [Clay][clay]. Eyre ferme les canaux inactifs et Clay efface son cache de construction. Typiquement, ces choses utilisent peu de mémoire, donc l'impact de `|trim` est minime et n'est pas utile. Pour une réduction significative de la mémoire, voir [`|meld`](#meld) et [`|pack`](#pqck).
 
 #### Arguments
 
@@ -4192,11 +3926,9 @@ it is not useful. For significant memory reduction, see [`|meld`](#meld) and
 @ud
 ```
 
-You may *optionally* give a trim priority number as an argument. The lower the
-number, the higher the priority. Currently, none of the vanes do anything with
-this so there's no point in specifying it.
+Vous pouvez *facultativement* donner un numéro de priorité trim comme argument. Plus le nombre est faible, plus la priorité est élevée. Actuellement, aucune des vanes ne fait quoi que ce soit avec ce numéro, il est donc inutile de le spécifier.
 
-#### Example
+#### Exemple
 
 ```
 > |trim
