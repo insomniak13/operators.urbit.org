@@ -48,7 +48,7 @@ Cela signifie que vous avez reçu une mise à jour du noyau en direct, par exemp
 
 Si les applications bloquées sont importantes pour vous et que vous ne voulez pas les suspendre, vous pouvez retarder l'application de la mise à jour du noyau et attendre de recevoir les mises à jour pour ces applications. Vous pouvez également vérifier que les mises à jour automatiques sont  activées pour les applications données. Voir la section [Mises à jour](https://operators.urbit.org/manual/os/updates#app-updates) des applications ci-dessous pour plus de détails
 
-#### App: "abc" is blocked from upgrading
+#### Application : “abc” ne peut pas être mis à jour
 
 ![app blocking messages
 screenshot](https://media.urbit.org/operators/manual/os/updates/app-blocked-messages.png)
@@ -152,7 +152,7 @@ Pour vérifier l'état de mise à jour d'une application, vous pouvez lancer la 
 
 S'il y a des `pending updates`, cela signifie généralement que les développeurs attendent une mise à jour du noyau avant de pouvoir les appliquer. L'entrée `updates` vous indique si les mises à jour automatiques sont activées ou non. Si `tracking` n'est pas indiqué, vous pouvez exécuter `|resume %the-desk` pour les réactiver, ou exécuter `|install ~the-publishing-ship %the-desk`.
 
-## Further reading
+## Lectures approfondies
 
 - [Runtime Reference](https://operators.urbit.org/manual/running/vere) - ceci documente toutes les options et utilités l’exécutable `urbit`, comme `next`.
 - [Dojo Tools](https://operators.urbit.org/manual/os/dojo-tools) - ceci inclut la documentation de nombreuses mises à jour et des commandes dojo liées au bureau.
