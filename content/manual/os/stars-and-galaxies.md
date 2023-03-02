@@ -1,38 +1,33 @@
 +++
 title = "Star and Galaxy Operations"
-description = "Additional information and suggested ettiquette for Star and Galaxy owners."
+description = "Informations supplémentaires et suggestions d'étiquette pour les propriétaires de Star et Galaxy."
 weight = 6
 aliases = ["/docs/using/operating-a-star/"]
 template = "doc.html"
 +++
 
-To boot your galaxy or star, follow our [installation instructions](https://urbit.org/getting-started/).
+Pour initialiser votre galaxie ou votre étoile, suivez [nos instructions d'installation](https://urbit.org/getting-started/).
 
-### Hosting your star
+### Hébergement de votre étoile
 
-If you plan to distribute planets in any capacity, we ask that you keep your star
-running. If you fail to do so, those planets will become orphans that are unable
-to communicate with the network unless they transfer to a new star.
+Si vous envisagez de distribuer des planètes de quelque manière que ce soit, nous vous demandons de maintenir votre étoile en exécution. Si vous ne le faites pas, ces planètes deviendront des orphelines incapables de communiquer avec le réseau, à moins qu'elles ne soient transférées vers une nouvelle étoile.
 
-See our [cloud hosting instructions](/manual/running/hosting) for
-instructions on settings up a Digital Ocean droplet.
+Consultez nos [instructions d'hébergement sur un cloud](https://operators.urbit.org/manual/running/hosting) pour savoir comment configurer un droplet Digital Ocean.
 
-### Distributing planets
+### Distribuer des planètes
 
-You can distribute planets from your star via [Bridge](https://bridge.urbit.org/). As a reminder if you do distribute planets, please boot and run your star on the Arvo network, otherwise those planets won't be able to connect, which has a negative effect on the network as a whole, as orphan planets are left with very limited functionality.
+Vous pouvez distribuer des planètes depuis votre étoile via [Bridge](https://bridge.urbit.org/). Pour rappel, si vous distribuez des planètes, veuillez démarrer et exécuter votre étoile sur le réseau Arvo, sinon ces planètes ne pourront pas se connecter, ce qui a un effet négatif sur le réseau dans son ensemble, car les planètes orphelines se retrouvent avec des fonctionnalités très limitées.
 
-### Software updates
+### Mises à jour logicielles
 
-By default, your star accepts software updates from its galaxy and routes them to its planets. You can use this mechanism to push custom software to your planets. Keep in mind that planets expect functional, non-breaking software updates, and generally want to be able to communicate with planets that are sponsored by other stars.
+Par défaut, votre étoile accepte les mises à jour logicielles de sa galaxie et les achemine vers ses planètes. Vous pouvez utiliser ce mécanisme pour envoyer des logiciels personnalisés à vos planètes. Gardez à l'esprit que les planètes attendent des mises à jour logicielles fonctionnelles, sans rupture, et qu'elles souhaitent généralement pouvoir communiquer avec les planètes parrainées par d'autres étoiles.
 
-### Star-owner etiquette
+### Code de conduite du propriétaire de l'étoile
 
-- If you distribute planets, boot and run your star on the Arvo network, or the
-  planets won't be able to boot for the first time or connect unless they
-  transfer to a different star.
-- A star is networking infrastructure. For that reason, the machine running your star or galaxy must have sufficient bandwidth, storage, and processing power for your dependent planets. Until event log pruning is implemented, expect ships to consume more disk space every year; stars looking to serve around 100 planets will want to ensure around 50GB of space per year of operation.
-- When messaging others, communicate using your star only when speaking in an official/infrastructural capacity. Otherwise, use your personal planet.
+- Si vous distribuez des planètes, initialisez et exécutez votre étoile sur le réseau Arvo, sinon les planètes ne pourront s’initialiser pour la première fois où se connecter, à moins qu'elles ne soient transférées vers une autre étoile.
+- Une étoile est une infrastructure réseau. C'est pourquoi la machine qui exécute votre étoile ou galaxie doit disposer d'une bande passante, d'un espace de stockage, et d'une puissance de traitement suffisant pour les planètes qui en dépendent. Jusqu'à ce que l'élagage des journaux d'événements soit mis en œuvre, attendez-vous à ce que les vaisseaux consomment plus d'espace disque chaque année ; les étoiles qui cherchent à faire tourner une centaine de planètes devront s'assurer d'un espace d'environ 50 Go par année d’exécution.
+- Lorsque vous envoyez des messages à d'autres personnes, n'utilisez votre étoile qu'à titre officiel/infrastructurel. Sinon, utilisez votre planète personnelle.
 
 ### Taxes
 
-Urbit address space has value, which means the distribution of address space has tax implications. You should speak with your tax advisor about these implications.
+L'espace d'adressage Urbit a une valeur, ce qui signifie que la distribution de l'espace d'adressage à des implications fiscales. Vous devriez parler de ces implications avec votre conseiller fiscal.

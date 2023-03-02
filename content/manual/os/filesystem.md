@@ -1,273 +1,207 @@
 +++
-title = "Filesystem"
+title = "Système de fichiers"
 template = "doc.html"
 weight = 5
 +++
 
-Urbit has its own revision-controlled filesystem, Clay. Clay is a typed, global,
-referentially transparent namespace. An easy way to think about it is like typed
-`git`.
+Urbit a son propre système de fichiers contrôlé par révision, Clay. Clay est un espace de noms typé, global, transparent par rapport aux références. Une façon simple d'y penser est de le considérer comme l’équivalent de `git` .
 
-The most common way to use Clay is to mount a Clay node in a Unix directory. The
-mounted directory is always at the root of your pier directory.
+La façon la plus commune d'utiliser Clay est de monter un nœud Clay dans un répertoire Unix. Le répertoire monté est toujours à la racine de votre répertoire ponton (*pier)*.
 
-For more information on Clay, see the [Overview](https://developers.urbit.org/reference/arvo/clay/clay), and
-additional usage information at [Using Clay](https://developers.urbit.org/reference/arvo/clay/using).
+Pour plus d'informations sur Clay, consultez [l'aperçu](https://developers.urbit.org/reference/arvo/clay/clay), et obtenez des informations supplémentaires sur [l'utilisation de Clay](https://developers.urbit.org/reference/arvo/clay/using).
 
-### Quickstart
+#### Démarrage rapide
 
-This quick-start guide will walk you through some common commands. Follow along
-using your Dojo. When you get a `>=` message after entering a command, this means
-that the command was successful.
+Ce guide de démarrage rapide vous guidera à travers quelques commandes courantes. Suivez-le en utilisant votre Dojo. Lorsque vous obtenez un message `>=` après avoir entré une commande, cela signifie que la commande a réussi.
 
-A [`desk`](https://developers.urbit.org/reference/glossary/desk) is something like an independently
-revision-controlled branch of your urbit's file-system. Your urbit's system
-files live in the `%base` desk.
+Un [`desk`](https://developers.urbit.org/reference/glossary/desk) est en quelque sorte une branche indépendante du système de fichiers de votre urbit, dont la révision est contrôlée. Les fichiers système de votre urbit se trouvent dans le bureau `%base`.
 
-It's important to note that whenever you want to sync changes from your Unix
-directory to your ship, you must use the `|commit %desk` command, where `%desk`
-is the `desk` that you'd like to sync to.
+Il est important de noter qu'à chaque fois que vous souhaitez synchroniser les changements de votre répertoire Unix vers votre vaisseau, vous devez utiliser la commande `|commit %desk`, où `%desk` est le `desk` vers lequel vous souhaitez vous synchroniser.
 
-When developing it's a good idea to use a separate `desk`. Create a `%sandbox`
-`desk` based on the `%base` `desk` (`our` produces your ship name):
+Lorsque vous codez, il est préférable d'utiliser un `desk` séparé. Crée un `%sandbox desk` basé sur le `%base` `desk` (`our` génère le nom de votre vaisseau): 
 
 ```
 ~zod:dojo> |merge %sandbox our %base
 ```
 
-Most of the time we want to use Clay from Unix. Mount the entire contents of
-your `%sandbox` desk to Unix:
+La plupart du temps, vous voudrez utiliser Clay depuis Unix. Montez tout le contenu de votre bureau `%sandbox` sur Unix :
 
 ```
 ~zod:dojo> |mount %sandbox
 ```
 
-To explore the filesystem from inside Urbit `+ls` and `+cat` are useful. `+ls`
-displays files in the current directory, and `+cat` displays the contents of
-a file.
+Pour explorer le système de fichiers depuis Urbit, `+ls` et `+cat` sont utiles. `+ls` affiche les fichiers dans le répertoire courant, et `+cat` affiche le contenu d'un fichier.
 
-We use `%` to mean "current directory." The result of the command below
-is just like using `ls` in a Unix terminal.
+Nous utilisons `%` pour signifier "répertoire actuel". Le résultat de la commande ci-dessous est exactement comme l'utilisation de `ls` dans un terminal Unix.
 
 ```
 ~zod:dojo> +ls %
 ```
 
-Notice how `+cat %` does the same thing. That's because everything in Clay,
-including directories, is a file.
+Vous remarquerez que `+cat %` fait la même chose. C'est parce que tout dans Clay, y compris les répertoires, est un fichier.
 
-Sync from your friend `~bus`'s `%experiment` desk to your `%sandbox` desk:
+Synchronisation du bureau `%experiment` de votre ami `~bus` vers votre bureau `%sandbox` :
 
 ```
 ~zod:dojo> |sync %sandbox ~bus %experiment
 ```
 
-If and when your sync is successful, you will receive a message:
+Si et quand votre synchronisation est réussie, vous recevrez un message :
 
 ```
-kiln: sync succeeded from %experiment on ~bus to %sandbox
+kiln : sync succeeded from %experiment on ~bus to %sandbox
 ```
 
-The ship that you sync from will get their own message indicating that you're
-both connected as peers:
+Le vaisseau à partir duquel vous vous synchronisez recevra son propre message indiquant que vous êtes tous deux connectés en tant que voisins.
 
 ```
-; ~zod is your neighbor.
+; ~zod est votre voisin.
 ```
 
 ---
 
-### Clay manual
+### Manuel de Clay
 
-The following constitutes an explanation of handy commands that most Urbit
-pilots will want to know at some point. Reading this section will get you to the
-point that you can navigate the file system, sync with Unix, merge your desk,
-and other basic tasks familiar to novice users of the Unix terminal.
+Ce qui suit constitue une explication des commandes pratiques que la plupart des pilotes Urbit voudront connaître à un moment donné. La lecture de cette section vous permettra de naviguer dans le système de fichiers, de vous synchroniser avec Unix, de fusionner votre bureau, et d’effectuer d'autres tâches de base familières aux utilisateurs novices du terminal Unix.
 
-#### Paths
+#### Chemins d'accès
 
-A path in Clay is a list of URL-safe text, restricted to the characters `[a z]`,`[0 9]`, `.`, `-`, `_`, and `~`. This path is a list of strings each
-prepended by `/`. In other words, paths are expressed as `/foo/bar/baz`. File
-extensions are separated from file names with `/`, not `.`. Extensions are
-syntactically identical to subdirectories, except that they must terminate the
-path.
+Un chemin d'accès dans Clay est une liste de textes sécurisés pour les URL, limités aux caractères `[a z]`, `[0 9]`, `.`, `-`, `_` et `~`. Ce chemin est une liste de chaînes de caractères précédées chacune de `/.` En d'autres termes, les chemins sont exprimés sous la forme `/foo/bar/baz`. Les extensions de fichiers sont séparées des noms de fichiers par `/`, et non par `.`. Les extensions sont syntaxiquement identiques aux sous-répertoires, sauf qu'elles doivent terminer le chemin.
 
-Paths begin with three strings indicating the ship, desk, and revision, and
-might look like `/~dozbud-namsep/base/11`.
+Les chemins commencent par trois chaînes indiquant le vaisseau, le bureau et la révision, et peuvent ressembler à `/~dozbud-namsep/base/11`.
 
-The first component is `ship`, which is, as you might guess, the name of
-an Urbit ship. The second component is `desk`, which is a workspace meant to
-contain other directories; the default `desk` is `%base`. The third component is
-the revision, which represents version information in various ways: date and time;
-a version sequence, which is a value incremented by one whenever a file on the
-given `desk` is modified; or an arbitrary plaintext label.
+Le premier composant est `ship`, qui est, comme vous l’aurez deviner, le nom d'un vaisseau Urbit. Le deuxième composant est le `desk`, qui est un espace de travail destiné à contenir d'autres répertoires ; le `desk` par défaut est `%base`. Le troisième composant est la révision, qui représente les informations de version de différentes manières : date et heure ; une séquence de version, qui est une valeur incrémentée de un à chaque fois qu'un fichier sur le `desk` donné est modifié ; ou une étiquette arbitraire en texte clair.
 
-You can find what your current ship, desk, and revision is at any given moment by
-typing `%` in the Dojo and looking at the first three results. This will display
-as a cell rather than a path, like
+Vous pouvez trouver quel est votre vaisseau, votre bureau et votre révision à tout moment en tapant `%` dans le Dojo et en regardant les trois premiers résultats. Cela s'affichera sous la forme d'une cellule plutôt que d'un chemin, comme par exemple:
 
 ```
 [~.~zod ~.base ~.~2021.3.19..16.11.20..0c60]
 ```
 
-Here we see that the revision consists of the date, time, and a short hash.
+Ici, nous voyons que la révision consiste en la date, l'heure et un hachage court.
 
-We use this format because, unlike the current internet, the Urbit network uses a
-global namespace. That means that a file named `example.hoon` in the `/gen`
-directory on the `%base` desk of your ship `~lodleb-ritrul` would have a
-universal address to anyone else on the network:
-`/~lodleb-ritrul/base/186/gen/example/hoon`. That, of
-course, doesn't mean that everyone on the network has privileges to access that
-path. But given the revision-controlled and immutable nature of Urbit, this
-means that if the file requested is available, it will always be the same. This
-means that if an Urbit is serving a webpage, that exact version will always be
-retrievable (assuming you have access to it).
+Nous utilisons ce format car, contrairement à l'internet actuel, le réseau Urbit utilise un espace de noms global. Cela signifie qu'un fichier nommé `example.hoon` dans le répertoire `/gen` sur le bureau `%base` de votre vaisseau `~lodleb-ritrul` aurait une adresse universelle pour toute autre personne sur le réseau : `/~lodleb-ritrul/base/186/gen/exemple/hoon`. Bien sûr, cela ne signifie pas que tout le monde sur le réseau a les privilèges pour accéder à ce chemin. Mais étant donné la nature immuable et à révision contrôlée d'Urbit, cela signifie que si le fichier demandé est disponible, il sera toujours le même. Cela signifie que si un Urbit dessert une page web, cette version-ci sera toujours récupérable (en supposant que vous en ayez l’accès).
 
-#### Relative paths
+#### Chemins relatifs
 
-The `%` command, which we gestured at in the above section, represents the
-**relative path**, which is the path where you are currently working.
+La commande `%`, que nous avons évoquée dans la section précédente, représente le chemin relatif, c'est-à-dire le chemin où vous travaillez actuellement.
 
-`%`s can be stacked to indicate one level further up in the hierarchy for each
-additional `%`. Try the following command:
+Les `%` peuvent être empilés pour indiquer un niveau plus haut dans la hiérarchie pour chaque `%` supplémentaire. Essayez la commande suivante :
 
 ```
 ~zod:dojo> %%%
 ```
 
-You'll notice that it only has your ship name and the empty list. The
-two additional `%`s abandoned the revision and the `desk` information by moving
-up twice the hierarchy.
+Vous remarquerez qu'elle ne contient que votre nom de vaisseau et que la liste vide. Les deux `%` supplémentaires ont abandonné la révision et les informations du `desk` en remontant deux fois dans la hiérarchie.
 
-There are no local relative paths. `/foo/bar` must be written as
-`%/foo/bar`.
+Il n'y a pas de chemins relatifs locaux. /`foo/bar` doit être écrit comme `%/foo/bar`.
 
 #### Substitution
 
-You don't need to write out the explicit path every time you want to reference
-somewhere outside of your working directory. You can substitute `=` for the
-segments of a path.
+Vous n'avez pas besoin d'écrire le chemin explicite chaque fois que vous voulez faire référence à un endroit situé en dehors de votre répertoire de travail. Vous pouvez substituer `=` aux segments d'un chemin.
 
-Recall that a full address in the the Urbit namespace is of the form
-`/ship/desk/case/path`. To switch to the `%sandbox` `desk`, you would enter
+Rappelez-vous qu'une adresse complète dans l'espace de nom Urbit est de la forme `/ship/desk/case/path`. Pour passer au bureau `%sandbox`, vous devez entrer
 
 ```
 ~sampel-palnet:dojo> =dir /=sandbox=
 ```
 
-`=dir` is used to change the working directory - we will see more on it
-[below](#changing-directories).
+`=dir` est utilisé pour changer le répertoire de travail, nous nous pencherons plus dessus [ci-dessous](https://operators.urbit.org/manual/os/filesystem#changing-directories).
 
-The above command uses substitution to use your current `ship` and
-revision; only the `desk` argument, which is located between the other two, is
-given something new. Without substitution, you would need to write:
+La commande ci-dessus utilise la substitution pour utiliser votre `ship` et votre révision actuels ; seul l'argument `desk`, qui est situé entre les deux autres, reçoit quelque chose de nouveau. Sans substitution, vous devriez écrire :
 
 ```
 ~sampel-palnet:dojo> =dir /~sampel-palnet/sandbox/85
 ```
 
-Substitutions work the same way in the `ship/desk/case` and
-paths. For example, if you are in the `/gen` directory, you can reference a file
-in the `/app` directory like below. (`+cat` displays the contents of a file).
+Les substitutions fonctionnent de la même manière dans le cas `ship/desk/case` et les chemins. Par exemple, si vous êtes dans le répertoire `/gen`, vous pouvez référencer un fichier dans le répertoire `/app` comme ci-dessous. (`+cat` affiche le contenu d'un fichier).
 
 ```
 ~sampel-palnet:dojo> =dir %/gen
 ~sampel-palnet:dojo/=/=/~2021.3.19..16.11.20..0c60/gen> +cat /===/app/curl/hoon
 ```
 
-Note what was substituted out, and note that we don't need to separate `=` with
-`/`.
+Notez ce qui a été substitué, et notez que nous n'avons pas besoin de séparer `=` par `/`.
 
-If we changed our working directory to something called `/gen/gmail`, we could
-access a file called
+Si nous changeons notre répertoire de travail en quelque chose appelé `/gen/gmail`, nous pouvons accéder à un fichier appelé
 
 ```
 ~sampel-palnet:dojo/=/=/~2021.3.19..16.11.20..0c60/gen> =dir %/gmail
 ~sampel-palnet:dojo/=/=/~2021.3.19..16.11.20..0c60/gen/gmail> +cat /===/app/=/split/hoon
-```
+``` 
 
-Because both paths share a directory named `/gmail` at the same position in the
-address hierarchy – which, if you recall, is just a `list` – the above command
-works!
+Parce que les deux chemins partagent un répertoire nommé `/gmail` à la même position dans la hiérarchie des adresses `-` qui, si vous vous souvenez, est juste une liste `-` la commande ci-dessus fonctionne !
 
-We can do the same thing between desks. If `%sandbox` has been merged with
-`%base`, the following command will produce the same results as the above
-command.
+Nous pouvons faire la même chose entre les bureaux. Si `%sandbox` a été fusionné avec `%base`, la commande suivante produira les mêmes résultats que la commande ci-dessus.
 
 ```
 ~sampel-palnet:dojo/=/=/~2021.3.19..16.11.20..0c60/gen/gmail> +cat /=sandbox=/app/=/split/hoon
 ```
 
-Most commonly this is used to avoid having to know the current revision
-number in the `dojo`: `/~lodleb-ritrul/base/~2021.3.19..16.11.20..0c60/gen/example/hoon`
+Le plus souvent, ceci est utilisé pour éviter d'avoir à connaître le numéro de révision actuel dans le `dojo` : `/~lodleb-ritrul/base/~2021.3.19..16.11.20..0c60/gen/exemple/hoon`
 
-#### Changing directories
+#### Changer de répertoire
 
-Change the working directory with `=dir`. It's our equivalent of the Unix `cd`.
+Changez le répertoire de travail avec `=dir`. C'est notre équivalent du `cd` d'Unix.
 
-For example, the syntax to navigate to `/base/gen/ask` is:
-
-```
-~sampel-palnet:dojo> =dir /=base=/gen/ask
-```
-
-This command will turn your prompt into something like this:
+Par exemple, la syntaxe pour naviguer vers /`base/gen/ask` est :
 
 ```
-~sampel-palnet:dojo/=/=/~2021.3.19..16.11.20..0c60/gen/ask>
+`~sampel-palnet:dojo> =dir /=base=/gen/ask`
 ```
 
-Using `=dir` without anything else uses the null path, which returns you to
-your base desk.
+Cette commande transformera votre invitation en quelque chose comme ceci :
 
 ```
-~sampel-palnet:dojo/=/=/~2021.3.19..16.11.20..0c60/gen/ask> =dir
+`~sampel-palnet:dojo/=/=/~2021.3.19..16.11.20..0c60/gen/ask>`
 ```
 
-Your dojo prompt will turn back into `~sampel-palnet:dojo>`.
+Utiliser `=dir` sans rien d'autre utilise le chemin nul, qui vous renvoie à votre bureau de base.
 
-To go up levels in the path hierarchy, recall the relative path expression
-`%`. Stacking them represents another level higher in the hierarchy than
-the current working directory for each `%` beyond the initial. The command below
-brings you one level up:
+```
+`~sampel-palnet:dojo/=/=/~2021.3.19..16.11.20..0c60/gen/ask> =dir`
+```
+
+Votre invitation dojo redeviendra `~sampel-palnet:dojo>`.
+
+Pour remonter les niveaux dans la hiérarchie des chemins, rappelez-vous l'expression de chemin relatif `%`. Les empiler représente un autre niveau plus haut dans la hiérarchie que le répertoire de travail actuel pour chaque `%` au-delà de l'initial. La commande ci-dessous vous fait remonter d'un niveau :
 
 ```
 ~sampel-palnet:dojo> =dir %/gen
 ~sampel-palnet:dojo/=/=/~2021.3.19..16.11.20..0c60/gen> =dir %%
 ```
 
-### Revision-control
+### Contrôle de révision
 
 #### Mount
 
-Syntax: `|mount %/clay/path %mount-point`
+Syntaxe : `|mount %/clay/path %mount-point`
 
-Mount the `/clay/path` at the Unix mount point `mount-point` with your pier as
-root directory.
+Monte le `/clay/path` au point de montage Unix `mount-point` avec votre ponton comme répertoire racine.
 
-**Examples:**
+**Exemples :**
 
 ```
 |mount %/gen %generators
 ```
 
-Mounts `%/gen` to `/generators` inside your pier directory.
+Monte `%/gen` dans `/generators` à l'intérieur de votre répertoire ponton.
 
-#### Unmount
+### Unmount
 
 ```
-|unmount %mount-point
+`|unmount %mount-point`
 ```
 
-Unmount the the mount point from Unix.
+Démonte le point de montage sous Unix.
 
-**Examples:**
+**Exemples :**
 
 ```
 |unmount %foo
 ```
 
-Unmounts the Unix path `/foo`.
+Démonte le chemin Unix `/foo`.
 
 #### Merge
 
@@ -275,35 +209,33 @@ Unmounts the Unix path `/foo`.
 |merge %target-desk ~source-ship %source-desk
 ```
 
-Merges a source `desk` into a target `desk`.
+Permet de fusionner un bureau source dans un bureau cible.
 
-This can optionally include a [merge
-strategy](https://developers.urbit.org/reference/arvo/clay/using#merging):
+Cela peut éventuellement inclure une [stratégie de fusion](https://developers.urbit.org/reference/arvo/clay/using#merging) :
 
 ```
 |merge %target-desk ~source-ship %source-desk, =gem %strategy
 ```
 
-You may also merge a Clay path on your own ship to a `desk`, along with an
-optional strategy.
+Vous pouvez également fusionner un chemin Clay sur votre propre vaisseau vers un `desk`, ainsi qu'une stratégie optionnelle.
 
 ```
 |merge %target-get %/clay/path, =gem %strategy
 ```
 
-**Examples:**
+**Exemples :**
 
 ```
 |merge %examples ~wacbex-ribmex %examples
 ```
 
-Merge the `%examples` `desk` from `~waxbex-ribmex`
+Fusionner le bureau `%examples` de `~waxbex-ribmex`
 
 ```
-|merge %work /=base=, =gem %fine
+|fusionner %work /=base=, =gem %fine
 ```
 
-Merge `/=base=` into `%work` using merge strategy `%fine`.
+Fusionne `/=base=` dans `%work` en utilisant la stratégie de fusion `%fine`.
 
 #### Sync
 
@@ -311,12 +243,12 @@ Merge `/=base=` into `%work` using merge strategy `%fine`.
 |sync %target-desk ~source-ship %target-desk
 ```
 
-Subscribe to continuous updates from remote `desk` on local `desk`.
+S’abonner aux mises à jours en continues d’un `desk` à distance ou d’un `desk` local
 
-**Examples:**
+**Exemples :**
 
 ```
-|sync %foo ~dozbud %kids
+`|sync %foo ~dozbud %kids`
 ```
 
 #### Unsync
@@ -325,10 +257,9 @@ Subscribe to continuous updates from remote `desk` on local `desk`.
 |unsync %target-desk ~source-ship %source-desk
 ```
 
-Unsubscribe from updates from remote `desk` on local `desk`. Arguments must
-match original `|sync` command.
+Se désabonner aux mises à jour du `desk` distant sur le `desk` local. Les arguments doivent correspondre à la commande `|sync` originale.
 
-Example:
+Exemple :
 
 ```
 |unsync %foo ~dozbud %kids
@@ -338,42 +269,38 @@ Example:
 
 #### `+cat`
 
-Syntax: `+cat path [path ...]`
+Syntaxe : `+cat path [path ...]`
 
-Similar to Unix `cat`. `+cat` takes one or more `path`s, and prints their
-contents. If that `path` is a file, the contents of the file is printed. If the
-`path` terminates in a directory, the list of names at that path is produced.
+Similaire à Unix `cat`. `+cat` prend un ou plusieurs `path`, et affiche leur contenu. Si le `path` est un fichier, le contenu du fichier est affiché. Si le `path` se termine par un répertoire, la liste des noms de ce chemin est produite.
 
-#### `+ls`
+####`+ls`
 
-Syntax: `+ls path`
+Syntaxe : `+ls path`
 
-Similar to Unix `ls`. `+ls` takes a single `path`.
+Similaire à Unix `ls`. `+ls` prend un seul `path`.
 
-Produces a list of names at the `path`.
+Il produit une liste de noms dans le `path`.
 
 ```
-~sampel-palnet:dojo> +cat %/our/base/gen/curl/hoon
+~sampel-palnet:dojo> +cat %/notre/base/gen/curl/hoon
 ```
 
 #### `|rm`
 
-Syntax: `|rm path`
+Syntaxe : `|rm path`
 
-Remove the data at `path`. `Path` must be a path to the actual node, not a
-'directory'.
+Supprime les données de `path`. Le chemin doit être un `path` vers le nœud actuel, pas un 'répertoire'.
 
 #### `|cp`
 
-Syntax: `|cp to from`
+Syntaxe : `|cp to from`
 
-Copy the file at `from` into the path `to`.
+Copie le fichier de `from` dans le chemin `to`.
 
 #### `|mv`
 
-Syntax: `|mv to from`
+Syntaxe : `|mv to from`
 
-Move the file at `from` into the path `to`.
+Déplace le fichier situé à partir de `from` le chemin `to` .
 
-In Clay, `|mv` is just a shorthand for `|cp` then `|rm`. The `|rm`
-doesn't happen unless the `|cp` succeeds.
+Dans Clay, `|mv` est juste un raccourci pour `|cp` puis `|rm`. Le `|rm` n'a lieu que si le `|cp` réussit.

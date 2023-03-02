@@ -1,35 +1,27 @@
 +++
-title = "Cloud Hosting"
-description = "How to host your ship in the cloud so you can access it from any device."
+title = "Hébergement sur un cloud"
+description = "Comment héberger votre vaisseau dans le cloud pour pouvoir y accéder depuis n'importe quel appareil."
 template = "doc.html"
 weight = 2
 [extra]
 hidetitle = "true"
 +++
 
-The goal of this guide is to have clear and easy to follow best practices for
-deploying an Urbit node to a server you control in the cloud. Deploying in the
-cloud allows you to access your Urbit from any device.
+Le but de ce guide est d'avoir un ensemble de bonnes pratiques claires et faciles à suivre pour déployer un nœud Urbit sur un serveur que vous contrôlez sur un cloud. Le déploiement dans le cloud vous permet d'accéder à votre Urbit depuis n'importe quel appareil.
 
-Most Urbit users start out running their ship locally on one machine in order to
-play with it, but this means when your machine is offline your Urbit node is
-offline too (and can't get updates). You can also only access your Urbit from
-that one machine.
+La plupart des utilisateurs d'Urbit commencent par exécuter leur vaisseau localement sur une machine afin de jouer avec, mais cela signifie que lorsque votre machine est hors ligne, votre nœud Urbit est hors ligne aussi (et ne peut pas obtenir de mises à jour). Vous ne pouvez également accéder à votre Urbit qu'à partir de cette seule machine.
 
-This guide uses Digital Ocean as the cloud provider, but others can be used. If
-using another provider, the setup script provided and other server configuration
-instructions may need to be modified or done manually.
+Ce guide utilise Digital Ocean comme fournisseur de cloud, mais d'autres peuvent être utilisés. Si vous utilisez un autre fournisseur, le script d'installation fourni et les autres instructions de configuration du serveur peuvent devoir être modifiés ou effectués manuellement.
 
-## 1. Create a Droplet
+## 1. Créer un Droplet
 
-Create an account on [Digital Ocean](https://digitalocean.com). Once you make an
-account, choose "Deploy a virtual machine".
+Créez un compte sur [Digital Ocean](https://digitalocean.com/). Une fois que vous avez créé un compte, choisissez "*Deploy a virtual machine*".
 
-You should see the page below where you can create your Droplet, aka Virtual Machine:
+Vous devriez voir la page ci-dessous où vous pouvez créer votre *Droplet*, c'est-à-dire votre machine virtuelle :
 
 ![do screenshot](https://media.urbit.org/operators/manual/running/hosting/do-screenshot.png)
 
-Fill out the options like so:
+Remplissez les options comme suit :
 
 #### Image
 
@@ -37,45 +29,37 @@ Ubuntu 22.04 x64
 
 #### Plan
 
-- Shared CPU: Basic
-- CPU options: Regular with SSD
-- 2GB / 1 CPU ($12/mo)
+- CPU partagé : Basique
+- Options de CPU : Régulier avec SSD
+- 2Go / 1 CPU ($12/m)
 
-You can choose a more powerful option if you'd like but the $12 option should be
-sufficient. Note Urbit needs 2GB of memory; it's possible to choose a cheaper
-option and run it with less memory by using swap but it will impact performance.
+Vous pouvez choisir une option plus puissante si vous le souhaitez mais l'option à 12$ devrait être suffisante. Notez que Urbit a besoin de 2Go de mémoire; il est possible de choisir une option moins chère et de le faire fonctionner avec moins de mémoire en utilisant le *swap* mais cela aura un impact sur les performances.
 
-#### Add block storage
+#### Ajouter un bloc de stockage
 
-The $12 plan includes 50GB which should be sufficient for quite some time, so
-you can skip this.
+Le plan à 12$ comprend 50Go, ce qui devrait être suffisant pour un certain temps. Vous pouvez donc ignorer cette étape.
 
-#### Datacenter region
+#### Région du datacenter
 
-Choose the region closest to you.
+Choisissez la région la plus proche de chez vous.
 
-#### VPC Network
+#### Réseau VPC
 
-Leave this as default.
+Laissez cette option par défaut.
 
-#### Authentication
+#### Authentification
 
-In the "Authentication" field, select "SSH keys" and hit "New SSH Key". Run the
-following command in the terminal on your local machine, replacing
-`riclen-tinlyr` with the name of your ship (sans the leading `~`):
+Dans le champ "Authentication", sélectionnez "SSH Keys" et cliquez sur "New SSH key". Exécutez la commande suivante dans le terminal de votre machine locale, en remplaçant `riclen-tinlyr` par le nom de votre vaisseau (sans le signe `~`) :
 
 ```bash {% copy=true %}
 SHIP="riclen-tinlyr" bash -c 'ssh-keygen -q -N "" -C $SHIP -f ~/.ssh/$SHIP && cat ~/.ssh/$SHIP.pub'
 ```
 
-It should spit out a long string of letters and numbers beginning with `ssh-rsa`
-and ending with your ship name. Copy the whole thing and paste it into the "SSH
-key content" field on Digital Ocean. In the "Name" field, enter your ship name.
+Il devrait en résulter une longue chaîne de lettres et de chiffres commençant par `ssh-rsa` et se terminant par le nom de votre vaisseau. Copiez le tout et collez-le dans le champ "SSH key content" sur Digital Ocean. Dans le champ "Name", entrez le nom de votre vaisseau.
 
-#### Additional options
+#### Options supplémentaires
 
-Click "User data" and paste the script below into the field provided. This
-will automatically configure the server and install necessary software.
+Cliquez sur "User data" et collez le script ci-dessous dans le champ prévu à cet effet. Cela permettra de configurer automatiquement le serveur et d'installer les logiciels nécessaires.
 
 ```bash {% copy=true %}
 #!/bin/bash
@@ -126,51 +110,45 @@ apt install -y tmux
 systemctl reboot
 ```
 
-#### How many Droplets?
+#### Combien de Droplet ?
 
 1
 
-#### Choose a hostname
+#### Choisissez un nom d'hôte
 
-This will be the name the server calls itself locally, you can put in whatever
-you want. Your planet name is a good choice.
+Il s'agit du nom que le serveur utilisera localement. Vous pouvez mettre ce que vous voulez. Le nom de votre planète est un bon choix.
 
-#### Add tags
+#### Ajouter des tags
 
-Leave empty.
+Laissez vide.
 
-#### Select project
+#### Sélectionner un projet
 
-Leave as the default.
+Laissez le projet par défaut.
 
-#### Create Droplet
+#### Créer le droplet
 
-Hit this button to create the droplet.
+Cliquez sur ce bouton pour créer le droplet.
 
-## 2. Prepare for upload
+## 2. Préparer le téléchargement
 
 {% callout %}
 
-**Note**
+**À noter:**
 
-This step is necessary if you already have a ship running locally and want to
-move it to the cloud. If you don't, you can skip this step.
+Cette étape est nécessaire si vous avez déjà un navire fonctionnant localement et que vous souhaitez le déplacer vers le cloud. Si vous ne l'avez pas, vous pouvez sauter cette étape.
 
-{% /callout %}
+{% callout %}
 
-In the Dojo, use either `"CTRL + D"` or `|exit` to shut down your ship.
+Dans le Dojo, utilisez "`CTRL + D`" ou `|exit` pour arrêter votre vaisseau.
 
-Archive your pier by running `tar cvzf riclen-tinlyr.tar.gz ~/path/to/your/pier`
-(substitute your own ship name and pier location).
+Archivez votre ponton (*pier*) en exécutant `tar cvzf riclen-tinlyr.tar.gz ~/path/to/your/pier` (remplacez votre propre nom de vaisseau et l'emplacement du ponton).
 
-## 3. Connect to the server
+## 3. Se connecter au serveur
 
-To make connecting simple, you can add an alias to `~/.ssh/config` on your local
-machine. Open `~/.ssh/config` in an editor (you may need to create it if the
-file doesn't exist), and add the following to the bottom of the file (replacing
-the ship name with your own and the IP address with that of your droplet):
+Pour faciliter la connexion, vous pouvez ajouter un alias à `~/.ssh/config` sur votre machine locale. Ouvrez `~/.ssh/config` dans un éditeur (vous devrez peut-être le créer si le fichier n'existe pas), et ajoutez ce qui suit au bas du fichier (en remplaçant le nom du vaisseau par le vôtre et l'adresse IP par celle de votre droplet) :
 
-``` {% copy=true %}
+```
 Host riclen-tinlyr
   HostName 161.35.148.247
   User urbit
@@ -180,125 +158,100 @@ Host riclen-tinlyr
 
 {% tabs %}
 
-{% tab label="If you have an existing pier" %}
+{% tab label="Si vous avez un ponton existant" %}
 
 
-Copy the archived pier to the server with the following (substituting your ship
-name and Host):
+Copiez le ponton archivé sur le serveur en utilisant la commande suivante (en subsituant le nom du vaisseau et l’hébergeur):
 
 ```bash {% copy=true %}
 scp riclen-tinlyr.tar.gz riclen-tinlyr:
 ```
 
-It may take a while to upload if your pier is large and/or your internet is
-slow.
+L’opération peut prendre du temps si votre ponton est large ou si votre internet est lent.
 
 {% /tab %}
 
-{% tab label="If you have a key file" %}
+{% tab label="Si vous avez un fichier clé" %}
 
-If you have obtained a planet and want to boot it for the first time, you'll
-need to upload its key file to the server. These instructions assume you've
-received an invite. If you've got a planet by another method, you can also login
-to [Bridge](https://bridge.urbit.org) and download the key file from there.
+Si vous avez obtenu une planète et que vous souhaitez l’initialiser pour la première fois, vous devez télécharger son fichier clé sur le serveur. Ces instructions supposent que vous avez reçu une invitation. Si vous avez obtenu une planète par une autre méthode, vous pouvez également vous connecter à [Bridge](https://bridge.urbit.org/) et télécharger le fichier clé à partir de là.
 
-If you've received a planet invite via email or a claim link like
-`https://bridge.urbit.org/#labfur-batteg-dapnex-binsup-riclen-tinlyr`, open it
-in a browser and you should see a page like the following:
+Si vous avez reçu une invitation pour une planète par courrier électronique ou par un lien de réclamation comme `https://bridge.urbit.org/#labfur-batteg-dapnex-binsup-riclen-tinlyr](https://bridge.urbit.org/#labfur-batteg-dapnex-binsup-riclen-tinlyr`, ouvrez-le dans un navigateur et vous devriez voir une page comme la suivante :
 
 ![claim planet screenshot](https://media.urbit.org/operators/manual/running/hosting/claim-planet.png)
 
-If you hit "Claim", it'll bring you here:
+Si vous cliquez sur "Claim", çeci vous amènera ici :
 
 ![download passport
 screenshot](https://media.urbit.org/operators/manual/running/hosting/download-passport.png)
 
-Hit "Download Backup (Passport)" and it'll have you download a file named like
-`riclen-tinlyr-passport.zip`.
+Cliquez sur "Download Backup (Passport)" et vous devrez télécharger un fichier nommé `riclen-tinlyr-passport.zip`.
 
-Unzip the file with:
+Décompressez le fichier avec :
 
 ```bash {% copy=true %}
 unzip ~/path/to/download/folder/riclen-tinlyr-passport.zip
 ```
 
-It'll create a folder called `riclen-tinlyr-passport` which will contain three files:
+Cela va créer un dossier appelé `riclen-tinlyr-passport` qui contiendra trois fichiers :
 
 - `riclen-tinlyr-1.key`
 - `riclen-tinlyr-Management Proxy.png`
 - `riclen-tinlyr-Master Ticket.png`
 
-You can physically print out the two `.png` files and store them in a safe and
-secure location. Importantly, you should ensure the *master ticket* (which will
-look something like `~tarnes-pilryd-dassed-sogsul`) is securely and safely
-stored. If anyone gains access to the master ticket they'll have ownership and
-control of your Urbit ID, and if you lose it you'll irreversibly lose ownership
-and control of your Urbit ID.
+Vous pouvez imprimer physiquement les deux fichiers `.png` et les stocker dans un endroit sûr et sécurisé. Il est important que vous vous assuriez que le *Master Ticket* (qui ressemblera à quelque chose comme `~tarnes-pilryd-dassed-sogsul`) soit stocké de manière sûre et sécurisée. Si quelqu'un a accès au *Master Ticket*, il aura la propriété et le contrôle de votre Urbit ID, et si vous le perdez, vous perdrez irréversiblement la propriété et le contrôle de votre Urbit ID.
 
-The next screen on the claim page will ask you to re-enter the master ticket to
-ensure you've recorded it accurately, and then the claim process is complete.
-Once you've securely, physically backed up the master ticket and the `.png`
-passports, it's a good idea to delete the `riclen-tinlyr-passport.zip` file and
-the two `.png` files, so if someone gains access to your computer, your Urbit ID
-will be safe.
+L'écran suivant de la page de récupération vous demandera de saisir à nouveau le *Master Ticket* pour vous assurer que vous l'avez enregistré correctement, puis la procédure de demande sera terminée. Une fois que vous avez sauvegardé physiquement et en toute sécurité le *Master Ticket* et les passeports `.png`, il est conseillé de supprimer le fichier `riclen-tinlyr-passport.zip` et les deux fichiers `.png`, de sorte que si quelqu'un accède à votre ordinateur, votre Urbit ID sera hors de leur portée.
 
-This will leave only the `riclen-tinlyr-1.key` file. The key file contains your
-planet's private keys, which are necessary to boot it up for the first time.
-You'll need to copy that file to the server with the following command (again,
-replacing `riclen-tinlyr` with your own ship and Host):
+Il ne restera que le fichier `riclen-tinlyr-1.key`. Le fichier clé contient les clés privées de votre planète, qui sont nécessaires pour la première initialisation. Vous devrez copier ce fichier sur le serveur avec la commande suivante (en remplaçant `riclen-tinlyr` par votre propre vaisseau et votre hôte) :
 
 ```bash {% copy=true %}
 scp riclen-tinlyr-passport/riclen-tinlyr-1.key riclen-tinlyr:
 ```
 
-Note: you should keep the `riclen-tinlyr-1.key` until you've completed this
-guide and your ship is booted to be sure it was copied successfully, but
-afterwards you should also delete that file for security.
+À noter : vous devriez conserver le fichier `riclen-tinlyr-1.key` jusqu'à ce que vous ayez terminé ce guide et que votre vaisseau soit initialiser pour être sûr qu'il ait été copié avec succès, mais après vous devriez également supprimer ce fichier par sécurité.
 
 {% /tab %}
 
 {% /tabs %}
 
-Once you've either uploaded your pier or uploaded your key file as the case may
-be, you can connect to your server:
+Une fois que vous avez soit téléchargé votre ponton, ou votre fichier clé, vous pouvez vous connecter à votre serveur avec :
 
 ```bash {% copy=true %}
 ssh riclen-tinlyr
 ```
-You'll be taken to the shell on your server.
 
-## 5. Boot your ship
+Vous serez dirigé vers le shell de votre serveur.
+
+
+
+## 5. Initialisez votre vaisseau
 
 {% tabs %}
 
-{% tab label="If you have an existing pier" %}
+{% tab label="Si vous avez un ponton existant" %}
 
-In the previous section you ssh'd into the server. In the same ssh session,
-extract the pier archive you previously uploaded, then delete the archive:
+
+Dans la section précédente, vous vous êtes connecté au serveur par ssh. Dans la même session ssh, extrayez l'archive ponton que vous avez précédemment téléchargée, puis supprimez l'archive :
 
 ```bash {% copy=true %}
 tar xvzf riclen-tinlyr.tar.gz && rm riclen-tinlyr.tar.gz
 ```
 
-You'll now have a folder called `riclen-tinlyr`, which is your pier. Urbit is
-best run in a tmux or screen session so it's easy to keep it running when
-you disconnect. In this case we'll use tmux, which has already been installed
-by the setup script.
+Vous aurez maintenant un dossier appelé `riclen-tinlyr`, qui est votre ponton. Urbit est mieux exécuté dans une session tmux ou screen afin qu'il soit facile de le garder en marche lorsque vous vous déconnectez. Dans ce cas, nous utiliserons tmux, qui a déjà été installé par le script d'installation.
 
-Run tmux:
+Exécutez tmux :
 
 ```bash {% copy=true %}
 tmux
 ```
 
-You should now be in tmux. First, dock your ship:
+Vous devriez maintenant être dans tmux. D'abord, amarrez votre vaisseau :
 
 ```bash {% copy=true %}
 ./urbit dock riclen-tinlyr
 ```
 
-That will copy the `urbit` runtime inside the pier, so you can now delete the
-separate binary:
+Cela copiera le runtime `urbit` à l'intérieur du ponton, donc vous pouvez maintenant supprimer l’exécutable avec :
 
 ```bash {% copy=true %}
 rm urbit
@@ -306,35 +259,27 @@ rm urbit
 
 {% /tab %}
 
-{% tab label="If you have a key file" %}
+{% tab label="Si vous avez un fichier clé" %}
 
-In the previous section you ssh'd into the server. In the same ssh session,
-start tmux:
+Dans la section précédente, vous vous êtes connecté au serveur par ssh. Dans la même session ssh, exécutez tmux
 
 ```bash {% copy=true}
 tmux
 ```
 
-You should now be in tmux. Boot a new ship with the following command,
-specifying the ship name and key file, as well as the Ames port that was
-previously opened in the firewall by the setup script:
+Vous devriez maintenant être dans tmux. Initialisez un nouveau vaisseau avec la commande suivante, en spécifiant le nom du vaisseau et le fichier clé, ainsi que le port Ames qui a été précédemment ouvert dans le pare-feu par le script d'installation :
 
 ```bash {% copy=true %}
 ./urbit -w riclen-tinlyr -k riclen-tinlyr-1.key -p 34543
 ```
 
-It may take several minutes to boot the new ship. Eventually, it'll take you to
-the Dojo (Urbit's shell) and show a prompt like `~riclen-tinlyr:dojo>`. Once
-booted, shut the ship down again by typing `|exit` in the Dojo. After it quits,
-it should print something like "docked successfully", which means the binary has
-been copied inside the pier. This means you can delete the separate binary:
+L’initialisation d’un nouveau vaisseau peut prendre plusieurs minutes. Finalement, il vous amènera au Dojo (le shell d'Urbit) et affichera une commande de la forme ~riclen-tinlyr:dojo>. Une fois initialisé, éteignez le vaisseau en tapant |exit dans le Dojo. Après qu'il se soit éteint, il devrait afficher quelque chose comme "docked successfully", ce qui signifie que l’exécutable a été copié dans le ponton. Cela signifie que vous pouvez supprimer l’exécutable :
 
 ```bash {% copy=true %}
 rm urbit
 ```
 
-The key file is only needed when you first boot the ship, so it's good practice
-to delete it after first boot:
+Le fichier clé n'est nécessaire que lorsque vous initialisez le vaisseau pour la première fois, donc c'est une bonne pratique de le supprimer après la première initialisation :
 
 ```bash {% copy=true %}
 rm riclen-tinlyr-1.key
@@ -344,34 +289,32 @@ rm riclen-tinlyr-1.key
 
 {% /tabs %}
 
-Run the following to allow the runtime to bind ports 80 and 443:
+Exécutez ce qui suit pour permettre au runtime de lier les ports 80 et 443 :
 
 ```bash {% copy=true %}
 sudo setcap 'cap_net_bind_service=+ep' riclen-tinlyr/.run
 ```
 
-Now you can start your ship up with the following:
+Maintenant vous pouvez démarrer votre vaisseau avec ce qui suit :
 
 ```bash {% copy=true %}
 ./riclen-tinlyr/.run -p 34543
 ```
 
-After a few moments it'll show the Dojo prompt like `~riclen-tinlyr:dojo>`.
+Après quelques instants, il affichera l'invite Dojo sous la forme `~riclen-tinlyr:dojo>`.
 
-## 6. Get a domain
 
-To make accessing the web interface convenient, you should request an
-`arvo.network` domain name. To do so, run the following command in the Dojo,
-replacing the IP address with your droplet's:
+## 6. Obtenez un domaine
+
+Pour faciliter l'accès à l'interface web, vous devez demander un nom de domaine `arvo.network`. Pour ce faire, exécutez la commande suivante dans le Dojo, en remplaçant l'adresse IP par celle de votre droplet :
 
 ``` {% copy=true %}
 -dns-address [%if .161.35.148.247]
 ```
 
-This will request a subdomain of your ship like `riclen-tinlyr.arvo.network`.
+Ceci demandera un sous-domaine de votre vaisseau ressemblant à `riclen-tinlyr.arvo.network`.
 
-The domain should be registered almost instantly, but sometimes it takes a while
-for it to propagate to other DNS servers. You might therefore see the following:
+Le domaine devrait être enregistré presque instantanément, mais il faut parfois un certain temps pour qu'il se propage aux autres serveurs DNS. Vous pouvez donc voir ce qui suit :
 
 ```
 > -dns-address [%if .161.35.148.247]
@@ -388,8 +331,7 @@ XX check via nslookup
 0
 ```
 
-If that happens, wait five or ten minutes and then try again. You should
-eventually see:
+Si cela se produit, attendez entre 5 et 10 minutes et réessayez. Vous devriez éventuellement voir :
 
 ```
 > -dns-address [%if .161.35.148.247]
@@ -409,54 +351,36 @@ http: web interface live on http://localhost:80
 http: loopback live on http://localhost:12321
 ```
 
-That means the domain has been registered and an SSL certificate has been
-installed, so you can access the web interface securely with HTTPS.
+Cela signifie que le domaine a été enregistré et qu'un certificat SSL a été installé, de sorte que vous pouvez accéder à l'interface web en toute sécurité avec HTTPS.
 
-## 7. Log in to Landscape
+## 7. Se connecter à Landscape
 
-In order to login to the web interface, you need to get the web login code. Run
-the following in the Dojo:
+Afin de vous connecter à l'interface web, vous devez obtenir le code de connexion web. Exécutez ce qui suit dans le Dojo :
 
 ``` {% copy=true %}
 +code
 ```
 
-It'll spit out something like `ropnys-batwyd-nossyt-mapwet`. That's your web
-login code, you can copy that and save it in a password manager or similar. Note
-that the web login code is separate from the master ticket.
+Vous obtiendrez quelque chose ressemblant à `ropnys-batwyd-nossyt-mapwet`. C'est votre code de connexion web. Vous pouvez le copier et le sauvegarder dans un gestionnaire de mot de passe ou quelque chose de similaire. Notez que le code de connexion web est séparé du *Master Ticket*.
 
-The server configuration should now be complete, and you can access Landscape in
-the browser. Navigate to the domain you configured previously, in this case
-`riclen-tinlyr.arvo.network`. You should see the Landscape login screen:
+La configuration du serveur devrait maintenant être terminée, et vous pouvez accéder à Landscape dans le navigateur. Naviguez vers le domaine que vous avez configuré précédemment, dans ce cas `riclen-tinlyr.arvo.network`. Vous devriez voir l'écran de connexion de Landscape :
 
 ![landscape login screen](https://media.urbit.org/operators/manual/running/hosting/landscape-login.png)
 
-Enter the web login code and you'll be taken to your ship's homescreen. Your
-ship is now running in the cloud, and you can access it from any device by
-visiting its URL.
+Saisissez le code de connexion Web et vous serez dirigé vers l'écran d'accueil de votre vaisseau. Votre vaisseau fonctionne maintenant dans le cloudet vous pouvez y accéder depuis n'importe quel appareil en visitant son URL.
 
-## 8. Disconnect
+## 8. Déconnexion
 
-You can now disconnect from the tmux session by hitting `CTRL+b d` (that is, you
-hit `CTRL+b`, release it, and then hit `d`). You'll be taken back to the
-ordinary shell, but the ship will still be running in the background. If you
-want to get back to the Dojo again, you can reattach the tmux session with:
+Vous pouvez maintenant vous déconnecter de la session tmux en appuyant sur `CTRL+b d` (c'est-à-dire que vous appuyez sur `CTRL+b`, vous le relâchez, puis vous appuyez sur `d`). Vous reviendrez au shell ordinaire, mais le vaisseau continuera de tourner en arrière-plan. Si vous voulez revenir au Dojo, vous pouvez rattacher la session tmux avec :
 
 ```bash {% copy=true %}
 tmux a
 ```
 
-Finally, you can disconnect from the ssh session completely by hitting `CTRL+d`.
+Enfin, vous pouvez vous déconnecter complètement de la session ssh en appuyant sur `CTRL+d`.
 
-## 9. Cleanup
+## 9. Nettoyage
 
-If you booted a new ship by uploading a key file, it's a good idea to now delete
-the key file on your local machine.
+Si vous avez initialisez un nouveau vaisseau en téléchargeant un fichier clé, c'est une bonne idée de supprimer maintenant le fichier clé sur votre machine locale.
 
-If you uploaded an existing pier, you should delete the old copy of both the
-pier directory and the `.tar.gz` archive on your local machine. You might be
-tempted to keep one of these as a backup, but note that **you must never again
-boot the old copy on the live network**. Doing so will create unfixable
-networking problems and require you to perform a factory reset through Bridge,
-wiping your ship's data. We therefore don't recommend you keep duplicates of
-your pier lying around.
+Si vous avez téléchargé un ponton existant, vous devriez supprimer l'ancienne copie du répertoire du ponton et de l'archive `.tar.gz` situé sur votre machine locale. Vous pourriez être tenté de conserver l'une de ces copies comme sauvegarde, mais notez que **vous ne devez plus jamais initialiser l'ancienne copie sur le réseau**. Cela créerait des problèmes de réseau impossibles à résoudre et vous obligerait à effectuer une réinitialisation d'usine via le Bridge, ce qui effacerait les données de votre vaisseau. Nous vous recommandons donc de ne pas conserver de copies de votre ponton.

@@ -1,93 +1,48 @@
 +++
-title = "Guide to Factory Resets"
+title = "Guide des réinitialisations d'usine"
 weight = 40
 template = "doc.html"
 +++
 
-An important concept on the [Ames](https://developers.urbit.org/reference/arvo/ames/ames) network is that of
-continuity. Continuity refers to how ships remember the order of their own
-network messages and the network messages of others -- these messages are
-numbered, starting from zero. A _factory reset_ is when ships on the network agree to
-forget about this sequence and treat one or more ships like they are brand new.
+Un concept important sur le réseau [Ames](https://developers.urbit.org/reference/arvo/ames/ames) est celui de la continuité. La continuité fait référence à la façon dont les vaisseaux se souviennent de l'ordre de leurs propres messages sur le réseau et de ceux des autres, ces messages sont numérotés, en partant de zéro. Une _réinitialisation d'usine_ consiste à ce que les vaisseaux du réseau acceptent d'oublier cette séquence et de traiter un ou plusieurs vaisseaux comme s'ils étaient tout neufs.
 
-## Factory Resets
+## Réinitialisations d’usine
 
-Ships on the Ames network sometimes need to reset their continuity. A factory
-reset (hereafter just called a _reset_) is
-when an individual ship announces to the network: "I forgot who I am, let's
-start over from scratch." That is, it clears its own event log and sends an
-announcement to the network, asking all ships that have communicated with it to
-reset its networking information in their state. This makes it as though the
-ship was just started for the first time again, since everyone on the network
-has forgotten about it.
+Les vaisseaux du réseau Ames ont parfois besoin de réinitialiser leur continuité. Une réinitialisation d'usine (appelée par la suite _réinitialisation_) est le moment où un vaisseau individuel annonce au réseau : "J'ai oublié qui je suis, recommençons depuis le début." C'est-à-dire qu'il efface son propre journal d'événements et envoie une annonce au réseau, demandant à tous les vaisseaux qui ont communiqué avec lui de réinitialiser ses informations de réseau dans leur état. Cela donne l'impression que le vaisseau vient de démarrer pour la première fois, puisque tout le monde sur le réseau l'a oublié.
 
-Resets often fix connectivity issues, but should only be used as a last
-resort. Before performing a reset, look at alternative fixes in the [Ship
-Troubleshooting](/manual/os/ship-troubleshooting) guide. Also reach out for help
-in the Help channel in the Urbit Community group
-`~bitbet-bolbel/urbit-community` to see if there is another option. Connectivity
-issues are typically related to a bug, and you may be able to help us fix it by
-emailing us at `support@urbit.org`.
+Les réinitialisations permettent souvent de résoudre les problèmes de connectivité, mais elles ne doivent être utilisées qu'en dernier recours. Avant de procéder à une réinitialisation, consultez les autres solutions possibles dans le [guide de dépannage des vaisseaux](https://operators.urbit.org/manual/os/ship-troubleshooting). Demandez également de l'aide dans le canal d'aide du groupe communautaire Urbit `~bitbet-bolbel/urbit-community` pour voir s'il existe une autre option. Les problèmes de connectivité sont généralement liés à un bug, et vous pouvez nous aider à le résoudre en nous envoyant un e-mail à `support@urbit.org`.
 
-There are two separate sequences of actions you need to take in order to reset.
-One flow is for when you wish to keep Ethereum ownership address of the ship the
-same, and the other is for when you are transferring the ship to a new Ethereum
-ownership address. We make the emphasis about the Ethereum _ownership_ address
-as changing your [proxies](https://developers.urbit.org/reference/glossary/proxies) does not require a reset.
+Il y a deux séquences distinctes dans l’ordre des actions que vous devez effectuer afin de réinitialiser un vaisseau. L'une est destinée au cas où vous souhaitiez conserver l'adresse de propriété Ethereum du vaisseau, et l'autre au cas où vous transféreriez le vaisseau vers une nouvelle adresse de propriété Ethereum. Nous mettons l'accent sur l'adresse de propriété Ethereum, car le changement de vos [proxies](https://developers.urbit.org/reference/glossary/proxies) ne nécessite pas de réinitialisation.
 
-If you will be keeping your ship at the same Ethereum ownership address and
-would like to perform a reset, follow the steps below.
+Si vous conservez votre vaisseau à la même adresse de propriété Ethereum et que vous souhaitez effectuer une réinitialisation, suivez les étapes ci-dessous.
 
-- Go to [bridge.urbit.org](https://bridge.urbit.org) and log into your identity.
-- Click on `OS: Urbit OS Settings` at the bottom, then click `Reset Networking Keys`.
-- Check the `Breach Continuity` box. Click `Reset Networking Keys`, and then
-  click `Send Transaction` and wait for the progress bar to appear.
-- Download your new keyfile following these instructions: [Generate your
-  keyfile](/manual/id/using-bridge#generate-your-keyfile).
-- Delete or archive your old [pier](https://developers.urbit.org/reference/glossary/pier).
-- Proceed to [boot your ship](https://urbit.org/getting-started/cli#boot-your-planet) with the
-  new keyfile.
-- Delete your keyfile after successfully booting.
-- Rejoin your favorite chat channels and subscriptions.
+- Allez sur [bridge.urbit.org](http://bridge.urbit.org/) et connectez-vous à votre identité.
+- Cliquez sur `OS : Urbit OS Settings` en bas, puis cliquez sur `Reset Networking Keys`.
+- Cochez la case `Breach Continuity`. Cliquez sur `Reset Networking Keys`, puis cliquez sur `Send Transaction` et attendez que la barre de progression apparaisse.
+- Téléchargez votre nouveau fichier clé en suivant ces instructions : [Générez votre fichier de clé](https://operators.urbit.org/manual/id/using-bridge#generate-your-keyfile).
+- Supprimez ou archivez votre ancien [ponton](https://developers.urbit.org/reference/glossary/pier).
+- Procédez à l’[initialisation de votre vaisseau](https://urbit.org/getting-started/cli#boot-your-planet) avec le nouveau fichier de clé.
+- Supprimez votre fichier clé après une initialisation réussie.
+- Rejoignez vos canaux de discussion et vos abonnements préférés.
 
-If you are transferring a ship to a new Ethereum ownership address you will have
-the choice as to whether or not you want to reset. This is to cover the case
-when you are transferring to another address you own. The process here is
-slightly different.
+Si vous transférez un vaisseau vers une nouvelle adresse de propriété Ethereum, vous aurez le choix de réinitialiser ou non. Ceci est pour couvrir le cas où vous transféreriez vers une autre adresse que vous possédez. Le processus est ici un peu différent.
 
-- Go to [bridge.urbit.org](https://bridge.urbit.org) and log into your identity.
-- Click on `ID: Identity and security settings` at the bottom, then click
-  `Transfer this point`.
-- Enter the new Ethereum address you would like to transfer ownership to. Click
-  `Generate & Sign Transaction`, then click `Send Transaction` and wait for the
-  progress bar to complete.
-- Logout of your current session in Bridge by clicking `Logout` at the top, and
-  then login to your new ownership address.
-- From here, following the directions on how to [Accept your
-  transfer](/manual/id/using-bridge#accept-your-transfer), [Set your networking
-  keys](/manual/id/using-bridge#set-your-networking-keys), and [Generate your
-  keyfile](/manual/id/using-bridge#generate-your-keyfile). The option whether or
-  not to reset is in the Accept your Transfer step.
-- Delete or archive your old [pier](https://developers.urbit.org/reference/glossary/pier).
-- Proceed to [boot your ship](https://urbit.org/getting-started/cli#boot-your-planet) with the
-  new keyfile.
-- Delete your keyfile after successfully booting.
-- Rejoin your favorite chat channels and subscriptions.
+- Allez sur [bridge.urbit.org](http://bridge.urbit.org/) et connectez-vous à votre identité.
+- Cliquez sur `ID : Identity and security settings` en bas, puis cliquez sur `Transfer this point`.
+- Saisissez la nouvelle adresse Ethereum à laquelle vous souhaitez transférer la propriété. Cliquez sur `Generate & sign transaction`, puis cliquez sur `Send transaction` et attendez que la barre de progression se termine.
+- Déconnectez-vous de votre session actuelle dans Bridge en cliquant sur `Logout` en haut, puis connectez-vous à votre nouvelle adresse de propriété.
+- À partir de là, suivez les instructions pour [Accepter votre transfert](https://operators.urbit.org/manual/id/using-bridge#accept-your-transfer), [Définir vos clés de réseau](https://operators.urbit.org/manual/id/using-bridge#set-your-networking-keys), et [Générer votre fichier de clés]( Generate your keyfile). L'option de réinitialisation ou non se trouve dans l'étape Accepter votre transfert.
+- Supprimez ou archivez votre ancien [ponton](https://developers.urbit.org/reference/glossary/pier))*.
+- Procédez à [l’initialisation de votre vaisseau](https://urbit.org/getting-started/cli#boot-your-planet) avec le nouveau fichier clé.
+- Supprimez votre fichier clé après une initialisation réussie.
+- Rejoignez vos canaux de discussion et vos abonnements préférés.
 
-## Network Resets
+## Réinitialisations du réseau
 
-Network resets were events where all ships on the network were required to
-update to a new continuity era. Network resets happened when an Arvo update
-was released that could not be implemented via an [OTA
-update](https://developers.urbit.org/reference/glossary/ota-updates). The continuity era is given by an integer
-in Ames that is incremented when the network resets. Only ships with the same
-such value are able to communicate with one another. The most recent network
-reset occurred in December 2020, and we expect it to have been the final one.
+Les réinitialisations de réseau sont des événements au cours desquels tous les vaisseaux du réseau doivent être mis à jour vers une nouvelle ère de continuité. Les réinitialisations du réseau se produisent lorsqu'une mise à jour Arvo est publiée et ne peut pas être mise en œuvre via une [mise à jour OTA](https://developers.urbit.org/reference/glossary/ota-updates). L'époque de continuité est donnée par un nombre entier en Ames qui est incrémenté lorsque le réseau se réinitialise. Seuls les vaisseaux ayant la même valeur de ce type sont capables de communiquer entre eux. La dernière réinitialisation du réseau a eu lieu en décembre 2020, et nous pensons qu'il s'agit de la dernière.
 
-If another network reset does occur, we will provide accompanying documentation
-on what to do to transfer your ship and all of its data to the new era.
+Si une autre réinitialisation du réseau a lieu, nous fournirons une documentation d'accompagnement sur la marche à suivre pour transférer votre navire et toutes ses données vers la nouvelle ère.
 
-## Breaches
+## Brèches
 
-Factory resets used to be called _breaches_, and you may find this terminology
-still used in some places. This is an identical concept - only the name differs.
+Les réinitialisations d'usine étaient autrefois appelées "brèches", et vous trouverez peut-être cette terminologie encore utilisée dans certains endroits. Il s'agit d'un concept identique ; seul le nom diffère.

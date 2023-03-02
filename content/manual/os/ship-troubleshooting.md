@@ -1,189 +1,167 @@
 +++
-title = "Ship Troubleshooting"
+title = "Dépannage des vaisseaux"
 weight = 8
 template = "doc.html"
 aliases = ["docs/using/ship-troubleshooting/"]
 +++
 
-Urbit is still in the development stage, so there's a chance that your ship won't start properly, or will stop working properly when you're running it. That's ok! This document is intended to help you in such an event.
+Urbit est toujours en phase de développement, donc il y a une chance que votre vaisseau ne démarre pas, ou cesse de fonctionner correctement lorsque vous l’exécuté. Ce n'est pas grave! Ce document est destiné à vous aider à résoudre ce problème.
 
-This page contains resolutions to many of the most commonly encountered issues.
-If your issue is not covered here, please check out our [Troubleshooting Knowledgebase](https://github.com/urbit/support/wiki).
+Cette page contient les solutions à la plupart des problèmes les plus fréquemment rencontrés. Si votre problème n'est pas couvert ici, veuillez consulter notre [Base de Connaissance pour le Dépannage](https://github.com/urbit/support/wiki).
 
-## Table of Contents
+## Table des matières
 
-- [Best practices](#best-practices)
-- [Operation issues](#operation-issues)
-- [Connectivity issues](#connectivity-issues)
-- [Booting issues](#booting-issues)
-- [Crashing issues](#crashing-issues)
+- Bonnes pratiques
+- Problèmes de fonctionnement
+- Problèmes de connectivité
+- Problèmes de d'initilisation
+- Problèmes de plantage
 
-## Best Practices {% #best-practices %}
+## Bonnes pratiques {% #bonnes-pratiques %}
 
-An ounce of prevention is worth a pound of cure, so let's first go over some best practices to keep your ship in working order.
+Une once de prévention vaut mieux qu'une tonne de remèdes, alors passons d'abord en revue quelques bonnes pratiques pour garder votre vaisseau en état de marche.
 
-### Only initialize your ship once
+### N'initialisez votre vaisseau qu'une seule fois
 
-Once your ship has been initialized (with the `-w` variation of the `./urbit` command), you should never do so a second time. If you do initialize it anew without special measures, you will experience trouble communicating with ships on the network you had talked to before.
+Une fois que votre vaisseau a été initialisé (avec la variante `-w` de la commande `./urbit`), vous ne devez jamais le faire une seconde fois. Si vous l'initialisez à nouveau sans prendre de mesures particulières, vous aurez des difficultés à communiquer avec les vaisseaux du réseau avec lesquels vous aviez parlé auparavant.
 
-If you accidentally did this a second time, or want to intentionally start
-fresh, you need to perform a [factory reset](#factory-reset), which is explained in the next section.
+Si vous l'avez accidentellement fait une deuxième fois, ou si vous voulez intentionnellement repartir à zéro, vous devez effectuer une [réinitialisation d'usine](https://operators.urbit.org/manual/os/ship-troubleshooting#factory-reset), ce qui est expliqué dans la section suivante.
 
-### Do not delete your pier
+### Ne supprimez pas votre ponton (*pier*)
 
-Urbit is stateful, meaning that it needs to hold onto all your data. If you
-delete your pier and start your ship again, you won't be able to talk to any
-ship you've talked to before. The only solution to this is performing a [factory
-reset](#factory-reset).
+Urbit est étatique, ce qui signifie qu'il a besoin de conserver toutes vos données. Si vous supprimez votre ponton et démarrez votre vaisseau à nouveau, vous ne serez pas en mesure de parler à quelque vaisseau que ce soit, même avec ceux que vous aviez contacté auparavant. La seule solution à ce problème est d'effectuer une [réinitialisation d'usine](https://operators.urbit.org/manual/os/ship-troubleshooting#factory-reset).
 
-### Keep track of the directory that you put your ship in
+### Gardez une trace du répertoire dans lequel vous placez votre vaisseau
 
-When you first start your ship, you should make sure you put it a place where you can find it again and where it won't get accidentally deleted.
+Lorsque vous démarrez votre vaisseau pour la première fois, assurez-vous de le placer à un endroit où vous pourrez le retrouver et où il ne sera pas supprimé accidentellement.
 
-### Keep up-to-date builds
+### Gardez les versions que vous utilisés à jour
 
-Check for latest Urbit version at https://github.com/urbit/urbit/releases. If you're behind, update using [this guide](https://urbit.org/getting-started/cli#updating).
+Vérifiez la dernière version d'Urbit sur https://github.com/urbit/urbit/releases. Si vous êtes en retard, mettez à jour en utilisant [ce guide](https://urbit.org/getting-started/cli#updating).
 
-### `|hi` your star to see if you're connected
+### `|hi` **votre étoile pour voir si vous êtes connectés**
 
-Find out who your star is by running `(sein:title our now our)` in the Dojo. Then, run `|hi ~star`, where `~star` is the star's name, and if things are working properly, you should get the message `hi ~star successful`. It could also be helpful to use `|hi` to check connectivity with `~zod` or another planet that you're in a Chat channel with.
+Découvrez qui est propriétaire de votre étoile en exécutant (`sein:title our now our`) dans le Dojo. Ensuite, exécutez `|hi ~star`, où `~star` est le nom de l’étoile, et si les choses fonctionnent correctement, vous devriez obtenir le message `hi ~star successful`. Il peut également être utile d'utiliser `|hi` pour vérifier la connectivité avec `~zod` ou une autre planète avec qui vous partagez un canal de discussion.
 
-### Turn your ship off and on again
+### Éteignez et rallumez votre vaisseau
 
-Use `ctrl-d` to gracefully exit your ship, and then start it again. This can solve many issues.
+Utilisez `ctrl-d` pour quitter gracieusement votre vaisseau, puis redémarrer le. Cela peut résoudre de nombreux problèmes.
 
-### Use the `|knob` command to customize your error messages
+### Utilisez la commande`|knob` pour personnaliser vos messages d'erreur
 
-Error messages can be by overwhelming, so the `|knob` command is intended to remedy this. It's used to silence errors that aren't important.
+Les messages d'erreur peuvent être accablants, la commande`|knob` est destinée à y remédier. Elle est utilisée pour faire taire les erreurs qui ne sont pas importantes.
 
-The command takes two arguments, and comes in the form of `|knob %error-tag %level`.
+La commande prend deux arguments, et se présente sous la forme de `|knob %error-tag %level`.
 
-`%error-tag` is the name of the error in question. It's usually printed at the top of the stack trace, such as in `crud: %hole event failed` -- `%hole` here is an example of an error tag.
+`%error-tag` est le nom de l'erreur en question. Il est généralement affiché en haut de la stack, comme dans `crud : %hole event failed` -- `%hole` voici un exemple de balise d'erreur.
 
-`%level` determines how much you will see of errors with your chosen `%error-tag`. There are three levels:
+`%level` détermine le nombre d'erreurs que vous verrez avec `%error-tag` que vous avez choisi. Il existe trois niveaux :
 
-- `%hush`: no output.
-- `%soft`: one line of output, just containing the error tag.
-- `%loud`: full output.
+- `%hush` : aucun affichage.
+- `%soft` : une ligne affichée, contenant uniquement la balise d'erreur.
+- `%loud` : liste complète affichée.
 
-So for example, to silence all Ames packet-related errors, try `|knob %hole %hush`.
+Ainsi, par exemple, pour faire taire toutes les erreurs liées aux paquets Ames, essayez `|knob %hole %hush`.
 
-### Perform a factory reset. {% #factory-reset %}
+### Effectuez une réinitialisation d'usine. {% #réinitialisation-d'usine %}
 
-A factory reset is when a ship tells the rest of the network to treat it as though the ship was just started for the first time again. Any ongoing or outstanding communication is forgotten and connections are reestablished from scratch.
+Une réinitialisation d'usine consiste à demander au reste du réseau de traiter le vaisseau comme s'il venait de démarrer pour la première fois. Toute communication en cours ou en suspens est oubliée et les connexions sont rétablies à partir de zéro.
 
-Factory resets often fix connectivity issues, but should only be used as a
-last resort. To find out how to perform a factory reset, check out our [Guide
-to Factory Resets](/manual/id/guide-to-resets). Before taking such a drastic measure, try
-other methods in this guide. You can also ask for help on
-in the Help channel in the Urbit Community group at `~bitbet-bolbel/urbit-community`.
+Les réinitialisations d'usine permettent souvent de résoudre les problèmes de connectivité, mais elles ne doivent être utilisées qu'en dernier recours. Pour savoir comment effectuer une réinitialisation d'usine, consultez notre [Guide des réinitialisations d'usine](https://operators.urbit.org/manual/id/guide-to-resets). Avant de prendre une mesure aussi radicale, essayez les autres méthodes proposées dans ce guide. Vous pouvez également demander de l'aide sur le canal d'aide du groupe Urbit Community que vous trouverez sur `~bitbet-bolbel/urbit-community`.
 
-### Reset `+code`
+### Réinitialiser le `+code`
 
-**WARNING:** Do not reset your +code if you are using a hosted ship. You will be locked out. Please contact your hosting provider for more information.
+**ATTENTION** : Ne réinitialisez pas votre `+code` si vous utilisez un vaisseau hébergé. Vous serez bloqué. Veuillez contacter votre hébergeur pour plus d'informations.
 
-You login to Landscape using the camel-case phrase obtained from dojo by
-entering `+code`. For security reasons you may wish to change this code
-regularly. You may do so by entering `|code %reset` into dojo. Doing this
-will prevent [Bridge](https://developers.urbit.org/reference/glossary/bridge) from being able to derive your code,
-meaning you will only be able to check it from dojo in the future.
+Vous vous connectez à Landscape en utilisant la phrase en majuscules obtenue à partir du dojo en entrant `+code`. Pour des raisons de sécurité, il est concevable que vous souhaitiez changer ce code régulièrement. Vous pouvez le faire en entrant `|code %reset` dans le dojo. Cela empêchera [Bridge](https://developers.urbit.org/reference/glossary/bridge) de dériver votre code, ce qui signifie que vous ne pourrez le vérifier qu'à partir du dojo à l'avenir.
 
-## Operation Issues {% #operation-issues %}
+## Problèmes de fonctionnement {% #Problèmes-de-fonctionnement %}
 
-### My urbit is frozen
+### Mon urbit est gelé
 
-Sometimes this happens if you're processing a very large event, or if you're in an infinite loop, or for a variety of other reasons.
+Cela se produit parfois si vous traitez un événement très important, ou si vous êtes dans une boucle infinie, ou pour une variété d'autres raisons.
 
-Before doing anything, try waiting for a minute: an event might finish processing. If it doesn't clear up, then use the Unix kill-command, `ctrl-z`, to end your ship's process. Then restart your ship.
+Avant de faire quoi que ce soit, essayez d'attendre une minute : un événement pourrait finir d'être traité. Si la situation ne s'améliore pas, utilisez la commande kill d'Unix, `ctrl-z`, pour terminer le processus de votre vaisseau. Redémarrez ensuite votre vaisseau.
 
-### When I try to type into the Dojo, it prints `%dy-edit-busy` or `%dy-no-prompt`
+### Lorsque j'essaie de saisir du texte dans le Dojo, il affiche `%dy-edit-busy` ou `%dy-no-prompt`.
 
-This happens when your Dojo is waiting on a request, such as an HTTP request. You can fix it simply by typing `backspace` or (`delete` on Mac).
+Cela se produit lorsque votre Dojo est en attente d'une requête, telle qu'une requête HTTP. Vous pouvez résoudre ce problème en entrant `backspace` ou (`delete` sur Mac).
 
-### My ship doesn't recognize file changes that I make in my pier
+### Mon vaisseau ne reconnaît pas les changements de fichiers que je fais à mon ponton (pier)
 
-Since version `0.8.0`, changes no longer automatically sync between the Unix side (your pier) and your ship. To sync your file changes, you must run `|commit %desk` in your Dojo, where `%desk` is the desk you'd like to sync.
+Depuis la version `0.8.0`, les modifications ne sont plus automatiquement synchronisées entre le côté Unix (votre ponton) et votre vaisseau. Pour synchroniser vos modifications de fichiers, vous devez exécuter `|commit %desk` dans votre Dojo. `%desk` étant le bureau que vous souhaitez synchroniser.
 
-## Connectivity Issues {% #connectivity-issues %}
+## Problèmes de connectivité {% #problèmes-de-connectivité %}
 
-### I can't communicate with anyone
+### Je n’arrive à communiquer avec personne
 
-Maybe you booted your ship twice, or ran it using old files. If this is the
-case, you must perform a [factory reset](#factory-reset).
+Vous avez peut-être démarré votre vaisseau deux fois, ou l'avez exécuté en utilisant d'anciens fichiers. Si c'est le cas, vous devez effectuer une [réinitialisation d'usine](https://operators.urbit.org/manual/os/ship-troubleshooting#factory-reset).
 
-### I don't have the latest OTA
+### Je n'ai pas la dernière version de la mise à jour à distance (OTA)
 
-You can check what build your ship is on by entering `+trouble` into dojo and
-reading the `%base` hash. If this does not match the latest hash published in
-the `urbit-dev` mailing list, you are behind.
+Vous pouvez vérifier sur quelle version se trouve votre vaisseau en entrant `+trouble` dans dojo et en lisant l’encodage `%base`. Si cela ne correspond pas au dernier encodage publié dans la liste de diffusion `urbit-dev`, vous êtes en retard.
 
-Your sponsor may just be lagging behind, so sometimes this will resolve on its
-own with patience. Otherwise, try the procedure outlined [here](https://github.com/urbit/support/wiki/Missing-OTA).
+Votre parrain peut simplement être à la traîne, donc parfois cela se résoudra tout seul avec de la patience. Sinon, essayez la procédure décrite [ici](https://github.com/urbit/support/wiki/Missing-OTA).
 
-### I keep getting an `ames` error stack-trace
+### Je continue à obtenir une erreur liée à la trace d’appel`Ames`
 
-You may see a message like this one: `/~zod/base/~2019.7.22..18.55.46..83a3/sys/vane/ames:<[line column].[line column]>`. This is a clay path to a Hoon file, pointing to the line and column where an expression crashed. This kind of error might be accompanied by a `crud` message.
+Vous pouvez voir un message comme celui-ci : `/~zod/base/~2019.7.22..18.55.46..83a3/sys/vane/ames:<[colonne de ligne].[colonne de ligne]>`. Il s'agit d'un chemin d'accès Clay à un fichier Hoon, pointant vers la ligne et la colonne où une expression qui a causée l’arrêt du système. Ce type d'erreur peut être accompagné d'un message `crud`.
 
-This means that another ship is sending invalid packets to you. This could be
-because one of the ships has not updated the other ship's "rift number", which
-is the number that starts at one and increments every time that ship performs a
-factory reset.
+Cela signifie qu'un autre vaisseau vous envoie des paquets invalides. Cela peut être dû au fait que l'un des vaisseaux n'a pas mis à jour le "rift number" de l'autre vaisseau, qui est le numéro qui commence à un et s'incrémente chaque fois que ce vaisseau effectue une réinitialisation d'usine.
 
-This can happen if they have the wrong keys of yours, or if you have the wrong keys of theirs. You can figure out who has the wrong keys by running this scry command in your dojo: `.^(* %j /=life=/shipname)`, where shipname is the other ship's name. Save that information. Then, go to the [Azimuth contract on Etherscan](https://etherscan.io/address/0x223c067f8cf28ae173ee5cafea60ca44c335fecb#readContract), scroll down to `32. points`, and put in the hexadecimal representation of the other ship's `@p`. You can find the hexadecimal representation by running ...
+Cela peut se produire si leurs cles, ou les vôtres, ne correspondent pas. Vous pouvez déterminer qui a les mauvaises clés en exécutant la commande `scry` dans votre dojo : `.^(* %j /=life=/shipname)`, où shipname qui est le nom de l'autre vaisseau. Sauvegardez cette information. Ensuite, allez dans le [contrat Azimut sur Etherscan](https://etherscan.io/address/0x223c067f8cf28ae173ee5cafea60ca44c335fecb#readContract), faites défiler jusqu'à `32. points`, et entrez la représentation hexadécimale de `@p` de l'autre vaisseau. Vous pouvez trouver la représentation hexadécimale en exécutant ...
 
 ```
-`@ux`~sampel-palnet
+@ux~sampel-palnet
 ```
 
-... in the Dojo, where `~sampel-palnet` is the other ship's name. Then, compare it to the scry information that you saved. If that information matches up, it means that the other ship is the problem. If it **doesn't** match up, your ship has wrong information about the other ship. If you have such wrong information, you can fix this by running:
+... dans le Dojo, où `~sampel-palnet` est le nom de l'autre vaisseau. Ensuite, comparez-le aux informations scry que vous avez sauvegardé. Si ces informations correspondent, cela signifie que l'autre vaisseau est le problème. Si elles ne correspondent pas, votre vaisseau contient des informations erronées sur l'autre vaisseau. Dans ce cas, vous pouvez y remédier en exécutant :
 
 ```
-:azimuth-tracker|listen ~ %app %azimuth-tracker
+`:azimuth-tracker|listen ~ %app %azimuth-tracker`
 ```
 
-The last line above syncs from an Ethereum node for _all_ ships on the network. If you only wanted to sync with certain ships, run:
+
+La dernière ligne ci-dessus synchronise à partir d'un nœud Ethereum *tous* les vaisseaux sur le réseau. Si vous ne voulez vous synchroniser qu'avec certains vaisseaux, exécutez :
 
 ```
-:azimuth-tracker|listen ~[~sampel-palnet ~zod ~marzod] %app %azimuth-tracker
+
+`:azimuth-tracker|listen ~[~sampel-palnet ~zod ~marzod] %app %azimuth-tracker
 ```
 
-`~sampel-palnet ~zod ~marzod` are example ship-names; replace these with any number of desired ship-names.
+`~sampel-palnet ~zod ~marzod` sont des exemples de noms de vaisseaux; remplacez-les par n'importe quel nombre de noms de vaisseaux souhaités.
 
-The above commands work if you have the wrong keys of other ships. If other ships have wrong keys of _yours_, you need to somehow ask them to to run such a command.
+Les commandes ci-dessus fonctionnent si vous avez les mauvaises clés des autres vaisseaux. Si d'autres vaisseaux ont les mêmes clés que vous, vous devez leur demander d'une manière ou d'une autre d'exécuter une telle commande.
 
-### I can talk to some ships, but I can't talk to my sponsor and some other ships
+### Je peux parler à certains vaisseaux, mais je ne peux pas parler à mon parrain et à certains autres vaisseaux.
 
-This is usually the result of deleting your pier and starting your ship again. To fix
-this, you must perform a [factory reset](#factory-reset).
+C'est généralement le résultat de la suppression de votre ponton et du redémarrage de votre vaisseau. Pour résoudre ce problème, vous devez effectuer une [réinitialisation d'usine](https://operators.urbit.org/manual/os/ship-troubleshooting#factory-reset).
 
-## Booting Issues {% #booting-issues %}
+## Problèmes d’initialisation {% #problèmes-de-d'initilisation %}
 
-### My ship booted for the first time, but it turned into a comet instead of my planet or star
+### Mon vaisseau a été initialisé pour la première fois, mais il s'est transformé en comète au lieu de ma planète ou de mon étoile.
 
-You may have used the wrong arguments when booting your ship for the first time. Delete this comet and try again.
+Vous avez peut-être utilisé les mauvais arguments lors de l’initialisation de votre vaisseau. Supprimez cette comète et réessayez.
 
-### My development ship ("fakezod") gets a `boot: malformed` failure
+### Mon vaisseau de développement ("fakezod") reçoit un message `boot : malformed` échec
 
-This means that you gave your development ship an invalid `@p`. So, you will get this error if you write, for example, `urbit -F zodzod` instead of `urbit -F zod`.
+Cela signifie que vous avez donné à votre vaisseau de développement un `@p` invalide. Vous obtiendrez donc cette erreur si vous écrivez, par exemple, `urbit -F zodzod` au lieu de `urbit -F zod`.
 
-## Crashing Issues {% #crashing-issues %}
+## Problèmes de Plantage {% #problème-de-plantage %}
 
-### I got a `bail` error and my ship crashed
+### J'ai eu une erreur `bail` et mon vaisseau s'est planté
 
-Try bringing it back up; it will often start working just fine again.
+Essayez de le remettre en marche; il se remettra souvent à fonctionner correctement de lui même.
 
-However, if you get a `bail` error again, this is a serious issue and should be
-reported (see below). It's advised to keep the old files around to assist issue
-research. If you want to get back on the network immediately, you might want to
-perform a [factory reset](#factory-reset).
+Toutefois, si vous obtenez à nouveau une erreur `bail`, c’est qu’il s'agit d'un problème grave qui doit être signalé (voir ci-dessous). Il est conseillé de conserver les anciens fichiers pour faciliter la recherche de problèmes. Si vous souhaitez vous reconnecter au réseau immédiatement, vous pouvez effectuer une [réinitialisation d'usine](https://operators.urbit.org/manual/os/ship-troubleshooting#factory-reset).
 
-#### Making a GitHub issue out of your `bail`
+### Créer une requête GitHub à partir de votre `bail`
 
-You can get help with you problem by creating an issue at [github.com/urbit/urbit](https://github.com/urbit/urbit/issues). But to make a good issue, you need to include some information.
+Vous pouvez obtenir de l'aide pour résoudre votre problème en créant une requête sur [github.com/urbit/urbit](http://github.com/urbit/urbit). Mais pour créer une bonne requête, vous devez inclure certaines informations.
 
-When your urbit crashes with a `bail`, you'll probably get a core dump, which is a file that contains the program state of your urbit when it crashed. On Mac, core dumps can be found in `/cores`. On Linux, cores can often be found in `/var/crash`, or the home directory.
+Lorsque votre urbit plante avec une alerte `bail`, vous obtiendrez probablement une copie de l’état système (*core dump*), qui est un fichier qui contient l'état du programme de votre urbit lorsqu'il s'est planté. Sur Mac, les les copies de l’état système  peuvent être trouvés dans `/cores`. Sous Linux, les fichiers peuvent souvent être trouvés dans `/var/crash`, ou dans le répertoire personnel.
 
-Navigate to the folder containing your core dumps. Find the most recent core dump by looking at the dates after you run `ls -l`. Then `lldb -c <corename>`. Once that loads, you'll be at an `(lldb)` prompt; type `bt` at this prompt. This will create a stack trace that looks like this:
+Naviguez vers le dossier contenant vos copies de l’état système Trouvez les copies de l’état système  le plus récent en regardant les dates après avoir exécuté `ls -l`. Puis `lldb -c <corename>`. Une fois le chargement effectué, vous serez conduit à une console (`lldb`) ; tapez `bt` dans la fenêtre de commande. Cela créera une stack qui ressemblera à ceci :
 
 ```
 (lldb) bt
@@ -196,30 +174,28 @@ Navigate to the folder containing your core dumps. Find the most recent core dum
 (lldb)
 ```
 
-Copy this stack trace and include it in your GitHub issue.
+Copiez la trace de cette stack et incluez la dans votre requête GitHub.
 
-### My ship crashed with a `bail: meme` error.
+### Mon vaisseau s'est planté avec une erreur `bail : meme`
 
-This means that your ship ran out of memory.
+Cela signifie que votre vaisseau a manqué de mémoire.
 
-1. Make sure you are running the latest binary if you are not already on it.
+1. Assurez-vous que vous exécutez le dernier exécutable si vous n'êtes pas déjà dessus.
 
-2. Restart your ship. If you don't crash again, everything may be fine.
+2. Redémarrez votre vaisseau. S’il ne se plante pas à nouveau, tout est peut-être rentré dans l’ordre.
 
-3. If you **do** crash again, try running the following after your ship has shut down:
-   `./urbit-worker meld your-ship` (Replacing `your-ship` with the name/directory of your ship.)
-   This will attempt to compact the memory of your ship. Note that this may use large amounts of memory on the machine you are running it on, and will be very slow if the machine has little memory available.
+3. Si votre vaisseau **se** plante de nouveau, essayez d'exécuter ce qui suit après que votre vaisseau se soit éteint : `./urbit-worker meld your-ship` (en remplaçant `your-ship` par le nom/répertoire de votre vaisseau.) Cela tentera de compacter la mémoire de votre vaisseau. Notez que cela peut utiliser une grande quantité de mémoire sur la machine sur laquelle vous l'exécutez, et sera très lent si la machine a peu de mémoire disponible.
 
-4. If the above succeeds, but you still get `bail: meme` immediately, or after running for a little while, please [file an issue](https://github.com/urbit/urbit/issues). If you can, run `|mass` and share its output.
+4. Si l'opération ci-dessus réussit, mais que vous obtenez toujours `bail : meme` immédiatement, ou après un certain temps d'exécution, veuillez [signaler le problème](https://github.com/urbit/urbit/issues). Si vous le pouvez, exécutez `|mass` et partagez le résultat qui s’affiche.
 
-5. As a last resort, you may perform a [factory reset](#factory-reset).
+5. En dernier recours, vous pouvez effectuer une [réinitialisation d'usine](https://operators.urbit.org/manual/os/ship-troubleshooting#factory-reset).
 
-### My ship crashed with a `bail: oops` error
+### Mon vaisseau s'est planté avec une erreur `bail : oops`
 
-Restart your ship. These issues often just go away on their own. If this error repeats after restart two or more times, post the messages in an issue at [github.com/urbit/urbit](https://github.com/urbit/urbit/issues).
+Redémarrez votre vaisseau. Ces problèmes disparaissent souvent d'eux-mêmes. Si cette erreur se répète après un redémarrage deux fois ou plus, postez les messages dans une requête sur [github.com/urbit/urbit](http://github.com/urbit/urbit).
 
-This same error might also appear with a message like `Assertion '0'`.
+Cette même erreur peut également apparaître avec un message du type `Assertion '0'`.
 
-### My ship crashed with an `pier: work error` error
+### Mon vaisseau s'est planté et affiche une erreur `pier : work error`
 
-This means that the Urbit worker process has shut down for one reason or another. Just restart your ship; this is not a notable or reportable error.
+Cela signifie que le processus de travail Urbit s'est arrêté pour une raison ou une autre. Redémarrez simplement votre vaisseau ; ce n'est pas une erreur notable ou à signaler.

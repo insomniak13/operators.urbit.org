@@ -1,27 +1,27 @@
 +++
-title = "Coturn Operator Guide"
-description = "Instructions for running a coturn server on your star."
+title = "Guide de l'opérateur Coturn"
+description = "Instructions pour exécuter un serveur coturn sur votre étoile."
 weight = 4
 template = "doc.html"
 +++
 
-To make voice and video calls through urbit we use a protocol called WebRTC which allows ships to connect directly to each other. Most times one or both ships are behind NATs and firewalls and often they are unable to connect. To get around this, instead of connecting directly to each other the ships can all connect to a TURN server (Transversal Using Relays around NATs) which will relay all the data between all the participants. Since this is relaying a bunch of data there are no free TURN servers on the internet. Thus a nice service that a star can provide is to run a TURN server and allow it's sponsored planets to use it. This guide will show you how to set one up.
+Pour effectuer des appels vocaux et vidéo via urbit, nous utilisons un protocole appelé WebRTC qui permet aux vaisseaux de se connecter directement les uns aux autres. La plupart du temps, l'un ou les deux vaisseaux sont derrière des NATs et des pare-feu et sont souvent incapables de se connecter. Pour contourner ce problème, au lieu de se connecter directement les uns aux autres, les vaisseaux peuvent tous se connecter à un serveur TURN (*Transversal Using Relays around NATs*) qui relaiera toutes les données entre tous les participants. Comme il s'agit de relayer un grand nombre de données, il n'existe pas de serveurs TURN gratuits sur Internet. C'est pourquoi une étoile peut offrir un service intéressant en gérant un serveur TURN et en permettant aux planètes qu'elle parraine de l'utiliser. Ce guide vous montrera comment en mettre un en place.
 
-The server you want to run is called [coturn](https://github.com/coturn/coturn).
+Le serveur que vous souhaitez utiliser s'appelle [coturn](https://github.com/coturn/coturn).
 
-coturn requires a server to run on, a domain, and a certificate. It can run on the same machine as your star or a separate machine. 
+Coturn nécessite un serveur, un domaine et un certificat. Il peut fonctionner sur la même machine que votre étoile ou sur une machine séparée.
 
-## Getting a server, domain, and certificate
+## Obtenir un serveur, un domaine et un certificat
 
-If you need a server or domain follow the [Cloud Hosting guide](https://urbit.org/using/running/hosting) until the section 'Installing Urbit.' Stop there since you don't need to install urbit on the coturn machine. Follow [this guide](https://www.digitalocean.com/community/tutorials/how-to-acquire-a-let-s-encrypt-certificate-using-dns-validation-with-certbot-dns-digitalocean-on-ubuntu-20-04) to install certbot and use it to aquire a certificate. 
+Si vous avez besoin d'un serveur ou d'un domaine, suivez [le guide de l'hébergement sur le cloud](https://urbit.org/using/running/hosting) jusqu'à la section ‘Installation d'Urbit’. Arrêtez-vous là, car vous n'avez pas besoin d'installer Urbit sur la machine coturn. Suivez [ce guide](https://www.digitalocean.com/community/tutorials/how-to-acquire-a-let-s-encrypt-certificate-using-dns-validation-with-certbot-dns-digitalocean-on-ubuntu-20-04) pour installer certbot et l'utiliser pour obtenir un certificat.
 
-Note the instructions below assume an Ubuntu server. If your server runs a different distribution, you may need to substitute `apt-get` and `ufw` with your distro's package manager and firewall.
+Notez que les instructions ci-dessous supposent que vous opérez depuis un serveur Ubuntu. Si votre serveur fonctionne avec une distribution différente, vous devrez peut-être remplacer `apt-get` et `ufw` par le gestionnaire de paquets et le pare-feu de votre distribution.
 
-## Installing docker 
+## Installation de docker
 
-We will install docker and run the coturn docker container with our own certificate and configuration file.
+Nous allons installer docker et exécuter le conteneur docker coturn avec notre propre certificat et fichier de configuration.
 
-Install Docker with these commands taken from [this guide](https://docs.docker.com/engine/install/ubuntu/#installation-methods):
+Installez Docker avec ces commandes tirées de [ce guide](https://docs.docker.com/engine/install/ubuntu/#installation-methods) :
 
 ```
 $ sudo apt-get update
@@ -39,12 +39,15 @@ $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 
-Verify that Docker is installed correctly with this command:
+Vérifiez que Docker est installé correctement avec cette commande :
+
 ```
 $ sudo docker run hello-world
 ```
-## Configure firewall to open up coturn ports
-Coturn requires ports 3478 and 5349 to talk to it plus ports 49152-65535 to relay data. (I know this is a ton of ports but it IS a relay server).
+
+## Configurer le pare-feu pour ouvrir les ports de Coturn
+
+Coturn nécessite les ports 3478 et 5349 pour communiquer, ainsi que les ports 49152-65535 pour relayer les données. (Je sais que c'est un nombre important de ports, mais c'est un serveur de relais).
 
 ```
 $ sudo ufw allow 3478
@@ -52,46 +55,47 @@ $ sudo ufw allow 5349
 $ sudo ufw allow 49152:65535/udp
 ```
 
-Turn on the firewall:
+Allumez le pare-feu :
+
 ```
 $ sudo ufw enable 
 ```
 
-- Check the status
+- Vérifier le statut
 ``` 
 $ sudo ufw status
 ```
 
-## Install coturn 
-- First create a directory for it
+## Installez Coturn
+- Créez un dossier pour Coturn
 
 ```
 $ mkdir ~/coturn
 ```
 
-- Copy your cert into the directory so coturn can use it. 
+- Copiez votre certification dans le dossier pour que Coturn puisse l’utiliser
 
 ```
 $ mkdir ~/coturn/certs
 $ sudo cp /etc/letsencrypt/live/<YOUR-DOMAIN>/cert.pem /etc/letsencrypt/live/<YOUR-DOMAIN>/privkey.pem ~/coturn/certs
 ```
 
-- Generate a secret which will be shared by both coturn and the uturn gall agent.
+- Générez un secret qui sera partagé entre Coturn et l’agent uturn gall
 
 ```
 $ sudo apt install pwgen
 $ pwgen -s 64 1
 ```
 
-The output of the pwgen command is your secret. Anyone with it can access your coturn server so keep it safe.
+La sortie de la commande pwgen est votre secret. N'importe qui le possédant peut accéder à votre serveur coturn, alors gardez-le précieusement.
 
-- Create a config file
+- Créez un fichier de configuration
 ```
 $ touch ~/coturn/coturn.conf
 $ nano ~/coturn/coturn.conf
 ```
 
-- Copy these contents into your coturn.conf
+- Collez le contenu ci-dessous dans coturn.conf
 ```
 # STUN server port is 3478 for UDP and TCP, and 5349 for TLS.
 # Allow connection on the UDP port 3478
@@ -113,26 +117,26 @@ pkey=/coturn/certs/privkey.pem
 cipher-list="ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384"
 ```
 
-- Make sure to put the secret you generated into the static-auth-secret line.
-- Make sure the paths to your certificate are correct. 
-- Make sure to set realm and domain to your domain (ie zod.net)
+- Assurez-vous de mettre le secret que vous avez généré dans la ligne static-auth-secret.
+- Assurez-vous que les chemins vers votre certificat sont corrects.
+- Assurez-vous que le royaume et le domaine correspondent à votre domaine (c'est-à-dire zod.net)
 
-- Run coturn
+- Exécutez coturn
 ```
 $ sudo docker run -d --network=host \
   -v ~/coturn:/coturn \
   instrumentisto/coturn -c /coturn/turnserver.conf
 ```
 
-## Test that coturn is working
-First you need to generate credentials for it using this python program. The credentials are created with a username, which can be anything, a TTL, which is how long they last, and the secret you put in the config file earlier. 
+## Test de fonctionnement de coturn
+Tout d'abord, vous devez générer des informations d'identification à l'aide de ce programme python. Les informations d'identification sont créées avec un nom d'utilisateur, qui peut être n'importe quoi, un TTL, qui est leur durée de vie, et le secret que vous avez mis dans le fichier de configuration plus tôt.
 
 ```
 $ touch coturn.py
 $ nano coturn.py
 ```
 
-- Copy this into coturn.py and replace SECRET with your secret. The user doesn't matter at all (it's only used to match connections with users in the logs) so just leave it as user1.
+- Copiez ceci dans coturn.py et remplacez SECRET par votre secret. L'utilisateur n'a pas d'importance (il n'est utilisé que pour faire correspondre les connexions avec les utilisateurs dans les journaux) donc, laissez-le comme user1.
 
 ```
 import hashlib
@@ -150,21 +154,22 @@ print('username: %s' % username)
 print('password: %s' % password)
 ```
 
-- Now run it to generate credentials
+- Maintenant, exécutez le pour obtenir les certificats
 ```
 $ python coturn.py
 ```
 
-This will spit out a username and password.
+Vous obtiendrez un nom d'utilisateur et un mot de passe.
 
-- Go to https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice/
-- Remove the existing google stun server in the list.
-- Add a server called `turn:your-domain` (ie turn:turn.zod.net)
-- Copy the username and password generated by the python script into the fields.
-- Click Gather Candidates. If you see component type 'rtp relay' in the list then it worked.
+- Allez sur https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice/
+- Supprimez le serveur google stun existant dans la liste.
+- Ajoutez un serveur appelé `turn:votre-domaine` (c'est-à-dire turn:turn.zod.net)
+- Copiez le nom d'utilisateur et le mot de passe générés par le script python dans les champs.
+- Cliquez sur *Gather Candidates*. Si vous voyez le type de composant `rtp relay` dans la liste, cela a fonctionné.
 
-## Configure uturn 
-- Now you should go to your ship (either your star or a moon) and poke uturn with the URL and secret of your turn server. Make sure to begin the URL with 'turn:' and put in your secret. 
+## Configurez uturn
+
+- Maintenant, vous devez aller sur votre vaisseau (votre étoile ou une lune) et demander à uturn l'URL et le secret de votre serveur de tour. Assurez-vous de commencer l'URL par 'turn:' et mets ton secret.
 
 ```
 > :uturn &set-server-config [%server url='turn:turn.zod.net' secret='mysecret']

@@ -1,33 +1,21 @@
 +++
-title = "Operator's Manual"
+title = "Manuel d'utilisation"
 sort_by = "weight"
 template = "sections/docs/chapters.html"
 +++
 
-Welcome to the Operator's Manual for the Urbit project. This documentation is
-maintained by [Tlon](https://tlon.io) and the Urbit community in a public
-[Github repository](https://github.com/urbit/operators.urbit.org). Issues and
-contributions are welcome.
+Bienvenue sur le Manuel d'Utilisation du projet Urbit. Cette documentation est maintenue par [Tlon](https://tlon.io/) et la communauté Urbit par le biais d’un dépôt public [Github](https://github.com/urbit/urbit.org). Les questions et les contributions sont les bienvenues.
 
-This documentation provides a series of guides and reference material for
-assisting you in the usage and operations of your ship. If you're looking for
-documentation on how to _develop_ on Urbit, see our [development docs](https://developers.urbit.org/).
+Cette documentation fournit une série de guides et de matériel de référence pour vous aider dans l'utilisation et les opérations dont est capable votre vaisseau. Si vous cherchez de la documentation sur la façon de développer sur Urbit, veuillez voir notre [documentation de développement](https://developers.urbit.org/).
 
 ### [Urbit OS](/manual/os/)
 
-This section describes how to interact with your running Urbit ship: this
-includes working with the filesystem, command line (`dojo`), resolving common
-issues, and more.
+Cette section décrit comment interagir avec votre vaisseau Urbit en cours d'exécution : cela inclut le travail avec le système de fichiers, la ligne de commande (`dojo`), la résolution des problèmes courants, et plus encore.
 
 ### [Urbit ID](/manual/id/)
 
-Urbit ID is our [public-key infrastructure](/manual/id/overview), which is
-what allows you to truly own your identity. Here you'll find guides for
-interacting with your Urbit ID via our [Bridge](https://bridge.urbit.org)
-application.
+[](https://operators.urbit.org/manual/id)Urbit ID est [notre infrastructure à clé publique](https://operators.urbit.org/manual/id/overview), qui vous permet de vraiment posséder votre identité. Vous trouverez ici des guides pour interagir avec votre Urbit ID via notre application [Bridge](https://bridge.urbit.org/).
 
 ### [Running Urbit](/manual/running/)
 
-Urbit can be run in a variety of contexts. Our [Getting Started
-Guide](https://urbit.org/getting-started/) covers how to run an Urbit locally on your
-computer; this section covers alternative ways of running Urbit.
+Urbit peut être exécuté dans une variété de contextes. Notre [Guide de Démarrage](https://urbit.org/getting-started/) couvre la façon d'exécuter un Urbit localement sur votre ordinateur ; cette section couvre d'autres façons d'exécuter Urbit.
